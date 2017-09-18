@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
@@ -13,17 +13,137 @@
     <link rel="import" href="../kwc-style.html">
 
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
-    </custom-style>
-  </head>
-  <body>
+    <style is="custom-style" include="demo-pages-shared-styles"></style>
+</custom-style>
+</head>
+<body>
     <div class="vertical-section-container centered">
-      <h3>Basic kwc-style demo</h3>
-      <demo-snippet>
-        <template>
-          <kwc-style></kwc-style>
-        </template>
-      </demo-snippet>
+        <h3>Colors</h3>
+        <demo-snippet>
+            <template>
+                <style is="custom-style">
+                    .color {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        line-height: 40px;
+                        font-size: 10px;
+                    }
+                    .color.black { background: var(--color-black); color: var(--color-porcelain) }
+                    .color.abbey { background: var(--color-abbey); color: var(--color-porcelain) }
+                    .color.chateau { background: var(--color-chateau); color: var(--color-porcelain) }
+                    .color.grey { background: var(--color-grey); }
+                    .color.stone { background: var(--color-stone); }
+                    .color.porcelain { background: var(--color-porcelain); }
+                    .color.flame { background: var(--color-flame); }
+                    .color.kano-orange { background: var(--color-kano-orange); }
+                    .color.pumpkin { background: var(--color-pumpkin); }
+                    .color.cinnabar { background: var(--color-cinnabar); }
+                    .color.flamingo { background: var(--color-flamingo); }
+                    .color.carnation { background: var(--color-carnation); }
+                    .color.topaz { background: var(--color-topaz); }
+                    .color.amber { background: var(--color-amber); }
+                    .color.candlelight { background: var(--color-candlelight); }
+                    .color.sushi { background: var(--color-sushi); }
+                    .color.grassland { background: var(--color-grassland); }
+                    .color.apple { background: var(--color-apple); }
+                    .color.azure { background: var(--color-azure); }
+                    .color.dodger-blue { background: var(--color-dodger-blue); }
+                    .color.sky { background: var(--color-sky); }
+                    .color.facebook { background: var(--color-facebook); }
+                    .color.twitter { background: var(--color-twitter); }
+                </style>
+                <!-- TODO: Add link to `color.html` -->
+                <!-- TODO: Add all colors -->
+                <p>Check all available colors on <code>color.html</code></p>
+                <div class="color black"><span>--color-black</span></div>
+                <div class="color abbey"><span>--color-abbey</span></div>
+                <div class="color chateau"><span>--color-chateau</span></div>
+                <div class="color grey"><span>--color-grey</span></div>
+                <div class="color stone"><span>--color-stone</span></div>
+                <div class="color porcelain"><span>--color-porcelain</span></div>
+                <div class="color flame"><span>--color-flame</span></div>
+                <div class="color kano-orange"><span>--color-kano-orange</span></div>
+                <div class="color pumpkin"><span>--color-pumpkin</span></div>
+                <div class="color cinnabar"><span>--color-cinnabar</span></div>
+                <div class="color flamingo"><span>--color-flamingo</span></div>
+                <div class="color carnation"><span>--color-carnation</span></div>
+                <div class="color topaz"><span>--color-topaz</span></div>
+                <div class="color amber"><span>--color-amber</span></div>
+                <div class="color candlelight"><span>--color-candlelight</span></div>
+                <div class="color sushi"><span>--color-sushi</span></div>
+                <div class="color grassland"><span>--color-grassland</span></div>
+                <div class="color apple"><span>--color-apple</span></div>
+                <div class="color azure"><span>--color-azure</span></div>
+                <div class="color dodger-blue"><span>--color-dodger-blue</span></div>
+                <div class="color sky"><span>--color-sky</span></div>
+                <div class="color facebook"><span>--color-facebook</span></div>
+                <div class="color twitter"><span>--color-twitter</span></div>
+            </template>
+        </demo-snippet>
+
+        <h3>Typography</h3>
+        <demo-snippet>
+            <template>
+                <style is="custom-style">
+                    h1, h2, h3 { font-family: var(--font-heading); }
+                    p { font-family: var(--font-body); }
+                    .special { font-family: var(--font-special); }
+                    .code {
+                        font-family: var(--font-code);
+                        background: var(--color-abbey);
+                        color: var(--color-porcelain);
+                    }
+                </style>
+                <h1>This is a header 1</h1>
+                <h2>This is a header 2</h2>
+                <h3>This is a header 3</h3>
+                <p>This is a body text paragraph. Kano is a computer anyone can make™. Our mission is to give young people – and the young at heart – a simple, fun way to make and play with technology, and take control of the world around them.</p>
+                <p class="special">Wow! This is a special text!</p>
+                <div class="code">
+                    this = "real code";
+                </div>
+            </template>
+        </demo-snippet>
+
+        <h3>Buttons</h3>
+        <demo-snippet>
+            <template>
+                <style is="custom-style">
+                    .button-round { @apply --kano-round-button; }
+                    .button-small { @apply --kano-button-small; }
+                    .button-big { @apply --kano-button-big; }
+                    .button-icon { @apply --kano-icon-button; }
+                </style>
+                <p>Please prefer to use the <a href="https://github.com/KanoComponents/kwc-button"><code>kwc-button</code></a> component instead.</p>
+                <p><button class="button-round color kano-orange">Round button</button></p>
+                <!-- TODO: Those look exactly the same: -->
+                <p><button class="button-small color kano-orange">Small button</button></p>
+                <p><button class="button-big color kano-orange">Big button</button></p>
+                <!-- TODO: I don't know how to demo this one: -->
+                <p><button class="button-icon"></button></p>
+            </template>
+        </demo-snippet>
+
+        <h3>Inputs</h3>
+        <demo-snippet>
+            <template>
+                <style is="custom-style" include="input-text"></style>
+                <style is="custom-style" include="input-range"></style>
+                <form action="">
+                    <p><input class="kano-input" type="text" value="I'm a text input"></p>
+                    <p><input class="kano-input" type="email" value="demo@kano.me"></p>
+                    <p><input class="kano-input" type="password" value="I'm secret"></p>
+                    <p><textarea>Write an essay about real code.</textarea></p>
+                    <p><input type="range"></p>
+                </form>
+                <!-- TODO: Demos for --kano-light-input, --kano-light-select, --kano-settings-container, --kano-settings-label -->
+            </template>
+        </demo-snippet>
+
+        <!-- TODO: Demos for `background`, `parts` and `layout` -->
     </div>
-  </body>
+</body>
 </html>
