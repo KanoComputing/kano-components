@@ -39,9 +39,12 @@ pipeline {
         stage('documentation') {
             steps {
                 script {
-                    // Generate the analysis.json file that will be sent to
-                    // the global documentation later on
-                    sh "polymer analyze > analysis.json"
+                    if (env.BRANCH_NAME == 'master') {
+                        build job: 'Kano/components-doc/master', parameters: [
+                            text(name: 'repoUrl', value: 'https://github.com/KanoComponents/kwc-style'),
+                            text(name: 'componentName', value: 'kwc-style')
+                        ], wait: false
+                    }
                 }
             }
         }
