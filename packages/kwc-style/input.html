@@ -5,8 +5,8 @@
   <style is="custom-style">
       html {
           --kano-input: {
-              font-family: bariol;
-              font-size: 1.1em;
+              font-family: var(--font-body);
+              font-size: 16px;
               border-radius: 3px;
           };
 
@@ -42,83 +42,97 @@
 <dom-module id="input-range">
     <template>
         <style>
-          input[type=range] {
-            -webkit-appearance: none;
-            background-color: transparent; }
+            input[type=range] {
+                -webkit-appearance: none;
+                background-color: transparent;
+            }
 
-          input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none; }
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+            }
 
-          input[type=range]::-ms-track {
-            cursor: pointer;
-            background-color: transparent;
-            border-color: transparent;
-            color: transparent; }
+            input[type=range]::-ms-track {
+                cursor: pointer;
+                background-color: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
 
-          /* Special styling for WebKit/Blink */
-          input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 9px;
-            width: 20px;
-            border-radius: 3px;
-            background-color: #B2B2B2;
-            cursor: pointer;
-            margin-top: -3px; }
+            /* Special styling for WebKit/Blink */
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 9px;
+                width: 20px;
+                border-radius: 3px;
+                background-color: #B2B2B2;
+                cursor: pointer;
+                margin-top: -3px;
+            }
 
-          /* All the same stuff for Firefox */
-          input[type=range]::-moz-range-thumb {
-            height: 9px;
-            width: 20px;
-            border-radius: 3px;
-            background-color: #B2B2B2;
-            cursor: pointer; }
+            /* All the same stuff for Firefox */
+            input[type=range]::-moz-range-thumb {
+                height: 9px;
+                width: 20px;
+                border-radius: 3px;
+                background-color: #B2B2B2;
+                cursor: pointer;
+            }
 
-          /* All the same stuff for IE */
-          input[type=range]::-ms-thumb {
-            height: 9px;
-            width: 20px;
-            border-radius: 3px;
-            background-color: #B2B2B2;
-            cursor: pointer; }
+            /* All the same stuff for IE */
+            input[type=range]::-ms-thumb {
+                height: 9px;
+                width: 20px;
+                border-radius: 3px;
+                background-color: #B2B2B2;
+                cursor: pointer;
+            }
 
-          input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 3px;
-            cursor: pointer;
-            background: #CBCBCB; }
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 3px;
+                cursor: pointer;
+                background: #CBCBCB;
+            }
 
-          input[type=range]:focus::-webkit-slider-runnable-track {
-            background: #CBCBCB; }
+            input[type=range]:focus::-webkit-slider-runnable-track {
+                background: #CBCBCB;
+            }
 
-          input[type=range]::-moz-range-track {
-            width: 100%;
-            height: 3px;
-            cursor: pointer;
-            background: #CBCBCB; }
+            input[type=range]::-moz-range-track {
+                width: 100%;
+                height: 3px;
+                cursor: pointer;
+                background: #CBCBCB;
+            }
 
-          input[type=range]::-ms-track {
-            width: 100%;
-            height: 3px;
-            cursor: pointer;
-            background: #CBCBCB; }
+            input[type=range]::-ms-track {
+                width: 100%;
+                height: 3px;
+                cursor: pointer;
+                background: #CBCBCB;
+            }
 
-          input[type=range]::-ms-fill-lower {
-            width: 100%;
-            height: 3px;
-            cursor: pointer;
-            background: #CBCBCB; }
+            input[type=range]::-ms-fill-lower {
+                width: 100%;
+                height: 3px;
+                cursor: pointer;
+                background: #CBCBCB;
+            }
 
-          input[type=range]:focus::-ms-fill-lower {
-            background: #CBCBCB; }
+            input[type=range]:focus::-ms-fill-lower {
+                background: #CBCBCB;
+            }
 
-          input[type=range]::-ms-fill-upper {
-            width: 100%;
-            height: 3px;
-            cursor: pointer;
-            background: #CBCBCB; }
+            input[type=range]::-ms-fill-upper {
+                width: 100%;
+                height: 3px;
+                cursor: pointer;
+                background: #CBCBCB;
+            }
 
-          input[type=range]:focus::-ms-fill-upper {
-            background: #CBCBCB; }
+            input[type=range]:focus::-ms-fill-upper {
+                background: #CBCBCB;
+            }
         </style>
     </template>
 </dom-module>
@@ -126,28 +140,99 @@
 <dom-module id="input-text">
     <template>
         <style>
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        textarea {
-            border-radius: 4px;
-            background: #f5f5f5;
-            border: 2px solid #ccc;
-            margin-bottom: 20px;
-            padding: 9px 15px;
-            display: inline-block;
-            font-size: 16px;
-            box-shadow: 0 2px 0 0 rgba(0,0,0,0.03) inset;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="password"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #ff842a;
-        }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            textarea {
+                background: white;
+                border-radius: 4px;
+                box-sizing: border-box;
+                border: 1px solid #d3d6d8;
+                display: block;
+                font-size: 14px;
+                padding: 8px 16px;
+                width: 100%;
+            }
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="password"]:focus,
+            textarea:focus {
+                outline: none;
+                border-color: var(--color-kano-orange);
+            }
+            /**
+             * Style the placeholders with all the browser-prefixes.
+             * See here: https://css-tricks.com/almanac/selectors/p/placeholder/
+             */
+            input[type="text"]::-webkit-input-placeholder,
+            input[type="email"]::-webkit-input-placeholder,
+            input[type="password"]::-webkit-input-placeholder,
+            textarea:focus {
+                text-transform: uppercase;
+            }
+            input[type="text"]::-moz-placeholder,
+            input[type="email"]::-moz-placeholder,
+            input[type="password"]::-moz-placeholder,
+            textarea:focus {
+                text-transform: uppercase;
+            }
+            input[type="text"]:-moz-placeholder,
+            input[type="email"]:-moz-placeholder,
+            input[type="password"]:-moz-placeholder,
+            textarea:focus {
+                text-transform: uppercase;
+            }
+            input[type="text"]:-ms-input-placeholder,
+            input[type="email"]:-ms-input-placeholder,
+            input[type="password"]:-ms-input-placeholder,
+            textarea:focus {
+                text-transform: uppercase;
+            }
+        </style>
+    </template>
+</dom-module>
+
+<dom-module id="input-checkbox">
+    <template>
+        <style>
+            input[type="checkbox"] {
+                height: 14px;
+                margin-right: 14px;
+                position: relative;
+                width: 14px;
+            }
+            input[type="checkbox"]::before,
+            input[type="checkbox"]::after {
+                border: 1px solid var(--color-abbey);
+                border-radius: 3px;
+                color: white;
+                cursor: pointer;
+                height: 14px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 14px;
+            }
+            input[type="checkbox"]::before {
+                background-color: white;
+                content: '';
+            }
+            input[type="checkbox"]::after {
+                content: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%3Cg%3E%0A%20%20%3Ctitle%3EKano%20Tick%3C/title%3E%0A%20%20%3Cpath%20id%3D%22tick-1%22%20fill%3D%22white%22%20d%3D%22m5.36056%2C11.53785l0%2C0c-0.37266%2C0%20-0.73026%2C-0.14826%20-0.99385%2C-0.41162l-2.98608%2C-2.98634c-0.54882%2C-0.54882%20-0.54882%2C-1.43863%200.00024%2C-1.98746c0.54882%2C-0.54831%201.43863%2C-0.54857%201.9872%2C0.00024l1.99248%2C1.99248l5.27158%2C-5.27158c0.54831%2C-0.54857%201.43889%2C-0.54857%201.9872%2C0c0.54882%2C0.54882%200.54882%2C1.43863%200%2C1.98746l-6.26518%2C6.26518c-0.26361%2C0.26335%20-0.62094%2C0.41162%20-0.9936%2C0.41162l0%2C0.00001l0.00001%2C0.00001z%22/%3E%0A%20%3C/g%3E%0A%3C/svg%3E');
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            input[type="checkbox"]:checked::after {
+                background-color: var(--color-abbey);
+                opacity: 1;
+            }
+            input[type="checkbox"]:focus {
+                outline: none;
+                border-color: var(--color-kano-orange);
+            }
+            input[type="checkbox"] ~ label {
+                cursor: pointer;
+            }
         </style>
     </template>
 </dom-module>
