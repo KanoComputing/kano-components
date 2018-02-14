@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <title>kwc-lightboard-preview demo</title>
+
+        <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+        <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+        <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+        <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+        <link rel="import" href="../kwc-lightboard-preview.html">
+        <custom-style>
+            <style is="custom-style" include="demo-pages-shared-styles">
+            </style>
+        </custom-style>
+    </head>
+    <body>
+        <div class="vertical-section-container centered">
+            <h3>30px wide</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-lightboard-preview src="../demo-assets/595a6c169f797577bd72bd70.png" width="30"></kwc-lightboard-preview>
+                </template>
+            </demo-snippet>
+            <h3>60px wide</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-lightboard-preview src="../demo-assets/595a6c169f797577bd72bd70.png" width="60"></kwc-lightboard-preview>
+                </template>
+            </demo-snippet>
+            <h3>90px wide</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-lightboard-preview src="../demo-assets/595a6c169f797577bd72bd70.png" width="90"></kwc-lightboard-preview>
+                </template>
+            </demo-snippet>
+            <h3>150px wide</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-lightboard-preview src="../demo-assets/595a6c169f797577bd72bd70.png" width="150"></kwc-lightboard-preview>
+                </template>
+            </demo-snippet>
+            <h3>300px wide</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-lightboard-preview src="../demo-assets/595a6c169f797577bd72bd70.png" width="300"></kwc-lightboard-preview>
+                </template>
+            </demo-snippet>
+            <h3>300px wide, 24 FPS</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-lightboard-preview src="../demo-assets/595a6c169f797577bd72bd70.png" width="300"  fps="24"></kwc-lightboard-preview>
+                </template>
+            </demo-snippet>
+        </div>
+    </body>
+</html>
