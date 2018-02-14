@@ -6,9 +6,11 @@
             #canvas {
                 background-color: #22272d;
                 image-rendering: pixelated;
+                width: 100%;
+                max-width: 100%;
             }
         </style>
-        
+
         <canvas id="canvas" width="16" height="8" style$="[[_computeCanvasStyle(width)]]"></canvas>
     </template>
 
@@ -70,8 +72,7 @@
             * Width of the component
             */
             width: {
-                type: Number,
-                value: 300
+                type: Number
             }
         },
         connectedCallback () {
