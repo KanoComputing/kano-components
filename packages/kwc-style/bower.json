@@ -3,7 +3,7 @@
   "description": "Provides style guidelines and assets to Kano Web Components",
   "main": "kwc-style.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.9.0"
+    "polymer": "Polymer/polymer#1 - 2"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
