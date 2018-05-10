@@ -1,13 +1,28 @@
 <link rel="import" href="../polymer/polymer.html">
 
+
+<!--
+`kwc-lightboard-preview`
+
+Renders animated covers from lightboard spritesheets.
+
+@demo demo/index.html
+-->
+
 <dom-module id="kwc-lightboard-preview">
     <template>
         <style>
+            :host {
+                display: block;
+            }
+
             #canvas {
                 background-color: #22272d;
                 image-rendering: pixelated;
                 width: 100%;
                 max-width: 100%;
+
+                display: block;
             }
         </style>
 
