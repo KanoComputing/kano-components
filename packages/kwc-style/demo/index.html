@@ -13,7 +13,12 @@
     <link rel="import" href="../kwc-style.html">
 
     <custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles"></style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+        .button-round { @apply --kano-round-button; }
+        .button-small { @apply --kano-button-small; }
+        .button-big { @apply --kano-button-big; }
+        .button-icon { @apply --kano-icon-button; }
+    </style>
 </custom-style>
 </head>
 <body>
@@ -111,12 +116,6 @@
         <h3>Buttons</h3>
         <demo-snippet>
             <template>
-                <style is="custom-style">
-                    .button-round { @apply --kano-round-button; }
-                    .button-small { @apply --kano-button-small; }
-                    .button-big { @apply --kano-button-big; }
-                    .button-icon { @apply --kano-icon-button; }
-                </style>
                 <p>Please prefer to use the <a href="https://github.com/KanoComponents/kwc-button"><code>kwc-button</code></a> component instead.</p>
                 <p><button class="button-round color kano-orange">Round button</button></p>
                 <!-- TODO: Those look exactly the same: -->
