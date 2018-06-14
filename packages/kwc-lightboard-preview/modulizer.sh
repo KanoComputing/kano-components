@@ -1,5 +1,5 @@
 modulizer --out . \
 --npm-name @kano/kwc-lightboard-preview \
---npm-version 3.0.0-beta.1 \
+--npm-version 3.0.0-beta.2 \
 --import-style name \
---dependency-mapping web-components,@kano/web-components,3.0.0-beta.1
+--dependency-mapping web-components,@kano/web-components,^3.0.0-beta.2
