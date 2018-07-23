@@ -10,13 +10,13 @@ export const outline = html`
         border-width: 1px;
     }
     .btn.outline.primary {
-        border-color: var(--kwc-button-border, var(--color-kano-orange));
-        color: var(--kwc-button-color, var(--color-kano-orange));
+        border-color: var(--color-kano-orange);
+        color: var(--color-kano-orange);
     }
     .btn.outline.primary:hover,
     .btn.outline.primary:focus {
-        border-color: var(--kwc-button-border-hover, var(--color-flame));
-        color: var(--kwc-button-color-hover, var(--color-flame));
+        border-color: var(--color-flame);
+        color: var(--color-flame);
     }
     .btn.outline.secondary {
         border-color: var(--color-grassland);
