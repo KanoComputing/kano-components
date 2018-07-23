@@ -7,7 +7,7 @@ export const outline = html`
         .btn.outline,
         .btn.outline:hover,
         .btn.outline:focus {
-            background: transparent;
+            background: transparent !important;
             border-style: solid;
             border-width: 1px;
         }

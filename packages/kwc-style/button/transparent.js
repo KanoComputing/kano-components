@@ -5,8 +5,9 @@ export const transparent = html`
     ${button}
     <style>
         .btn.transparent,
-        .btn.transparent:hover {
-            background: transparent;
+        .btn.transparent:hover
+        .btn.transparent:focus {
+            background: transparent !important;
         }
         .btn.transparent.outline,
         .btn.transparent.outline:hover {
