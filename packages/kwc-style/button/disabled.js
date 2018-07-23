@@ -5,7 +5,7 @@ export const disabled = html`
     .btn.disabled,
     .btn.disabled:hover,
     .btn.disabled:focus {
-        background-color: var(--color-grey) !important;
+        background: var(--color-grey) !important;
         cursor: default;
     }
 </style>

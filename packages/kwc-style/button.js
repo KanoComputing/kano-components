@@ -16,7 +16,7 @@ export const button = html`
         padding: 0 22px;
         text-align: center;
         text-transform: uppercase;
-        transition-property: background-color, border-color, color;
+        transition-property: background, border-color, color;
         transition-duration: 0.3s;
         transition-timing-function: ease;
         white-space: nowrap;
@@ -28,7 +28,7 @@ export const button = html`
     .btn:hover,
     .btn:focus {
         color: white;
-        background-color: var(--color-flame);
+        background: var(--color-flame);
     }
     .btn.small {
         font-size: 12px;

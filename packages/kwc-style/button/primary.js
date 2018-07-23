@@ -9,7 +9,7 @@ export const primary = html`
     .btn.primary:hover,
     .btn.primary:focus {
         color: white;
-        background-color: var(--color-flame);
+        background: var(--color-flame);
     }
 </style>
 `;
