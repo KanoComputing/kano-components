@@ -9,6 +9,8 @@ import { tertiary } from './button/tertiary.js';
 import { transparent } from './button/transparent.js';
 import { warning } from './button/warning.js';
 import { white } from './button/white.js';
+import { soft } from './button/soft.js';
+import { mega } from './button/mega.js';
 
 export {
     button,
@@ -22,6 +24,8 @@ export {
     transparent,
     warning,
     white,
+    soft,
+    mega,
 };
 
 export default {
@@ -36,4 +40,6 @@ export default {
     transparent,
     warning,
     white,
+    soft,
+    mega,
 };
