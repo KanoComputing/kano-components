@@ -5,16 +5,108 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Styles</title>
+        <link rel="stylesheet" href="../fonts/bariol.css">
     </head>
     <body>
-        <button>Hello</button>
-        <button class="btn primary medium">Hello Button</button>
-        <a class="btn round" href="#">Hello Link</a>
         <script type="module">
             import '../color.js';
-            import { button } from '../button.js';
-            const tpl = button.cloneNode(true);
-            document.head.appendChild(tpl.content);
+            import * as buttons from '../button.js';
+
+            Object.keys(buttons).forEach((button) => {
+                if (button != "default") {
+                    var tpl = buttons[button].cloneNode(true);
+                    document.head.appendChild(tpl.content);
+                }
+            });            
         </script>
+
+        <style>
+            body {
+                font-family: 'Bariol';
+            }
+            fieldset {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px 30px;
+                border: 1px solid var(--color-kano-orange);
+                border-radius: 16px;
+            }
+        </style>
+
+        <fieldset>
+            <legend>Default:</legend>
+            <button class="btn">Default</button>
+            <button class="btn small">Default Small</button>
+            <button class="btn primary outline">Default Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Primary:</legend>
+            <button class="btn primary">Primary</button>
+            <button class="btn primary small">Primary Small</button>
+            <button class="btn primary outline">Primary Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Secondary:</legend>
+            <button class="btn secondary">Secondary</button>
+            <button class="btn secondary small">Secondary Small</button>
+            <button class="btn secondary outline">Secondary Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Tertiary:</legend>
+            <button class="btn tertiary">Tertiary</button>
+            <button class="btn tertiary small">Tertiary Small</button>
+            <button class="btn tertiary outline">Tertiary Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Warning:</legend>
+            <button class="btn warning">Warning</button>
+            <button class="btn warning small">Warning Small</button>
+            <button class="btn warning outline">Warning Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Small:</legend>
+            <button class="btn warning small">Warning</button>
+            <button class="btn primary small">Warning Small</button>
+            <button class="btn secondary small outline">Warning Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Square:</legend>
+            <button class="btn primary square">Warning</button>
+            <button class="btn secondary square">Warning Small</button>
+            <button class="btn tertiary small square outline">Warning Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Ghost:</legend>
+            <button class="btn ghost primary">Warning</button>
+            <button class="btn ghost small secondary">Warning Small</button>
+            <button class="btn ghost tertiary outline">Warning Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Outline:</legend>
+            <button class="btn primary outline">Warning</button>
+            <button class="btn small secondary outline">Warning Small</button>
+            <button class="btn tertiary outline">Warning Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>Black:</legend>
+            <button class="btn black">Warning</button>
+            <button class="btn black small">Warning Small</button>
+            <button class="btn black outline">Warning Outline</button>
+        </fieldset>
+        <fieldset>
+            <legend>White:</legend>
+            <button class="btn white">Warning</button>
+            <button class="btn white small">Warning Small</button>
+        </fieldset>
+        <fieldset>
+            <legend>Disabled:</legend>
+            <button class="btn disabled">Warning</button>
+            <button class="btn small disabled">Warning Small</button>
+        </fieldset>
+        <fieldset>
+            <legend>Transparent:</legend>
+            <button class="btn transparent primary">Warning</button>
+            <button class="btn small transparent secondary">Warning Small</button>
+        </fieldset>
     </body>
 </html>
