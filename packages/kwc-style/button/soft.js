@@ -9,22 +9,6 @@ export const soft = html`
             border: 1px solid #a2a6aa;
             border-radius: 3px;
             color: var(--color-chateau);
-            cursor: pointer;
-            display: inline-block;
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: bold;
-            height: 40px;
-            line-height: 40px;
-            outline: none;
-            overflow: hidden;
-            padding: 0 22px;
-            text-align: center;
-            text-transform: uppercase;
-            transition-property: background, border-color, color;
-            transition-duration: 0.3s;
-            transition-timing-function: ease;
-            white-space: nowrap;
         }
         .btn.soft:hover,
         .btn.soft[active] {

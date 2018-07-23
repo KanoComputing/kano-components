@@ -7,14 +7,6 @@ export const mega = html`
         .btn.mega {
             height: 48px;
             min-width: 150px;
-            display: inline-block;
-
-            line-height: 48px;
-            outline: none;
-            overflow: hidden;
-            padding: 0 22px;
-            white-space: nowrap;
-            cursor: pointer;
 
             background: rgba(255, 255, 255, 1);
             color: var(--color-abbey);
@@ -25,19 +17,9 @@ export const mega = html`
             border-radius: 5px;
 
             font-size: 16px;
-            font-family: var(--font-body);
-            font-weight: bold;
-
-            text-align: center;
-            text-transform: uppercase;
-
-            transition-property: background, border-color, color;
-            transition-duration: 0.3s;
-            transition-timing-function: ease;
         }
         .btn.mega:hover,
         .btn.mega:focus, {
-            color: white;
             background: var(--color-kano-orange);
         }
         .btn.mega[disabled],
