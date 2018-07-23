@@ -1,13 +1,15 @@
 import { html } from '../template.js';
+import { button } from "../button.js";
 
 export const warning = html`
-<style>
-    .btn.warning {
-        background: var(--color-cinnabar);
-    }
-    .btn.warning:hover,
-    .btn.warning:focus {
-        background: var(--color-flamingo);
-    }
-</style>
+    ${button}
+    <style>
+        .btn.warning {
+            background: var(--color-cinnabar);
+        }
+        .btn.warning:hover,
+        .btn.warning:focus {
+            background: var(--color-flamingo);
+        }
+    </style>
 `;
