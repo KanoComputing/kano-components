@@ -32,7 +32,7 @@ export const soft = html`
         }
         .btn.soft[disabled],
         .btn.soft[disabled]:hover {
-            background: transparent;
+            background: transparent !important;
             border-color: #d3d6d8;
             color: #a2a6aa;
         }
