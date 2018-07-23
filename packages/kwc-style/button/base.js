@@ -1,5 +1,5 @@
-import { html } from './template.js';
-
+import { html } from '../template.js';
+ 
 export const button = html`
     <style>
         .btn {

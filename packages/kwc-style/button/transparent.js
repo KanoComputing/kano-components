@@ -1,5 +1,5 @@
 import { html } from '../template.js';
-import { button } from "../button.js";
+import { button } from "./base.js";
 
 export const transparent = html`
     ${button}
