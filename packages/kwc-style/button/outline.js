@@ -1,5 +1,5 @@
 import { html } from '../template.js';
-import { button } from "./base.js";
+import { button } from './base.js';
 
 export const outline = html`
     ${button}
