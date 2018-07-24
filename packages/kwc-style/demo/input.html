@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Styles</title>
+        <link rel="stylesheet" href="../fonts/bariol.css">
+    </head>
+    <body>
+        <script type="module">
+            import '../color.js';
+            import * as inputs from '../input.js';
+
+            Object.keys(inputs).forEach((input) => {
+                if (input != "default") {
+                    var tpl = inputs[input].cloneNode(true);
+                    document.head.appendChild(tpl.content);
+                }
+            });            
+        </script>
+
+        <style>
+            body {
+                font-family: 'Bariol';
+
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            fieldset {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px 30px;
+                border: 1px solid var(--color-kano-orange);
+                border-radius: 16px;
+            }
+            fieldset.text label {
+                text-align: center;
+                display: block;
+                margin-bottom: 10px;
+            }
+            fieldset.text label:not([for="text"]) {
+                margin-top: 15px;
+            }
+            fieldset.text .input {
+                width: 300px;
+                margin: 0 auto;
+            }
+            .input[type="checkbox"] + label {
+                margin-right: 30px;
+            }
+            .input[type="range"] {
+                width: 250px;
+            }
+        </style>
+
+        <fieldset class="text">
+            <legend>Text:</legend>
+            <label for="text">Text Input</label>
+            <input type="text" class="input" id="text" value="Hi, I'm a Kano styled component">
+
+            <label for="email">Email Input</label>
+            <input type="email" class="input" id="email" value="team@kano.me">
+
+            <label for="password">Password Input</label>
+            <input type="password" class="input" id="password" value="Why are you seeing this one?">
+        </fieldset>
+        <fieldset>
+            <legend>Checkbox:</legend>
+            <input type="checkbox" class="input" id="checkbox">
+            <label for="checkbox">Default</label>
+
+            <input type="checkbox" class="input" id="checkbox-checked" checked>
+            <label for="checkbox-checked">Checked</label>
+
+            <input type="checkbox" class="input" id="checkbox-disabled" disabled>
+            <label for="checkbox-disabled">Disabled</label>
+
+            <input type="checkbox" class="input" id="checkbox-checked-disabled" checked disabled>
+            <label for="checkbox-checked-disabled">Disabled Checked</label>
+        </fieldset>
+        <fieldset>
+            <legend>Range:</legend>
+            <input type="range" class="input" value="35">
+        </fieldset>
+    </body>
+</html>
