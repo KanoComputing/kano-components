@@ -13,7 +13,7 @@
             import * as buttons from '../button.js';
 
             Object.keys(buttons).forEach((button) => {
-                if (button != "default") {
+                if (button !== 'default') {
                     var tpl = buttons[button].cloneNode(true);
                     document.head.appendChild(tpl.content);
                 }

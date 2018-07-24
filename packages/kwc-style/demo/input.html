@@ -13,7 +13,7 @@
             import * as inputs from '../input.js';
 
             Object.keys(inputs).forEach((input) => {
-                if (input !== "default") {
+                if (input !== 'default') {
                     var tpl = inputs[input].cloneNode(true);
                     document.head.appendChild(tpl.content);
                 }
