@@ -1,15 +1,3 @@
-import { checkbox } from './input/checkbox.js';
-import { range } from './input/range.js';
-import { text } from './input/text.js';
-
-export {
-    checkbox,
-    range,
-    text,
-};
-
-export default {
-    checkbox,
-    range,
-    text,
-};
+export * from './input/checkbox.js';
+export * from './input/range.js';
+export * from './input/text.js';

@@ -1,4 +1,5 @@
 import { html } from '../template.js';
+import '../typography.js';
  
 export const button = html`
     <style>

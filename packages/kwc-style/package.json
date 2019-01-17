@@ -1,0 +1,8 @@
+{
+  "name": "@kano/styles",
+  "version": "1.0.0",
+  "main": "styles.js",
+  "repository": "git@github.com:KanoComponents/kwc-style.git",
+  "author": "Paul Varache <paul@kano.me>",
+  "license": "MIT"
+}

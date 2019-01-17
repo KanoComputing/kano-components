@@ -1,6 +1,11 @@
 import { html } from './template.js';
+import { bariol } from './fonts/bariol.js';
 
+/**
+ * Typography style, sets the fonts variables
+ */
 const typography = html`
+    ${bariol}
     <style>
         html {
             --font-heading: 'Bariol', Helvetica, Arial, sans-serif;

@@ -1,45 +1,13 @@
-import { button } from './button/base.js';
-import { black } from './button/black.js';
-import { disabled } from './button/disabled.js';
-import { ghost } from './button/ghost.js';
-import { outline } from './button/outline.js';
-import { primary } from './button/primary.js';
-import { secondary } from './button/secondary.js';
-import { tertiary } from './button/tertiary.js';
-import { transparent } from './button/transparent.js';
-import { warning } from './button/warning.js';
-import { white } from './button/white.js';
-import { soft } from './button/soft.js';
-import { mega } from './button/mega.js';
-
-export {
-    button,
-    black,
-    disabled,
-    ghost,
-    outline,
-    primary,
-    secondary,
-    tertiary,
-    transparent,
-    warning,
-    white,
-    soft,
-    mega,
-};
-
-export default {
-    button,
-    black,
-    disabled,
-    ghost,
-    outline,
-    primary,
-    secondary,
-    tertiary,
-    transparent,
-    warning,
-    white,
-    soft,
-    mega,
-};
+export * from './button/base.js';
+export * from './button/black.js';
+export * from './button/disabled.js';
+export * from './button/ghost.js';
+export * from './button/outline.js';
+export * from './button/primary.js';
+export * from './button/secondary.js';
+export * from './button/tertiary.js';
+export * from './button/transparent.js';
+export * from './button/warning.js';
+export * from './button/white.js';
+export * from './button/soft.js';
+export * from './button/mega.js';
