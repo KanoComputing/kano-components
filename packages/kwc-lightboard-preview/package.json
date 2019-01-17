@@ -1,7 +1,7 @@
 {
   "description": "Display pixel kit lightboard sprites",
   "name": "@kano/kwc-lightboard-preview",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0",
   "main": "kwc-lightboard-preview.js",
   "scripts": {
     "serve": "es6-server"
