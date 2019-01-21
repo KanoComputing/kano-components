@@ -4,5 +4,11 @@
   "main": "styles.js",
   "repository": "git@github.com:KanoComponents/kwc-style.git",
   "author": "Paul Varache <paul@kano.me>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "serve": "es6-server"
+  },
+  "devDependencies": {
+    "@kano/es6-server": "^1.0.1"
+  }
 }
