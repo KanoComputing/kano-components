@@ -8,6 +8,9 @@
   "scripts": {
     "serve": "es6-server"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@kano/es6-server": "^1.0.1"
   }
