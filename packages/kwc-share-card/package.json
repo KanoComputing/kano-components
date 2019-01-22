@@ -1,0 +1,28 @@
+{
+  "description": "Displays a creation made with Kano Code.",
+  "name": "@kano/kwc-share-card",
+  "version": "3.0.4",
+  "main": "kwc-share-card.js",
+  "scripts": {
+    "serve": "es6-server",
+    "serve-test": "web-tester serve ./**/*.test.js",
+    "test": "web-tester run ./**/*.test.js",
+    "test-ci": "yarn run --silent test > test-results.xml",
+    "prepublishOnly": "yarn test"
+  },
+  "dependencies": {
+    "@kano/kwc-lightboard-preview": "3.0.0",
+    "@kano/styles": "^1.0.0",
+    "@polymer/iron-image": "^3.0.1",
+    "@polymer/paper-spinner": "^3.0.1",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@kano/es6-server": "^1.0.1",
+    "@kano/icons": "^0.0.1-alpha.3",
+    "@kano/web-tester": "^1.0.0-alpha.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

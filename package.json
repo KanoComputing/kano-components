@@ -6,6 +6,10 @@
   "devDependencies": {
     "lerna": "^3.5.1"
   },
+  "scripts": {
+    "serve": "es6-server",
+    "serve-test": "web-tester serve ./packages/**/*.test.js"
+  },
   "private": true,
   "workspaces": [
     "packages/*"

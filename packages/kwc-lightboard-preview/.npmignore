@@ -2,3 +2,4 @@ demo
 demo-assets
 README.md
 yarn.lock
+**/*.test.js

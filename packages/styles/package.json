@@ -13,5 +13,8 @@
   },
   "devDependencies": {
     "@kano/es6-server": "^1.0.1"
+  },
+  "dependencies": {
+    "@kano/demo-helpers": "^1.0.0"
   }
 }
