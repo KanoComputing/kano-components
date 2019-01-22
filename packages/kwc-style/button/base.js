@@ -1,43 +1,74 @@
 import { html } from '../template.js';
 import '../typography.js';
+import '../color.js';
  
 export const button = html`
     <style>
+        html {
+            --button-primary-color: var(--color-kano-orange);
+            --button-primary-hover-color:  var(--color-flame);
+            --button-secondary-color: var(--color-grey);
+            --button-secondary-hover-color: var(--color-abbey);
+        }
         .btn {
             border: none;
-            border-radius: 40px;
-            color: white;
             cursor: pointer;
             display: inline-block;
             font-family: var(--font-body);
             font-weight: bold;
-            min-width: 100px;
             outline: none;
             overflow: hidden;
-            padding: 0 22px;
             text-align: center;
-            text-transform: uppercase;
-            transition-property: background, border-color, color;
-            transition-duration: 0.3s;
-            transition-timing-function: ease;
             white-space: nowrap;
-            background: var(--color-kano-orange);
-            font-size: 14px;
-            height: 40px;
-            line-height: 40px;
+            background: var(--button-primary-color);
+            font-size: 16px;
+            height: 32px;
+            line-height: 32px;
+            padding: 0 14px;
+            border-radius: 40px;
+            color: white;
+            transition-property: background, border-color, color;
+            transition-duration: 0.2s;
+            transition-timing-function: ease;
         }
         .btn:hover,
         .btn:focus {
             color: white;
-            background: var(--color-flame);
+            background: var(--button-primary-hover-color);
         }
-        .btn.small {
-            font-size: 12px;
-            height: 32px;
-            line-height: 32px;
+        /* SIZES */
+        .btn.tab {}
+        .btn.s {
+            font-size: 14px;
+            height: 24px;
+            line-height: 24px;
+            padding: 0 10px;
         }
-        .btn.square {
-            border-radius: 3px;
+        .btn.l {
+            font-size: 18px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 18px;
+        }
+
+        /* SECONDARY */
+        .btn.secondary {
+            background: var(--button-secondary-color);
+        }
+        .btn.secondary:hover,
+        .btn.secondary:focus {
+            background: var(--button-secondary-hover-color);
+        }
+
+        .btn.round {}
+
+        /* DISABLED */
+        .btn[disabled],
+        .btn[disabled]:hover,
+        .btn[disabled]:focus {
+            background: var(--color-grey) !important;
+            opacity: 0.5;
+            cursor: default;
         }
     </style>
 `;
