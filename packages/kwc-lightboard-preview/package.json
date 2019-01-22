@@ -6,6 +6,9 @@
   "scripts": {
     "serve": "es6-server"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },
