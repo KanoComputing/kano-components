@@ -9,19 +9,16 @@
     <body>
         <script type="module">
             import '../color.js';
-            import * as buttons from '../button.js';
-
-            Object.keys(buttons).forEach((button) => {
-                if (button !== 'default') {
-                    var tpl = buttons[button].cloneNode(true);
-                    document.head.appendChild(tpl.content);
-                }
-            });            
+            import button from '../button.js';
+         
+            var tpl = button.cloneNode(true);
+            document.head.appendChild(tpl.content);
         </script>
 
         <style>
             body {
                 font-family: 'Bariol';
+                --button-action-highlight: red;
             }
             fieldset {
                 max-width: 800px;
@@ -49,6 +46,21 @@
             <button disabled class="btn l">Large</button>
             <button disabled class="btn">Medium</button>
             <button disabled class="btn s">Small</button>
+        </fieldset>
+        <fieldset>
+            <legend>Action:</legend>
+            <button class="btn action">
+                <svg viewBox="0 0 64 64">
+                    <rect x="0" y="0" width="64" height="64"></rect>
+                </svg>
+                <div>Action</div>
+            </button>
+            <button class="btn action active">
+                <svg viewBox="0 0 64 64">
+                    <rect x="0" y="0" width="64" height="64"></rect>
+                </svg>
+                <div>Action</div>
+            </button>
         </fieldset>
     </body>
 </html>

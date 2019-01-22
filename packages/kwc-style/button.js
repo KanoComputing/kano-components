@@ -9,6 +9,9 @@ const buttonColors = html`
             --button-primary-hover-color:  var(--color-flame);
             --button-secondary-color: var(--color-grey);
             --button-secondary-hover-color: var(--color-abbey);
+            --button-action-background: #f6f7f9;
+            --button-action-background-hover: #e5e8eC;
+            --button-action-highlight: var(--button-action-background-hover);
         }
     </style>
 `;
@@ -76,6 +79,31 @@ export const button = html`
             background: var(--color-grey) !important;
             opacity: 0.5;
             cursor: default;
+        }
+        /* ACTION */
+        .btn.action {
+            background-color: var(--button-action-background);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: var(--color-chateau);
+            fill: var(--color-chateau);
+        }
+        .btn.action:hover,
+        .btn.action:focus {
+            background-color: var(--button-action-background-hover);
+            fill: var(--button-action-highlight);
+            color: var(--color-chateau);
+        }
+        .btn.action.active {
+            background-color: var(--button-action-highlight);
+            fill: white;
+            color: white;
+        }
+        .btn.action svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 9px;
         }
     </style>
 `;
