@@ -106,8 +106,7 @@ class KwcSharePlayer extends PolymerElement {
         // Switch to make sure bundler resolve the import
         switch (id) {
         case 'app': {
-            // eslint-disable-next-line
-                return import('./kwc-app-player.js');
+            return import('./kwc-app-player.js');
         }
         case 'art': {
             return import('./kwc-art-player.js');
