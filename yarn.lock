@@ -172,12 +172,32 @@
     "@polymer/paper-styles" "^3.0.0-pre.18"
     "@polymer/polymer" "^3.0.0"
 
+"@kano/kwc-drop-down@^3.0.0-beta.2":
+  version "3.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@kano/kwc-drop-down/-/kwc-drop-down-3.0.0-beta.5.tgz#ce0f632e8810cb2d936809979880d0bad18546df"
+  integrity sha512-USVLiyTci7PKWnjnljoLHlM2XZqQY10JEQ4CuU9bALN6LtAFD4WE+3FL1GHFHiB8ekS+1DkzdXNdI4ARldFiSw==
+  dependencies:
+    "@kano/kwc-icons" "3.0.0-beta.2"
+    "@kano/kwc-style" "3.0.0-beta.2"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.18"
+    "@polymer/iron-icon" "^3.0.0-pre.18"
+    "@polymer/polymer" "^3.0.0"
+
 "@kano/kwc-file-picker@^3.0.0-beta.2":
   version "3.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@kano/kwc-file-picker/-/kwc-file-picker-3.0.0-beta.2.tgz#218b5cbdc1f99c5066f88438e17667901107a999"
   integrity sha1-IYtcvcH5nFBm+IQ44XZnkBEHqZk=
   dependencies:
     "@polymer/iron-list" "^3.0.0-pre.18"
+    "@polymer/polymer" "^3.0.0"
+
+"@kano/kwc-icons@3.0.0-beta.2":
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@kano/kwc-icons/-/kwc-icons-3.0.0-beta.2.tgz#16348b887dd01f953ae9d797e51e7435cdd4dd47"
+  integrity sha1-FjSLiH3QH5U66deX5R50Nc3U3Uc=
+  dependencies:
+    "@polymer/iron-icon" "^3.0.0-pre.18"
+    "@polymer/iron-iconset-svg" "^3.0.0-pre.18"
     "@polymer/polymer" "^3.0.0"
 
 "@kano/kwc-icons@^3.0.0-beta.2", "@kano/kwc-icons@^3.0.0-beta.3":
@@ -199,7 +219,7 @@
     "@polymer/iron-selector" "^3.0.0-pre.21"
     "@polymer/polymer" "^3.0.0"
 
-"@kano/kwc-style@^3.0.0-beta.2":
+"@kano/kwc-style@3.0.0-beta.2", "@kano/kwc-style@^3.0.0-beta.2":
   version "3.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@kano/kwc-style/-/kwc-style-3.0.0-beta.2.tgz#350947eefe1278658ae138646e961b13290e9057"
   integrity sha1-NQlH7v4SeGWK4ThkbpYbEykOkFc=
@@ -342,10 +362,10 @@
     p-map-series "^1.0.0"
     p-waterfall "^1.0.0"
 
-"@lerna/cli@3.10.6":
-  version "3.10.6"
-  resolved "https://registry.yarnpkg.com/@lerna/cli/-/cli-3.10.6.tgz#3ec601d18d0dbaefdee4668d81ce4c4a9488ecf7"
-  integrity sha512-GtmzJztjrcb5k1Qi/GKNs8xbQBgRpEBoPpt1Udgo23GkepVrQQo45QjM9hyqOhJ6LrV/lfXAv111kDBN/43jLw==
+"@lerna/cli@3.10.7":
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/@lerna/cli/-/cli-3.10.7.tgz#2f88ae4a3c53fa4d3a4f61b5f447bbbcc69546e2"
+  integrity sha512-yuoz/24mIfYit3neKqoE5NVs42Rj9A6A6SlkNPDfsy3v/Vh7SgYkU3cwiGyvwBGzIdhqL4/SWYo8H7YJLs0C+g==
   dependencies:
     "@lerna/global-options" "3.10.6"
     dedent "^0.7.0"
@@ -595,10 +615,10 @@
     signal-exit "^3.0.2"
     write-pkg "^3.1.0"
 
-"@lerna/npm-publish@3.10.5":
-  version "3.10.5"
-  resolved "https://registry.yarnpkg.com/@lerna/npm-publish/-/npm-publish-3.10.5.tgz#b2eb47cd7f3d1cdbfe32a13140017348ffe0e204"
-  integrity sha512-6wpgTfu5A5jJeB8RnH2n01HzfaB4Y9aKC0Tq0AAkw37PZ12LTgEL9I+ZZPqhUVFIFLB8/Ekpnj3AcKznJLG5xQ==
+"@lerna/npm-publish@3.10.7":
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/@lerna/npm-publish/-/npm-publish-3.10.7.tgz#9326b747b905a7f0e69d4be3f557859c3e359649"
+  integrity sha512-oU3/Q+eHC1fRjh7bk6Nn4tRD1OLR6XZVs3v+UWMWMrF4hVSV61pxcP5tpeI1n4gDQjSgh7seI4EzKVJe/WfraA==
   dependencies:
     "@lerna/run-lifecycle" "3.10.5"
     figgy-pudding "^3.5.1"
@@ -679,10 +699,10 @@
     inquirer "^6.2.0"
     libnpm "^2.0.1"
 
-"@lerna/publish@3.10.6":
-  version "3.10.6"
-  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.10.6.tgz#bebd0d8fd820e1e63f6e9e6673aa41e9c4c61b3b"
-  integrity sha512-Wrmgf82rtZWdHSrTzZGOi1/QbkPJduUSmVMhZsdnLC814WHrNGYKbayvFBOo1RAAJ4EKggZ2ReOWXKhg/IZYUw==
+"@lerna/publish@3.10.7":
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.10.7.tgz#8c5a3268398152e1f7993ff7bb6722a0363797af"
+  integrity sha512-Qd8pml2l9s6GIvNX1pTnia+Ddjsm9LF3pRRoOQeugAdv2IJNf45c/83AAEyE9M2ShG5VjgxEITNW4Lg49zipjQ==
   dependencies:
     "@lerna/batch-packages" "3.10.6"
     "@lerna/check-working-tree" "3.10.0"
@@ -693,7 +713,7 @@
     "@lerna/log-packed" "3.6.0"
     "@lerna/npm-conf" "3.7.0"
     "@lerna/npm-dist-tag" "3.8.5"
-    "@lerna/npm-publish" "3.10.5"
+    "@lerna/npm-publish" "3.10.7"
     "@lerna/output" "3.6.0"
     "@lerna/pack-directory" "3.10.5"
     "@lerna/prompt" "3.6.0"
@@ -897,7 +917,7 @@
   dependencies:
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-autogrow-textarea@^3.0.0-pre.26":
+"@polymer/iron-autogrow-textarea@^3.0.0-pre.26", "@polymer/iron-autogrow-textarea@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-autogrow-textarea/-/iron-autogrow-textarea-3.0.1.tgz#0205d9c5ca16f3afd505f41e9037989707d59dce"
   integrity sha512-FgSL7APrOSL9Vu812sBCFlQ17hvnJsBAV2C2e1UAiaHhB+dyfLq8gGdGUpqVWuGJ50q4Y/49QwCNnLf85AdVYA==
@@ -978,7 +998,7 @@
   dependencies:
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-flex-layout@^3.0.0-pre.18", "@polymer/iron-flex-layout@^3.0.0-pre.25", "@polymer/iron-flex-layout@^3.0.0-pre.26":
+"@polymer/iron-flex-layout@^3.0.0-pre.18", "@polymer/iron-flex-layout@^3.0.0-pre.25", "@polymer/iron-flex-layout@^3.0.0-pre.26", "@polymer/iron-flex-layout@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.1.tgz#36f9e1a8eb792d279b2bc75d362628721ad37f0c"
   integrity sha512-7gB869czArF+HZcPTVSgvA7tXYFze9EKckvM95NB7SqYF+NnsQyhoXgKnpFwGyo95lUjUW9TFDLUwDXnCYFtkw==
@@ -992,7 +1012,7 @@
   dependencies:
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-icon@^3.0.0-pre.18", "@polymer/iron-icon@^3.0.0-pre.26":
+"@polymer/iron-icon@^3.0.0-pre.18", "@polymer/iron-icon@^3.0.0-pre.26", "@polymer/iron-icon@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-icon/-/iron-icon-3.0.1.tgz#93211c39d8825fe4965a68419566036c1df291eb"
   integrity sha512-QLPwirk+UPZNaLnMew9VludXA4CWUCenRewgEcGYwdzVgDPCDbXxy6vRJjmweZobMQv/oVLppT2JZtJFnPxX6g==
@@ -1001,7 +1021,7 @@
     "@polymer/iron-meta" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-icons@^3.0.0-pre.19", "@polymer/iron-icons@^3.0.0-pre.21":
+"@polymer/iron-icons@^3.0.0-pre.19", "@polymer/iron-icons@^3.0.0-pre.21", "@polymer/iron-icons@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-icons/-/iron-icons-3.0.1.tgz#c1bd31d8483afbdb5422cdc384081e19c9267cfe"
   integrity sha512-xtEI8erH2GIBiF3QxEMyW81XuVjguu6Le5WjEEpX67qd9z7jjmc4T/ke3zRUlnDydex9p8ytcwVpMIKcyvjYAQ==
@@ -1085,7 +1105,7 @@
     "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-pages@^3.0.0-pre.18":
+"@polymer/iron-pages@^3.0.0-pre.18", "@polymer/iron-pages@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-pages/-/iron-pages-3.0.1.tgz#b0c3639a4d51e405464c8b8bcccbe055fab401c0"
   integrity sha512-PQe8S1JKHPcsIvFOaQP+9+AXmqUIL9fPqC6xT63OAZQxYCeZJDKgT9GKBx+VRryYBUlj2FLEXkUVpG+PTotdjg==
@@ -4291,15 +4311,15 @@ lcid@^2.0.0:
     invert-kv "^2.0.0"
 
 lerna@^3.5.1:
-  version "3.10.6"
-  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.10.6.tgz#d4d0566a0ef78855e22ec85c7120137f6a583040"
-  integrity sha512-qdoyEpozHKQQnrpaDWbhiFG85/CBAyz2rkcj78JQVl2g400n9FFqS2Zweol5wusRnUzmpQKxFFll4P9DzIzSIA==
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.10.7.tgz#9d308b1fee1697f89fe90e6bc37e51c03b531557"
+  integrity sha512-ha/dehl/L3Nw0pbdir5z6Hrv2oYBg5ym2fTcuk8HCLe7Zdb/ylIHdrgW8CU9eTVZkwr4et8RdVtxFA/+xa65/Q==
   dependencies:
     "@lerna/add" "3.10.6"
     "@lerna/bootstrap" "3.10.6"
     "@lerna/changed" "3.10.6"
     "@lerna/clean" "3.10.6"
-    "@lerna/cli" "3.10.6"
+    "@lerna/cli" "3.10.7"
     "@lerna/create" "3.10.6"
     "@lerna/diff" "3.10.6"
     "@lerna/exec" "3.10.6"
@@ -4307,7 +4327,7 @@ lerna@^3.5.1:
     "@lerna/init" "3.10.6"
     "@lerna/link" "3.10.6"
     "@lerna/list" "3.10.6"
-    "@lerna/publish" "3.10.6"
+    "@lerna/publish" "3.10.7"
     "@lerna/run" "3.10.6"
     "@lerna/version" "3.10.6"
     import-local "^1.0.0"
@@ -6853,9 +6873,9 @@ wrappy@1:
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
 write-file-atomic@^2.0.0, write-file-atomic@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.3.0.tgz#1ff61575c2e2a4e8e510d6fa4e243cce183999ab"
-  integrity sha512-xuPeK4OdjWqtfi59ylvVL0Yn35SF3zgcAcv7rBPFHVaEapaDr4GdGgm3j7ckTwH9wHL7fGmgfAnb0+THrHb8tA==
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.4.2.tgz#a7181706dfba17855d221140a9c06e15fcdd87b9"
+  integrity sha512-s0b6vB3xIVRLWywa6X9TOMA7k9zio0TMOsl9ZnDkliA/cfJlpHXAscj0gbHVJiTdIuAYpIyqS5GW91fqm6gG5g==
   dependencies:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"

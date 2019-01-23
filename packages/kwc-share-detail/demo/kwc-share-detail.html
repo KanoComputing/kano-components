@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>kwc-share-detail demo</title>
+
+    <style>
+        html {
+            font-family: var(--font-body);
+        }
+        fieldset {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px 30px;
+            border: 1px solid var(--color-kano-orange);
+            border-radius: 16px;
+        }
+    </style>
+
+    <script type="module" src="../kwc-share-detail.js"></script>
+</head>
+
+<body>
+    <div class="vertical-section-container share-detail centered">
+        <h2>kwc-share-detail</h2>
+        <fieldset>
+            <legend>Basic kwc-share-detail demo</legend>
+            <kwc-share-detail id="share-detail"></kwc-share-detail>
+        </fieldset>
+        <fieldset>
+            <legend>Remix kwc-share-detail demo</legend>
+            <kwc-share-detail id="share-detail-remix"></kwc-share-detail>
+        </fieldset>
+        <fieldset>
+            <legend>kwc-share-detail demo viewed by author</legend>
+            <kwc-share-detail id="share-detail-author"></kwc-share-detail>
+        </fieldset>
+
+    </div>
+    <script type="module">
+        import * as data from './data.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let detail = document.querySelector('#share-detail');
+            detail.shareData = data.share;
+            detail.comments = data.comments;
+            detail.likes = data.share.likes;
+            detail.currentUser = data.user;
+            detail.featured = data.share.featured;
+            detail.addEventListener('view-user', (e) => {
+                alert(`View user ${e.detail.id}`);
+            });
+            detail.addEventListener('action-click', (e) => {
+                alert(`Someone clicked on ${e.detail.action}`);
+            });
+            detail.addEventListener('social-share', (e) => {
+                alert(`Someone clicked on ${e.detail.action}`);
+            });
+
+            detail = document.querySelector('#share-detail-remix');
+            detail.shareData = data.share;
+            detail.canRemix = true;
+            detail.comments = data.comments;
+            detail.likes = [];
+            detail.currentUser = data.admin;
+            detail.featured = data.share.featured;
+            detail.addEventListener('view-user', (e) => {
+                alert(`View user ${e.detail.id}`);
+            });
+            detail.addEventListener('action-click', (e) => {
+                alert(`Someone clicked on ${e.detail.action}`);
+            });
+            detail.addEventListener('social-share', (e) => {
+                alert(`Someone clicked on ${e.detail.action}`);
+            });
+
+            detail = document.querySelector('#share-detail-author');
+            detail.shareData = data.share;
+            detail.canRemix = true;
+            detail.comments = data.comments;
+            detail.likes = data.share.likes;
+            detail.currentUser = data.author;
+            detail.featured = data.share.featured;
+            detail.related = data.relatedShares;
+            detail.addEventListener('view-user', (e) => {
+                alert(`View user ${e.detail.id}`);
+            });
+            detail.addEventListener('action-click', (e) => {
+                alert(`Someone clicked on ${e.detail.action}`);
+            });
+            detail.addEventListener('social-share', (e) => {
+                alert(`Someone clicked on ${e.detail.action}`);
+            });
+        });
+    </script>
+</body>
+
+</html>

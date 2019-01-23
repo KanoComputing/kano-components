@@ -1,0 +1,42 @@
+{
+  "description": "To display details specific to a kano code share.",
+  "name": "@kano/kwc-share-detail",
+  "version": "3.0.2",
+  "scripts": {
+    "serve": "es6-server",
+    "serve-test": "web-tester serve ./*.test.js",
+    "test": "web-tester run ./*.test.js",
+    "test-ci": "yarn run --silent test > test-results.xml",
+    "checkstyle": "eslint ./kwc-*.js",
+    "checkstyle-ci": "yarn checkstyle -f checkstyle -o eslint.xml"
+  },
+  "main": "kwc-share-detail.js",
+  "dependencies": {
+    "@kano/icons": "^0.0.1-alpha.3",
+    "@kano/kwc-drop-down": "^3.0.0-beta.2",
+    "@kano/kwc-icons": "^3.0.0-beta.2",
+    "@kano/kwc-share-card": "^3.0.4",
+    "@kano/kwc-share-player": "^3.0.2",
+    "@kano/styles": "^1.0.0",
+    "@polymer/iron-autogrow-textarea": "^3.0.1",
+    "@polymer/iron-flex-layout": "^3.0.1",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/iron-image": "^3.0.1",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/paper-spinner": "^3.0.0-pre.18",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@kano/demo-helpers": "^1.0.0",
+    "@kano/es6-server": "^1.0.1",
+    "@kano/eslint-config": "^1.0.0",
+    "@kano/web-tester": "^1.0.0-alpha.5",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

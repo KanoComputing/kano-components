@@ -1,14 +1,3 @@
-/**
-
-
-    @demo demo/index.html
-*/
-/*
-  FIXME(polymer-modulizer): the above comments were extracted
-  from HTML and may be out of place here. Review them and
-  then delete this comment!
-*/
-
 import '@polymer/iron-flex-layout/iron-flex-layout.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 
@@ -58,7 +47,7 @@ class KwcMusicPlayer extends PolymerElement {
             }
         </style>
         <div class="player">
-            <button type="button" class="playback-button" on-tap="_playbackButtonTapped" hidden\$="[[cannotRenderSample]]">
+            <button type="button" class="playback-button" on-click="_playbackButtonTapped" hidden$="[[cannotRenderSample]]">
                 <svg viewBox="0 0 17 19">
                     <path id="button-icon-path" d="M 4,18 10.5,14 10.5,6 4,2 z M 10.5,14 17,10 17,10 10.5,6 z">
                     </path>

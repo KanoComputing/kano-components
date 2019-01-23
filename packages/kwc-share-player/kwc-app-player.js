@@ -17,6 +17,7 @@ class KwcAppPlayer extends PolymerElement {
             :host {
                 display: block;
                 height: 100%;
+                font-family: var(--font-body);
             }
 
             :host * {
