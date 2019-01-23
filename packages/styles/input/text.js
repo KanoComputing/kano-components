@@ -1,5 +1,5 @@
 import { html } from '../template.js';
- 
+
 export const text = html`
     <style>
         .input[type="text"],

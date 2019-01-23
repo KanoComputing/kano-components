@@ -179,13 +179,12 @@ class KwcShareCard extends PolymerElement {
     _computeAvatar(worldAvatar, circleAvatar, user) {
         if (worldAvatar) {
             return worldAvatar;
-        } else if (user.base && this.username === user.base.username) {
+        } if (user.base && this.username === user.base.username) {
             return user.base.avatar;
-        } else if (circleAvatar) {
+        } if (circleAvatar) {
             return circleAvatar;
-        } else {
-            return this.defaultAvatar;
         }
+        return this.defaultAvatar;
     }
     /**
      * Fired when avatar is tapped
@@ -220,7 +219,7 @@ class KwcShareCard extends PolymerElement {
     * Computes the day/time a share was created
     */
     _timeSince(date) {
-        const UTCDate = /Z$/.test(date) ? date : date + 'Z';
+        const UTCDate = /Z$/.test(date) ? date : `${date}Z`;
         const parsedDate = new Date(Date.parse(UTCDate));
         const seconds = Math.floor((new Date() - parsedDate) / 1000);
         let interval = Math.floor(seconds / 31536000);
@@ -243,7 +242,7 @@ class KwcShareCard extends PolymerElement {
         if (interval >= 1) {
             return this.multipleCheck(interval, 'minute');
         }
-        return Math.floor(seconds) + ' seconds';
+        return `${Math.floor(seconds)} seconds`;
     }
     multipleCheck(interval, unit) {
         const baseDate = `${interval} ${unit}`;

@@ -158,22 +158,22 @@ demo('kwc-share-card', card, (element) => {
     const customAction = shareCard.querySelector('#custom');
 
     shareCard.set('avatar', avatar);
-    likeAction.addEventListener('click', (e) => {
+    likeAction.addEventListener('click', () => {
         console.log('demo', 'liked');
     });
-    commentAction.addEventListener('click', (e) => {
+    commentAction.addEventListener('click', () => {
         console.log('demo', 'comment');
     });
-    customAction.addEventListener('click', (e) => {
+    customAction.addEventListener('click', () => {
         console.log('demo', 'custom');
     });
-    shareCard.addEventListener('avatar-tapped', (e) => {
+    shareCard.addEventListener('avatar-tapped', () => {
         console.log('demo', 'avatar tapped');
     });
-    shareCard.addEventListener('title-tapped', (e) => {
+    shareCard.addEventListener('title-tapped', () => {
         console.log('demo', 'title tapped');
     });
-    shareCard.addEventListener('username-tapped', (e) => {
+    shareCard.addEventListener('username-tapped', () => {
         console.log('demo', 'username tapped');
     });
 });

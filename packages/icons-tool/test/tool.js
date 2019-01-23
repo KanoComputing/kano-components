@@ -1,6 +1,6 @@
-const iconsTool = require('../index');
 const mockFS = require('mock-fs');
 const { assert } = require('chai');
+const iconsTool = require('../index');
 
 suite('icons-tool', () => {
     test('default formatter', () => {

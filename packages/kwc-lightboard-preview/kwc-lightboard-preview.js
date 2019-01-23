@@ -36,14 +36,14 @@ class KwcLightboardPreview extends PolymerElement {
             */
             fps: {
                 type: Number,
-                value: 4
+                value: 4,
             },
             /*
             * Number of frames in the image sprite
             */
             frames: {
                 type: Number,
-                value: 12
+                value: 12,
             },
             /*
             * Image file location
@@ -51,42 +51,42 @@ class KwcLightboardPreview extends PolymerElement {
             src: {
                 type: String,
                 required: true,
-                observer: '_loadImage'
+                observer: '_loadImage',
             },
             /*
             * Horizontal position of the image
             */
             _x: {
                 type: Number,
-                value: 0
+                value: 0,
             },
             /*
             * Width of the source image frames
             */
             xResolution: {
                 type: Number,
-                value: 16
+                value: 16,
             },
             /*
             * Vertical position of the image
             */
             _y: {
                 type: Number,
-                value: 0
+                value: 0,
             },
             /*
             * Height of the source image frames
             */
             yResolution: {
                 type: Number,
-                value: 8
+                value: 8,
             },
             /*
             * Width of the component
             */
             width: {
-                type: Number
-            }
+                type: Number,
+            },
         };
     }
     connectedCallback() {
@@ -98,14 +98,18 @@ class KwcLightboardPreview extends PolymerElement {
         clearInterval(this.interval);
     }
     _animate() {
-        let xMax = this.frames * this.xResolution,
-            timing = 1000 / this.fps,
-            xPosition;
+        const xMax = this.frames * this.xResolution;
+
+
+        const timing = 1000 / this.fps;
+
+
+        let xPosition;
         this.context.clearRect(
             0,
             0,
             this.xResolution,
-            this.yResolution
+            this.yResolution,
         );
         this.context.drawImage(
             this.image,
@@ -116,7 +120,7 @@ class KwcLightboardPreview extends PolymerElement {
             0,
             0,
             this.xResolution,
-            this.yResolution
+            this.yResolution,
         );
         if (this._x + this.xResolution <= xMax) {
             xPosition = this._x + this.xResolution;
@@ -130,7 +134,7 @@ class KwcLightboardPreview extends PolymerElement {
         }, timing);
     }
     _computeCanvasStyle(width) {
-        let height = width * 0.5;
+        const height = width * 0.5;
         return `height: ${height}px; max-width: 100%; width: ${width}px;`;
     }
     _loadImage(src) {
@@ -140,7 +144,7 @@ class KwcLightboardPreview extends PolymerElement {
             this.context = this.$.canvas.getContext('2d');
             this.image.onload = () => {
                 this._animate();
-            }
+            };
         }
     }
 }

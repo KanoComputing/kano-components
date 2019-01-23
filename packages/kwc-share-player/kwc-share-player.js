@@ -3,18 +3,11 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 const appMapping = {
     'make-music': 'music',
     'make-light': 'art',
-    'kano-draw' : 'art',
-    'make-apps' : 'app',
-    'lightboard': 'app'
-},
-loadedImports = {};
-
-const importsMap = {
-    app: './kwc-app-player.js',
-    art: './kwc-art-player.js',
-    music: './kwc-music-player.js',
-    default: './kwc-player.js',
+    'kano-draw': 'art',
+    'make-apps': 'app',
+    lightboard: 'app',
 };
+const loadedImports = {};
 
 class KwcSharePlayer extends PolymerElement {
     static get template() {
@@ -68,9 +61,7 @@ class KwcSharePlayer extends PolymerElement {
              */
             share: {
                 type: Object,
-                value: () => {
-                    return {}
-                },
+                value: () => ({}),
             },
             /**
              * String to select which player to use for a given share.
@@ -79,7 +70,7 @@ class KwcSharePlayer extends PolymerElement {
             _player: {
                 type: String,
                 value: '',
-            }
+            },
         };
     }
     static get observers() {
@@ -87,7 +78,7 @@ class KwcSharePlayer extends PolymerElement {
             '_shareChanged(share.*)',
         ];
     }
-    /** OBSERVERS **/
+    /** OBSERVERS * */
     /**
      * The share data is used to set the _player property which selects
      * which player to use. It will import the player if not imported
@@ -96,12 +87,11 @@ class KwcSharePlayer extends PolymerElement {
      */
     _shareChanged(shareChange) {
         const share = shareChange.base;
-        let player;
 
         if (!share || !Object.keys(share).length) {
             return;
         }
-        player = appMapping[share.app] || 'default';
+        const player = appMapping[share.app] || 'default';
 
         if (loadedImports[player]) {
             this.set('_player', player);
@@ -115,18 +105,19 @@ class KwcSharePlayer extends PolymerElement {
     lazyImport(id) {
         // Switch to make sure bundler resolve the import
         switch (id) {
-            case 'app': {
+        case 'app': {
+            // eslint-disable-next-line
                 return import('./kwc-app-player.js');
-            }
-            case 'art': {
-                return import('./kwc-art-player.js');
-            }
-            case 'music': {
-                return import('./kwc-music-player.js');
-            }
-            default: {
-                return import('./kwc-player.js');
-            }
+        }
+        case 'art': {
+            return import('./kwc-art-player.js');
+        }
+        case 'music': {
+            return import('./kwc-music-player.js');
+        }
+        default: {
+            return import('./kwc-player.js');
+        }
         }
     }
     /**
@@ -138,9 +129,9 @@ class KwcSharePlayer extends PolymerElement {
     _usePlayer(key, player) {
         return key === player;
     }
-    /** EVENT HANDLERS**/
+    /** EVENT HANDLERS* */
     /**
-    * Set the property responsible for displaying and hiding the 
+    * Set the property responsible for displaying and hiding the
     * display code element.
     *
     * @event hide-code

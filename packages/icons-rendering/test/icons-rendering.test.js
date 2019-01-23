@@ -18,8 +18,8 @@ suite('Icons rendering', () => {
     });
     test('as dataURI', () => {
         const iconSrc = dataURI(sample);
-        const img = image();
-        img.src = iconSrc;
+        const localImg = image();
+        localImg.src = iconSrc;
     });
     test('as div background', () => {
         const iconTemplate = img(sample, 64, 64);

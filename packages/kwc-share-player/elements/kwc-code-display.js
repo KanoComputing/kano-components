@@ -188,7 +188,7 @@ class KwcCodeDisplay extends PolymerElement {
             codeType: {
                 type: String,
                 value: 'Code',
-            }
+            },
         };
     }
     /**

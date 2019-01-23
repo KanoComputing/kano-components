@@ -463,23 +463,13 @@ class KwcSocialComments extends PolymerElement {
             e.stopPropagation();
         }
     }
-    /**
-     * Reset the `_comment` back to an empty String and hide the form
-     * actions
-     */
     _cancelComment() {
         this._comment = '';
         this._displayFormActions = false;
     }
-    /** Show the Submit and Cancel buttons on the comment input */
     _toggleFormControls() {
         this._displayFormActions = true;
     }
-    /**
-     * Decide whether the current comment is valid
-     * @param {String} comment
-     * @returns {Boolean}
-     */
     _commentIsValid() {
         /**
            * Prevent users trying to submit either blank comments, or,
@@ -513,15 +503,6 @@ class KwcSocialComments extends PolymerElement {
     _createDate(formatted) {
         return new Date(formatted);
     }
-    /**
-     * Compute whether a comment is deletable by the current user
-     * – either they must have written the comment, or they must be
-     * a Kano admin.
-     * @param {String} commentAuthorId
-     * @param {String} userId
-     * @param {Number} userAdminLevel
-     * @returns {Boolean}
-     */
     _commentIsDeletable(commentAuthorId, userId, userAdminLevel) {
         return commentAuthorId === userId || userAdminLevel > 0;
     }
@@ -562,10 +543,6 @@ class KwcSocialComments extends PolymerElement {
     _computeErrorState(error) {
         return error ? true : '';
     }
-    /**
-     * Dispatch the event to delete a comment
-     * @param {Event} e
-     */
     _deleteButtonTapped(e) {
         const commentId = e.model.comment.id;
         if (!commentId) {
@@ -586,13 +563,6 @@ class KwcSocialComments extends PolymerElement {
         safeDiv.textContent = value;
         return safeDiv.innerHTML.replace(/\n/g, '<br>');
     }
-    /**
-    * Fired when flag icon is pressed on an individual comment.
-    *
-    * @event flag-comment
-    * @param {string} index Index in comments array.
-    * @param {string} id Id of comment as given by comment object.
-    */
     _flagButtonTapped(e) {
         const { index } = e.model;
         const { id } = this.comments[index];
@@ -623,13 +593,6 @@ class KwcSocialComments extends PolymerElement {
             },
         }));
     }
-    /**
-    * Fired when retry is clicked on an individual comment that has errored.
-    *
-    * @event post-comment
-    * @param {string} value Comment text.
-    * @param {boolean} retry Flag to indicate the post is a retry.
-    */
     _retryButtonTapped() {
         this.set('retryButton', 'hide');
         this.dispatchEvent(new CustomEvent('post-comment', {
@@ -639,12 +602,6 @@ class KwcSocialComments extends PolymerElement {
             },
         }));
     }
-    /**
-    * Fired when new comment is submited.
-    *
-    * @event post-comment
-    * @param {string} value Comment text.
-    */
     _submitComment(e) {
         e.preventDefault();
         const input = this.$['comment-input'];
@@ -696,12 +653,6 @@ class KwcSocialComments extends PolymerElement {
         const baseDate = `${interval} ${unit}`;
         return interval === 1 ? baseDate : `${baseDate}s`;
     }
-    /**
-    * Fired when the user icon or name is tapped on an individual comment.
-    *
-    * @event view-user
-    * @param {string} id provided by the `comment.author.id` property.
-    */
     _userTapped(e) {
         const { index } = e.model;
         const { author } = this.comments[index];

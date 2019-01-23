@@ -2,7 +2,7 @@ import './kwc-lightboard-preview.js';
 
 const basic = fixture`
     <kwc-lightboard-preview></kwc-lightboard-preview>
-`
+`;
 
 suite('kwc-lightboard-preview', () => {
     test('instantiate', () => {

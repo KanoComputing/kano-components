@@ -13,9 +13,9 @@ then delete this comment!
 import '@polymer/iron-image/iron-image.js';
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import './elements/kwc-code-display.js';
 import './highlight-theme/art.js';
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 
 class KwcArtPlayer extends PolymerElement {
     static get template() {
@@ -74,7 +74,7 @@ class KwcArtPlayer extends PolymerElement {
                 computed: '_computeLines(_mdCode)',
             },
             /**
-             * The markdown version of the share code to display in the 
+             * The markdown version of the share code to display in the
              * code display element.
              */
             _mdCode: {
@@ -86,10 +86,8 @@ class KwcArtPlayer extends PolymerElement {
              */
             share: {
                 type: Object,
-                value: () => {
-                    return {};
-                },
-            }
+                value: () => ({}),
+            },
         };
     }
     static get observers() {
@@ -97,7 +95,7 @@ class KwcArtPlayer extends PolymerElement {
             '_shareChanged(share.*)',
         ];
     }
-    /** OBSERVERS **/
+    /** OBSERVERS * */
     /**
      * Computed the number of lines in the share's code and
      * populated an array with the list of numbers.
@@ -106,41 +104,42 @@ class KwcArtPlayer extends PolymerElement {
         if (!mdCode) {
             return [];
         }
-        let newLines = mdCode.match(/\n(?!$)/g),
-            lineCount = newLines ? newLines.length : 1;
+        const newLines = mdCode.match(/\n(?!$)/g);
+
+
+        const lineCount = newLines ? newLines.length : 1;
         const lines = [];
         /* Don't include the header */
-        for (let i = 1; i < lineCount; i++) {
+        for (let i = 1; i < lineCount; i += 1) {
             lines.push(i);
         }
         return lines;
     }
     /**
-     * Load any code from storage and compute the markdown for 
+     * Load any code from storage and compute the markdown for
      * display in the display code element.
      */
     _shareChanged() {
-        if (!this.share){return;}
-        let attachment = this.share.attachment_url;
+        if (!this.share) { return; }
+        const attachment = this.share.attachment_url;
         if (attachment) {
             fetch(attachment)
                 .then(r => r.text())
-                .then(code => {
+                .then((code) => {
                     this._code = code;
-                    this._mdCode = '```coffeescript\n' + code + '\n```';
+                    this._mdCode = `\`\`\`coffeescript\n${code}\n\`\`\``;
                 });
         }
     }
     _computeCodeType(app) {
         if (app === 'make-light') {
             return 'Python';
-        } else {
-            return 'CoffeeScript';
         }
+        return 'CoffeeScript';
     }
-    /** EVENT HANDLERS**/
+    /** EVENT HANDLERS* */
     /**
-     * Set the property responsible for displaying and hiding the 
+     * Set the property responsible for displaying and hiding the
      * display code element.
      */
     _hideCode() {

@@ -1,6 +1,6 @@
 import { html } from '../template.js';
 import { checkedIcon } from './assets.js';
- 
+
 export const checkbox = html`
     <style>
         .input[type="checkbox"] {

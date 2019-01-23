@@ -1,5 +1,5 @@
 import { html, demo } from '@kano/demo-helpers/index.js';
-import button from '../button.js';
+import { button } from '../button.js';
 
 document.head.appendChild(button.content.cloneNode(true));
 

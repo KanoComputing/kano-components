@@ -1,4 +1,4 @@
-test
 .eslintrc.js
 README.md
 Jenkinsfile
+**/*.test.js

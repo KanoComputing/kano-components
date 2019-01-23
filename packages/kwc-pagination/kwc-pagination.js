@@ -67,9 +67,7 @@ class KWCPagination extends PolymerElement {
         </template>
 `;
     }
-
     static get is() { return 'kwc-pagination'; }
-
     static get properties() {
         return {
             /**
@@ -134,7 +132,6 @@ class KWCPagination extends PolymerElement {
 
         };
     }
-
     _computePages(currentPage, totalPages = 1, range) {
         const pages = [];
 
@@ -177,86 +174,30 @@ class KWCPagination extends PolymerElement {
         }
         return pages;
     }
-
-    /**
-     * Triggered to notify an intent to navigate to a page (from the
-     * available pages on the navigation).
-     * @event go-to-page
-     * @param {Object} e Object containing information if the event
-     *     should bubble up (`bubbles`) and the page index intended
-     *    (`detail`).
-     */
-    /**
-     * Dispath event to notify intent to navigate to a specific page
-     * @param {Event} e Event triggered by tapping a page button.
-     */
     _goToPage(e) {
         const page = parseInt(e.model.item, 10);
-        this.dispatchEvent(new CustomEvent(
-            'go-to-page', { bubbles: false, detail: page },
-        ));
+        this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: page }));
     }
-
-    /**
-     * Dispath event to notify intent to navigate to the next page
-     * @param {Event} e Event triggered by tapping a page button.
-     */
     _nextPage() {
         const page = parseInt(this.currentPage, 10);
-        this.dispatchEvent(new CustomEvent(
-            'go-to-page', { bubbles: false, detail: page + 1 },
-        ));
+        this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: page + 1 }));
     }
-
-    /**
-     * Dispath event to notify intent to navigate to the previous page
-     * @param {Event} e Event triggered by tapping a page button.
-     */
     _previousPage() {
         const page = parseInt(this.currentPage, 10);
-        this.dispatchEvent(new CustomEvent(
-            'go-to-page', { bubbles: false, detail: page - 1 },
-        ));
+        this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: page - 1 }));
     }
-
-    /**
-     * Dispath event to notify intent to navigate to the jump to the
-     * last page.
-     * @param {Event} e Event triggered by tapping a page button.
-     */
     _goToLastPage() {
-        this.dispatchEvent(new CustomEvent(
-            'go-to-page', { bubbles: false, detail: this.totalPages + this.startsOn - 1 },
-        ));
+        this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: this.totalPages + this.startsOn - 1 }));
     }
-
-    /**
-     * Dispath event to notify intent to navigate to the jump to the
-     * first page.
-     * @param {Event} e Event triggered by tapping a page button.
-     */
     _goToFirstPage() {
-        this.dispatchEvent(new CustomEvent(
-            'go-to-page', { bubbles: false, detail: this.startsOn },
-        ));
+        this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: this.startsOn }));
     }
     _computeActiveClass(item, selected) {
         return this._isActive(item, selected) ? '' : 'secondary';
     }
-
-    /**
-     * Calculates if the given page is the currently selected/active
-     * @param {Number} page Page to check if it's selected/active
-     * @return {Boolean}
-     */
     _isActive(page, current) {
         return page === current;
     }
-
-    /**
-     * Calculates if the current page is the first page.
-     * @return {Boolean}
-     */
     _isFirstPage() {
         // If there are pages, check if it's the first
         if (this.totalPages > 1) {
@@ -266,11 +207,6 @@ class KWCPagination extends PolymerElement {
         // buttons on the navigation
         return true;
     }
-
-    /**
-     * Calculates if the current page is the last page.
-     * @return {Boolean}
-     */
     _isLastPage() {
         if (this.totalPages > 1) {
             return parseInt(this.currentPage, 10) === this.totalPages + this.startsOn - 1;

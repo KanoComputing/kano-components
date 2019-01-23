@@ -22,9 +22,10 @@
   },
   "devDependencies": {
     "@kano/eslint-config": "^1.0.0",
+    "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
-    "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint": "^5.12.1",
+    "eslint-plugin-import": "^2.15.0",
     "mocha": "^5.2.0",
     "mocha-jenkins-reporter": "^0.4.1",
     "mock-fs": "^4.7.0"

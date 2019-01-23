@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "resolutions": {
+    "eslint-config-airbnb-base": "13.1.0"
+  },
   "devDependencies": {
     "lerna": "^3.5.1"
   },
   "scripts": {
     "serve": "es6-server",
-    "serve-test": "web-tester serve ./packages/**/*.test.js"
+    "serve-test": "web-tester serve ./packages/**/*.test.js",
+    "test": "web-tester run ./packages/**/*.test.js",
+    "test-ci": "yarn run --silent test > test-results.xml",
+    "lint": "eslint ./packages/**/*.js",
+    "lint-ci": "yarn lint -f checkstyle -o eslint.xml",
+    "prepublishOnly": "yarn run test"
   },
   "private": true,
   "workspaces": [

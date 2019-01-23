@@ -1,9 +1,9 @@
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
 import '@kano/code/app/elements/kc-player/kc-player.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import './elements/kwc-code-display.js';
 import './highlight-theme/app.js';
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 /**
 `kwc-app-player`
 Player UI component for kano code shares.
@@ -60,7 +60,7 @@ class KwcAppPlayer extends PolymerElement {
              */
             _code: {
                 type: String,
-                value: null
+                value: null,
             },
             /**
              * Flag to indicate whether the code display element is visible.
@@ -68,7 +68,7 @@ class KwcAppPlayer extends PolymerElement {
              */
             displayCode: {
                 type: Boolean,
-                value: false
+                value: false,
             },
             /**
              * An array of line numbers for rendering the code display.
@@ -76,7 +76,7 @@ class KwcAppPlayer extends PolymerElement {
              */
             _lines: {
                 type: Array,
-                computed: '_computeLines(_mdCode)'
+                computed: '_computeLines(_mdCode)',
             },
             /**
              * The markdown version of the share code to display in the
@@ -85,11 +85,11 @@ class KwcAppPlayer extends PolymerElement {
              */
             _mdCode: {
                 type: String,
-                value: null
+                value: null,
             },
             _appUrl: {
                 type: String,
-                value: null
+                value: null,
             },
             /**
              * The current share to be played.
@@ -97,11 +97,11 @@ class KwcAppPlayer extends PolymerElement {
              */
             share: {
                 type: Object,
-                observer: '_shareChanged'
-            }
+                observer: '_shareChanged',
+            },
         };
     }
-    /** OBSERVERS **/
+    /** OBSERVERS * */
     /**
      * Computed the number of lines in the share's code and
      * populated an array with the list of numbers.
@@ -112,11 +112,13 @@ class KwcAppPlayer extends PolymerElement {
         if (!mdCode) {
             return [];
         }
-        let newLines = mdCode.match(/\n(?!$)/g),
-        lineCount = newLines ? newLines.length : 1
+        const newLines = mdCode.match(/\n(?!$)/g);
+
+
+        const lineCount = newLines ? newLines.length : 1;
         const lines = [];
         /* Don't include the header */
-        for (let i = 1; i < lineCount; i++) {
+        for (let i = 1; i < lineCount; i += 1) {
             lines.push(i);
         }
         return lines;
@@ -135,7 +137,7 @@ class KwcAppPlayer extends PolymerElement {
             this._appUrl = attachment;
         }
     }
-    /** EVENT HANDLERS**/
+    /** EVENT HANDLERS* */
     /**
      * Proxy the hide code event from the code display element.
      *

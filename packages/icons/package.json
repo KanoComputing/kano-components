@@ -14,7 +14,11 @@
     "@kano/icons-rendering": "^0.0.1-alpha.1"
   },
   "devDependencies": {
-    "@kano/icons-tool": "^0.0.1-alpha.1"
+    "@kano/eslint-config": "^1.0.0",
+    "@kano/icons-tool": "^0.0.1-alpha.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-plugin-import": "^2.15.0"
   },
   "publishConfig": {
     "access": "public"

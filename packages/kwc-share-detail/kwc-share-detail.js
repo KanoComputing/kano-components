@@ -18,7 +18,9 @@ import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ellipsis, like, remix } from '@kano/icons/ui.js';
-import { facebook, twitter, share, code } from '@kano/icons/social.js';
+import {
+    facebook, twitter, share, code,
+} from '@kano/icons/social.js';
 import * as partIcons from '@kano/icons/parts.js';
 import button from '@kano/styles/button.js';
 import { assets } from './assets.js';
@@ -879,7 +881,6 @@ class KwcShareDetail extends PolymerElement {
         }
         return icon.innerHTML;
     }
-    /** Computed values */
     _computeAvatarUrl(shareData) {
         if (shareData) {
             if (shareData.userAvatar) {
@@ -971,9 +972,9 @@ class KwcShareDetail extends PolymerElement {
         return partId;
     }
     _getLinkForPartId(partId) {
-        if (this.knownParts &&
-            this.knownParts[partId] &&
-            this.knownParts[partId].link) {
+        if (this.knownParts
+            && this.knownParts[partId]
+            && this.knownParts[partId].link) {
             return this.knownParts[partId].link;
         }
 
@@ -984,21 +985,9 @@ class KwcShareDetail extends PolymerElement {
         const activeClass = section === id ? 'active' : 'inactive';
         return `${baseClass} ${activeClass}`;
     }
-    /**
-     * Compute whether share controls – delete button etc – should
-     * display
-     * @param {Boolean} sharedByUser
-     * @param {Boolean} userIsAdmin
-     * @returns {Boolean}
-     */
     _computeMetaActionDisplay(sharedByUser, userIsAdmin) {
         return sharedByUser || userIsAdmin;
     }
-    /**
-     * Compute whether the current user is an adminstrator
-     * @param {Number} adminLevel
-     * @returns {Boolean}
-     */
     _computeUserIsAdmin(adminLevel) {
         return adminLevel && adminLevel > 0;
     }
@@ -1031,25 +1020,12 @@ class KwcShareDetail extends PolymerElement {
         }
         return false;
     }
-    /**
-     * Check whether this share can be remixed (or not)
-     * @param {Object} share Current share data
-     * @param {Boolean} canRemix Flag this share can be remixed
-     * @return {Boolean}
-     */
     _showRemixButton(sh, canRemix) {
         if (sh && canRemix) {
             return true;
         }
         return false;
     }
-    /**
-     * Check whether the current user is admin. Used to hide or show the
-     * fetured button.
-     * @param {Object} share Current share data
-     * @param {Boolean} isAdmin Flag this user as admin
-     * @return {Boolean}
-     */
     _showFeaturedButton(sh, isAdmin) {
         return sh && isAdmin;
     }
@@ -1059,19 +1035,12 @@ class KwcShareDetail extends PolymerElement {
     _showRelatedShares(related) {
         return related && related.length > 0;
     }
-    /**
-     * Check if any hardware was used in the current creation.
-     *
-     * @param {Array} hardware As returned from the API.
-     * @returns {Boolean} When more than one hardware flag is present.
-     */
     _anyHardwareUsed(hardware) {
         return hardware && hardware.length > 0 && !hardware.includes('wand');
     }
     _wandHardwareUsed(hardware) {
         return hardware && hardware.includes('wand');
     }
-    /** Event listeners */
     _onDeleteTapped() {
         this.dispatchEvent(new CustomEvent('action-click', {
             detail: {
@@ -1212,7 +1181,6 @@ class KwcShareDetail extends PolymerElement {
             detail: e.detail,
         }));
     }
-    /** Fire an event upwards for tracking purposes */
     _handleHardwareClick(e) {
         const linkElement = e.path.find(element => element.href !== undefined);
         const link = linkElement.href;

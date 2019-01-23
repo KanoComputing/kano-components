@@ -62,7 +62,7 @@ class KwcShareCover extends PolymerElement {
             imageUrl: {
                 type: String,
                 value: null,
-                observer: '_imageUrlChanged'
+                observer: '_imageUrlChanged',
             },
             /**
              * URL of a lightboard spritesheet.
@@ -81,15 +81,15 @@ class KwcShareCover extends PolymerElement {
             fallbackUrl: {
                 type: String,
                 value: null,
-            }
+            },
         };
     }
     _imageUrlChanged(image) {
-        this.set('_imageUrl', image)
+        this.set('_imageUrl', image);
     }
     imageError(_, par) {
         const imageError = par.value;
-        const fallback = this.fallback;
+        const { fallback } = this;
 
         if (imageError && fallback !== null) {
             this.set('_imageUrl', this.fallbackUrl);

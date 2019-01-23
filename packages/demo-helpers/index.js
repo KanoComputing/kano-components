@@ -1,4 +1,4 @@
-import 'prismjs/prism.js'
+import 'prismjs/prism.js';
 import 'prismjs/components/prism-javascript.js';
 import 'prismjs/components/prism-markup.js';
 import './style.js';
@@ -17,8 +17,9 @@ function htmlValue(value) {
 
 export const html = function html(strings, ...values) {
     const template = document.createElement('template');
-    template.innerHTML = values.reduce((acc, v, idx) =>
-        acc + htmlValue(v) + strings[idx + 1], strings[0]);
+    template.innerHTML = values.reduce(
+        (acc, v, idx) => acc + htmlValue(v) + strings[idx + 1], strings[0],
+    );
     return template;
 };
 
@@ -59,4 +60,3 @@ export function demo(title, tpl, script) {
         script(demoSnippet.element);
     }
 }
-

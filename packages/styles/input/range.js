@@ -1,5 +1,5 @@
 import { html } from '../template.js';
- 
+
 export const range = html`
     <style>
         .input[type=range] {

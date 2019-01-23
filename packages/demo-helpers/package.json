@@ -9,5 +9,11 @@
   "dependencies": {
     "@kano/styles": "^1.0.0",
     "prismjs": "^1.15.0"
+  },
+  "devDependencies": {
+    "@kano/eslint-config": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-plugin-import": "^2.15.0"
   }
 }

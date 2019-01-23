@@ -2,9 +2,6 @@
   "description": "UI for pagination",
   "name": "@kano/kwc-pagination",
   "version": "3.0.0",
-  "resolutions": {
-    "eslint-config-airbnb-base": "13.1.0"
-  },
   "main": "kwc-pagination.js",
   "scripts": {
     "serve": "es6-server",
@@ -25,6 +22,7 @@
     "@kano/eslint-config": "^1.0.0",
     "@kano/web-tester": "^1.0.0-alpha.6",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",
     "eslint-plugin-import": "^2.15.0"
   },
