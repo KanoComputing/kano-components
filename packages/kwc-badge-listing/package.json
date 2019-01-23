@@ -1,11 +1,14 @@
 {
-  "name": "@kano/kwc-badge",
+  "name": "@kano/kwc-badge-listing",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Paul Varache <perso@paulvarache.ninja>",
   "homepage": "https://github.com/KanoComputing/kano-components#readme",
   "license": "ISC",
-  "main": "kwc-badge.js",
+  "main": "kwc-badge-listing.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KanoComputing/kano-components.git"
@@ -17,11 +20,9 @@
     "url": "https://github.com/KanoComputing/kano-components/issues"
   },
   "dependencies": {
-    "@kano/kwc-paper-tooltip": "^3.0.0-beta.2",
-    "@polymer/iron-image": "^3.0.1",
+    "@kano/kwc-badge": "^1.0.0",
+    "@kano/styles": "^1.0.0",
+    "@polymer/paper-spinner": "^3.0.1",
     "@polymer/polymer": "^3.1.0"
-  },
-  "devDependencies": {
-    "@kano/demo-helpers": "^1.0.0"
   }
 }

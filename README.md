@@ -12,8 +12,8 @@ KanoComputing/kwc
  - [x] kwc-user-about
  - kwc-avatar-creator
  - kwc-auth
- - kwc-badge-listing
- - kwc-badge
+ - [x] kwc-badge-listing
+ - [x] kwc-badge
  - kwc-follow-item
  - [x] kwc-pagination
  - kwc-password-settings 
