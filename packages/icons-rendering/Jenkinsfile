@@ -1,0 +1,77 @@
+#!groovy
+
+@Library('kanolib') _
+
+pipeline {
+    agent {
+        label 'ubuntu_18.04'
+    }
+    post {
+        always {
+            junit allowEmptyResults: true, testResults: 'icons-rendering/test-results.xml'
+            step([$class: 'CheckStylePublisher', pattern: 'icons-rendering/eslint.xml'])
+        }
+        regression {
+            notify_culprits currentBuild.result
+        }
+    }
+    stages {
+        stage('main') {
+            when {
+                changeset 'icons-rendering/**/*'
+            }
+            stages {
+                stage('checkout') {
+                    steps {
+                        checkout scm
+                    }
+                }
+                stage('tools') {
+                    steps {
+                        script {
+                            def NODE_PATH = tool name: 'Node 8.11.2', type: 'nodejs'
+                            env.PATH = "${env.PATH}:${NODE_PATH}/bin"
+                            def YARN_PATH = tool name: 'yarn', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
+                            env.PATH = "${env.PATH}:${YARN_PATH}/bin"
+                        }
+                    }
+                }
+                // Install the bower dependencies of the component
+                stage('install dependencies') {
+                    steps {
+                        dir('icons-rendering') {
+                            sshagent(['read-only-github']) {
+                                script {
+                                    sh "yarn"
+                                }
+                            }
+                        }
+                    }
+                }
+                // Lints, the component
+                stage('checkstyle') {
+                    steps {
+                        dir('icons-rendering') {
+                            script {
+                                sh "yarn checkstyle-ci"
+                            }
+                        }
+                    }
+                }
+                stage('test') {
+                    steps {
+                        dir('icons-rendering') {
+                            script {
+                                install_chrome_dependencies()
+                                sh "yarn test-ci"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '20'))
+    }
+}

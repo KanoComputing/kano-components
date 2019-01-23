@@ -1,0 +1,23 @@
+{
+  "name": "@kano/icons",
+  "version": "0.0.1-alpha.3",
+  "main": "icons.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "yarn generate:all",
+    "generate:all": "yarn generate:ui && yarn generate:social && yarn generate:parts",
+    "generate:ui": "icons-tool generate ./src/ui -o ui.js",
+    "generate:social": "icons-tool generate ./src/social -o social.js",
+    "generate:parts": "icons-tool generate ./src/parts -o parts.js"
+  },
+  "dependencies": {
+    "@kano/icons-rendering": "^0.0.1-alpha.1"
+  },
+  "devDependencies": {
+    "@kano/icons-tool": "^0.0.1-alpha.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "7087eaf639f6f0b1f57203d9bfb7dc0c67ef6c07"
+}
