@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>kwc-user-about demo</title>
+    <style>
+        html {
+            font-family: var(--font-body);
+        }
+        fieldset {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px 30px;
+            border: 1px solid var(--color-kano-orange);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vertical-section-container centered">
+        <fieldset>
+            <legend>Basickwc-user-about demo</legend>
+            <kwc-user-about assets-path="/demo/assets/"></kwc-user-about>
+        </fieldset>
+        <fieldset>
+            <legend>Allow edit</legend>
+            <kwc-user-about bio="Hello there" assets-path="/demo/assets/" allow-edit-bio></kwc-user-about>
+        </fieldset>
+        <fieldset>
+            <legend>Auto edit</legend>
+            <kwc-user-about bio="" assets-path="/demo/assets/" allow-edit-bio=""></kwc-user-about>
+        </fieldset>
+        <fieldset>
+            <legend>Using legacy user API</legend>
+            <kwc-user-about id="legacy" assets-path="/demo/assets/"></kwc-user-about>
+        </fieldset>
+    </div>
+    <script type="module">
+        import '../kwc-user-about.js';
+        import { getStatsForUser, getProgressForUser } from '../legacy-populate.js';
+        import * as data from './data.js';
+        // DEFAULT DEMO
+        const el = document.querySelector('kwc-user-about');
+        el.bio = data.defaultProfile.bio;
+        el.stats = data.defaultProfile.stats;
+        el.progress = data.defaultProfile.progress;
+
+        // LEGACY DEMO
+        const legacyEl = document.querySelector('#legacy');
+        legacyEl.stats = getStatsForUser(data.legacyProfile.user.profile, data.legacyProfile.staffPicks);
+        legacyEl.progress = getProgressForUser(data.legacyProfile.user, data.legacyProfile.progress);
+        legacyEl.bio = data.legacyProfile.user.profile.bio;
+    </script>
+</body>
+
+</html>

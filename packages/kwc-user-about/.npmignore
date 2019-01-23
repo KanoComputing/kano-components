@@ -1,0 +1,7 @@
+demo
+test
+.gitattributes
+yarn.lock
+*.test.js
+test-results.xml
+icons
