@@ -9,16 +9,15 @@ Custom property | Description | Default
 @group Kano Web Components
 @demo demo/index.html
 */
-import '@polymer/polymer/polymer-legacy.js';
 
 import '@polymer/iron-image/iron-image.js';
 import '@kano/kwc-paper-tooltip/kwc-paper-tooltip.js';
 import '@kano/styles/color.js';
-import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 
-Polymer({
-    _template: html`
+class KwcBadge extends PolymerElement {
+    static get template() {
+        return html`
         <style>
             :host {
                 --paper-tooltip-background: var(--color-abbey);
@@ -90,67 +89,68 @@ Polymer({
                 <p hidden$="[[!_displayDescription]]">[[description]]</p>
             </kwc-paper-tooltip>
         </template>
-`,
-
-    is: 'kwc-badge',
-
-    properties: {
-        /** The criteria that users much meet to unlock the badge */
-        criteria: {
-            type: String,
-        },
-        /**
-       * Boolean to indicate whether the user viewing the badge
-       * is the one that has earned the badge
-       */
-        currentUser: {
-            type: Boolean,
-            value: false,
-        },
-        /** The badge description to show to the current user */
-        description: {
-            type: String,
-        },
-        /**
-       * Boolean to indicate whether the desription or the criteria
-       * should be shown. The criteria should be shown if the badge is
-       * locked, or if the user that has earned the badge and the
-       * user currently viewing the badge are different. If the badge
-       * has been earned by the current user, then the description
-       * should be shown.
-       */
-        _displayDescription: {
-            type: Boolean,
-            computed: '_unlockedByUser(currentUser, unlocked)',
-        },
-        /** The URL of the badge image */
-        imageUrl: {
-            type: String,
-        },
-        /** The title of the badge */
-        title: {
-            type: String,
-        },
-        /**
-       * Boolean to indicate whether the tooltip should
-       * be shown on mouseover
-       */
-        tooltip: {
-            type: Boolean,
-            value: true,
-        },
-        /**
-       * Boolean to indicate whether the user has
-       * unlocked the badge
-       */
-        unlocked: {
-            type: Boolean,
-            value: false,
-            reflectToAttribute: true,
-        },
-    },
-
+`;
+    }
+    static get properties() {
+        return {
+            /** The criteria that users much meet to unlock the badge */
+            criteria: {
+                type: String,
+            },
+            /**
+           * Boolean to indicate whether the user viewing the badge
+           * is the one that has earned the badge
+           */
+            currentUser: {
+                type: Boolean,
+                value: false,
+            },
+            /** The badge description to show to the current user */
+            description: {
+                type: String,
+            },
+            /**
+           * Boolean to indicate whether the desription or the criteria
+           * should be shown. The criteria should be shown if the badge is
+           * locked, or if the user that has earned the badge and the
+           * user currently viewing the badge are different. If the badge
+           * has been earned by the current user, then the description
+           * should be shown.
+           */
+            _displayDescription: {
+                type: Boolean,
+                computed: '_unlockedByUser(currentUser, unlocked)',
+            },
+            /** The URL of the badge image */
+            imageUrl: {
+                type: String,
+            },
+            /** The title of the badge */
+            title: {
+                type: String,
+            },
+            /**
+           * Boolean to indicate whether the tooltip should
+           * be shown on mouseover
+           */
+            tooltip: {
+                type: Boolean,
+                value: true,
+            },
+            /**
+           * Boolean to indicate whether the user has
+           * unlocked the badge
+           */
+            unlocked: {
+                type: Boolean,
+                value: false,
+                reflectToAttribute: true,
+            },
+        };
+    }
     _unlockedByUser(currentUser, unlocked) {
         return currentUser && unlocked;
-    },
-});
+    }
+}
+
+customElements.define('kwc-badge', KwcBadge);
