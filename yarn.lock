@@ -281,6 +281,14 @@
     "@polymer/iron-iconset-svg" "^3.0.0-pre.18"
     "@polymer/polymer" "^3.0.0"
 
+"@kano/kwc-paper-tooltip@^3.0.0-beta.2":
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@kano/kwc-paper-tooltip/-/kwc-paper-tooltip-3.0.0-beta.2.tgz#5c1e5043f56545baf96d5eeeeceef5d377f0ca4b"
+  integrity sha1-XB5QQ/VlRbr5bV7u7O7103fwyks=
+  dependencies:
+    "@polymer/paper-styles" "^3.0.0-pre.18"
+    "@polymer/polymer" "^3.0.0"
+
 "@kano/kwc-picker@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@kano/kwc-picker/-/kwc-picker-0.0.4.tgz#b059032be17d33d869ad4db962a6267d78edbf1f"
@@ -1484,7 +1492,7 @@
     "@polymer/paper-styles" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/polymer@^3.0.0", "@polymer/polymer@^3.0.0-pre.6":
+"@polymer/polymer@^3.0.0", "@polymer/polymer@^3.0.0-pre.6", "@polymer/polymer@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.1.0.tgz#3e1b7447a1e350fd654e1823def655d0f0828a70"
   integrity sha512-hwN8IMERsFATz/9dSMxYHL+84J9uBkPuuarxJWlTsppZ4CAYTZKnepBfNrKoyNsafBmA3yXBiiKPPf+fJtza7A==

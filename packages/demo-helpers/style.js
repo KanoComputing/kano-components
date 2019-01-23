@@ -24,6 +24,15 @@ const style = html`
         legend {
             font-family: var(--font-body);
         }
+        pre {
+            margin: 0;
+            padding: 0 0 10px 0;
+            background-color: #f5f5f5;
+            font-size: 13px;
+            overflow: auto;
+            overflow: auto;
+            max-width: 600px;
+        }
     </style>
 `;
 
