@@ -12,9 +12,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@kano/es6-server": "^1.0.1"
-  },
-  "dependencies": {
+    "@kano/es6-server": "^1.0.1",
     "@kano/demo-helpers": "^1.0.0"
   }
 }

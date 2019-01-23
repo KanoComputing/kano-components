@@ -11,6 +11,7 @@
     "prepublishOnly": "yarn test"
   },
   "dependencies": {
+    "@kano/demo-helpers": "^1.0.0",
     "@kano/kwc-lightboard-preview": "3.0.0",
     "@kano/styles": "^1.0.0",
     "@polymer/iron-image": "^3.0.1",
