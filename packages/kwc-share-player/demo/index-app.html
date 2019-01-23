@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>kwc-share-player demo</title>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+
+    <script type="module" src="../../node_modules/@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+    <script type="module" src="../../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../../node_modules/@polymer/paper-button/paper-button.js"></script>
+    <script type="module" src="../../node_modules/@kano/kwc-style/button.js"></script>
+    <script type="module" src="../../node_modules/@kano/kwc-style/typography.js"></script>
+    <script type="module" src="../../node_modules/@kano/kwc-style/color.js"></script>
+    <script type="module" src="../kwc-share-player.js"></script>
+
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+        const $_documentContainer = document.createElement('template');
+        $_documentContainer.setAttribute('style', 'display: none;');
+
+        $_documentContainer.innerHTML = `<style is="custom-style" include="demo-pages-shared-styles">
+
+        .player {
+            width: 730px;
+            max-width: 730px;
+        }
+        #toggle {
+            @apply --kano-button;
+            color: black;
+            position: relative;
+            bottom: 5px;
+        }
+    </style>`;
+
+        document.head.appendChild($_documentContainer.content);
+    </script>
+</head>
+
+<body>
+    <div class="vertical-section-container centered player">
+        <h3>Share player default shares</h3>
+        <paper-button id="toggle">Show code</paper-button>
+        <kwc-share-player id="share"></kwc-share-player>
+        <!-- <demo-snippet class="">
+            <template>
+            </template>
+        </demo-snippet> -->
+    </div>
+    <script type="module">
+        const view = document.getElementById('share'),
+            button = document.getElementById('toggle');
+        button.addEventListener('click', () => {
+            view.displayCode = !view.displayCode;
+        });
+        document.onkeydown = function (evt) {
+            evt = evt || window.event;
+            let isEscape = (evt.key == "Escape" || evt.key == "Esc");
+            if (isEscape) {
+                view.displayCode = false;
+            }
+        }.bind(this);
+        const shareData = {
+            "id": "595a6c169f797577bd72bd70",
+            "app": "make-apps",
+            "attachments": {
+                "cover_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/covers/595a6c169f797577bd72bd70.png",
+                "attachment_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/attachments/5b05960a2700270fdce45de2.html",
+                "resource_url": null,
+                "sample_url": null,
+                "workspace_info_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/workspace-info/595a6c169f797577bd72bd70.json",
+                "lightboard_spritesheet_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/lightboard-spritesheets/595a6c169f797577bd72bd70.png",
+                "animation_url": null
+            },
+            "attachment_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/attachments/5b05960a2700270fdce45de2.html",
+            "workspace_info_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/workspace-info/595a6c169f797577bd72bd70.json",
+            "cover_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/covers/595a6c169f797577bd72bd70.png",
+            "slug": "particle-flow"
+        };
+        view.share = shareData;
+    </script>
+</body>
+
+</html>

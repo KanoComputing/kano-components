@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>kwc-share-player demo</title>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+
+    <script type="module" src="../../node_modules/@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+    <script type="module" src="../../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../../node_modules/@kano/kwc-style/typography.js"></script>
+    <script type="module" src="../../node_modules/@kano/kwc-style/color.js"></script>
+    <script type="module" src="../kwc-share-player.js"></script>
+
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+        const $_documentContainer = document.createElement('template');
+        $_documentContainer.setAttribute('style', 'display: none;');
+
+        $_documentContainer.innerHTML = `<style is="custom-style" include="demo-pages-shared-styles">
+
+        .player {
+            width: 730px;
+            max-width: 730px;
+        }
+    </style>`;
+
+        document.head.appendChild($_documentContainer.content);
+    </script>
+</head>
+
+<body>
+    <div class="vertical-section-container centered player">
+        <h3>Unknown share app with cover</h3>
+        <demo-snippet class="">
+            <template>
+                <kwc-share-player id="share-any"></kwc-share-player>
+                <script>
+                    document.addEventListener('WebComponentsReady', function () {
+                        const view = document.getElementById('share-any');
+                        const shareData = {
+                            id: "59dfbdc78276043dd9510cc9",
+                            app: "no-such-app",
+                            cover_url: "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/covers/59dfbdc78276043dd9510cc9.png",
+                            attachment_url: "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/attachments/59dfbdc78276043dd9510cc9.draw"
+                        };
+                        view.share = shareData;
+                    });
+                </script>
+            </template>
+        </demo-snippet>
+        <h3>Make Art</h3>
+        <demo-snippet class="">
+            <template>
+                <kwc-share-player id="share-art"></kwc-share-player>
+                <script>
+                    document.addEventListener('WebComponentsReady', function () {
+                        const view = document.getElementById('share-art');
+                        const shareData = {
+                            id: "59dfbdc78276043dd9510cc9",
+                            app: "kano-draw",
+                            cover_url: "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/covers/59dfbdc78276043dd9510cc9.png",
+                            attachment_url: "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/attachments/59dfbdc78276043dd9510cc9.draw"
+                        };
+                        view.share = shareData;
+                    });
+                </script>
+            </template>
+        </demo-snippet>
+        <h3>Kano Code</h3>
+        <demo-snippet class="">
+            <template>
+                <kwc-share-player id="share-app"></kwc-share-player>
+                <script>
+                    document.addEventListener('WebComponentsReady', function () {
+                        const view = document.getElementById('share-app');
+                        const shareData = {
+                            "id": "595a6c169f797577bd72bd70",
+                            "app": "make-apps",
+                            "attachments": {
+                                "cover_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/covers/5b05960a2700270fdce45de2.png",
+                                "attachment_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/attachments/5b05960a2700270fdce45de2.html",
+                                "workspace_info_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/workspace-info/5b05960a2700270fdce45de2.json",
+                            },
+                            "cover_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/covers/5b05960a2700270fdce45de2.png",
+                            "attachment_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/attachments/5b05960a2700270fdce45de2.html",
+                            "workspace_info_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me.staging/share-items/workspace-info/5b05960a2700270fdce45de2.json",
+                            "slug": "particle-flow"
+                        };
+                        view.share = shareData;
+                    });
+                </script>
+            </template>
+        </demo-snippet>
+        <h3>Make Music</h3>
+        <demo-snippet class="">
+            <template>
+                <kwc-share-player id="share-music"></kwc-share-player>
+                <script>
+                    document.addEventListener('WebComponentsReady', function () {
+                        const view = document.getElementById('share-music');
+                        const shareData = {
+                            "id": "595a6c169f797577bd72bd70",
+                            "app": "make-music",
+                            "sample_url": "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/samples/5b1a9437c6e9dd2d984dc1c7.oga",
+                        };
+                        view.share = shareData;
+                    });
+                </script>
+            </template>
+        </demo-snippet>
+    </div>
+</body>
+
+</html>

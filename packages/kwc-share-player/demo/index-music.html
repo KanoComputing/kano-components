@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>kw-share-card demo</title>
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <script type="module" src="../../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        <script type="module" src="../../../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
+        <script type="module" src="../../../node_modules/@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+        <script type="module" src="../kwc-music-player.js"></script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.setAttribute('style', 'display: none;');
+
+$_documentContainer.innerHTML = `<style is="custom-style" include="demo-pages-shared-styles">
+            kw-music-share {
+                width: 520px;
+                height: 200px;
+                font-family: var(--font-body);
+            }
+            .centered {
+                max-width: 600px !important;
+            }
+        </style>`;
+
+document.head.appendChild($_documentContainer.content);
+</script>
+    </head>
+
+    <body unresolved>
+        <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
+            <h3>Default</h3>
+            <demo-snippet>
+                <template>
+                    <kwc-music-player id="share"></kwc-music-player>
+                    <script>
+                        document.addEventListener('WebComponentsReady', function () {
+                            var card = document.querySelector('#share');
+
+                            card.share = {
+                                title: 'My song from outer space',
+                                user: {
+                                    username: 'platypusmeister',
+                                    avatar: {
+                                        urls: {
+                                            circle: 'https://pbs.twimg.com/profile_images/613499829608665088/8VPONBWD.jpg'
+                                        }
+                                    }
+                                },
+                                cover_url: 'http://vignette2.wikia.nocookie.net/adventuretimewithfinnandjake/images/0/0b/Blush.jpg/revision/latest',
+                                date_created: new Date(),
+                                likes: new Array(27),
+                                comments_count: 5,
+                                sample_url: "https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/samples/581dfcd62204b21a7e99049e.oga"
+                            }
+                        });
+                    &lt;/script>
+                </template>
+            </demo-snippet>
+            
+    
+</div>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
