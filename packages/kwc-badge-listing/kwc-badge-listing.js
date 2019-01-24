@@ -49,7 +49,7 @@ class KwcBadgeListing extends PolymerElement {
                 display: block;
                 margin: auto;
             }
-            :host kwc-badge {
+            :host kwc-badge {
                 margin: var(--kwc-badge-listing-gutter, 25px);
             }
         </style>
@@ -73,9 +73,9 @@ class KwcBadgeListing extends PolymerElement {
             /** Array of badges to be displayed */
             badges: {
                 type: Array,
-                value: function () {
+                value() {
                     return [];
-                }
+                },
             },
             /**
              * Boolean to indicate whether the user viewing the badges
@@ -83,8 +83,8 @@ class KwcBadgeListing extends PolymerElement {
              */
             currentUser: {
                 type: Boolean,
-                value: false
-            }
+                value: false,
+            },
         };
     }
 }
