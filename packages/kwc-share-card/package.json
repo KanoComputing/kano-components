@@ -22,7 +22,7 @@
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/icons": "^0.0.1-alpha.3",
-    "@kano/web-tester": "^1.0.0-alpha.7",
+    "@kano/web-tester": "^1.0.0-alpha.8",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",
     "eslint-plugin-import": "^2.15.0"

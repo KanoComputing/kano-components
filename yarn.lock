@@ -165,7 +165,7 @@
   integrity sha512-D0k6UzNWkHQel5MpBbOXpJcAHKPHDumwaELlaJUm8VBqgURP6iYPPO7SX6E6Q0vGqKnkZX0xvFvazrf6oulG9w==
 
 "@kano/es6-resolution@^1.0.12", "@kano/es6-resolution@^1.0.8":
-  version "1.0.15"
+  version "1.0.14"
   resolved "https://registry.yarnpkg.com/@kano/es6-resolution/-/es6-resolution-1.0.14.tgz#6afbba8e1f9647f311fb580789c7b7efd6d495a7"
   integrity sha512-jqJzM2Qlti3snpYb71a7VEN7Idpl9hFLUGHYzZoj5L7heHSigVzv1KKb1G1AwkFldjusreFcKHk63bCF+cf6MQ==
   dependencies:
@@ -321,14 +321,16 @@
   dependencies:
     "@kano/common" "^1.0.1"
 
-"@kano/web-tester@^1.0.0-alpha.7":
-  version "1.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@kano/web-tester/-/web-tester-1.0.0-alpha.7.tgz#7e3f05af8297e2798dbb79cfe7dce13bdd5aa2ff"
-  integrity sha512-VXM68RrgaMi7Ee4zXqubfSghD5uoznv8q6cc6IEJ5EiRpGr1EE38OKHX2KZcUfALt+vneMq+iYNsUj1w0Q0OkQ==
+"@kano/web-tester@^1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@kano/web-tester/-/web-tester-1.0.0-alpha.8.tgz#b0d982e104ac7037e87b9722ee3b88288bbde76e"
+  integrity sha512-whKfOIs/IemD01MxGcNnEPM05uOyvE+GWQkgRPl5N76b24Z8/h7F8MAWMZKTU522yaq4RV9UlOduGXxvcXvCbg==
   dependencies:
     "@kano/es6-resolution" "^1.0.8"
     chai "^4.2.0"
+    chalk "^2.4.2"
     connect "^3.6.6"
+    flatted "^2.0.0"
     glob "^7.1.3"
     mime "^2.3.1"
     mocha "^5.2.0"
@@ -336,7 +338,8 @@
     puppeteer "^1.7.0"
     resolve "^1.8.1"
     serve-static "^1.13.2"
-    yargs "^12.0.1"
+    sywac "^1.2.1"
+    xml "^1.0.1"
 
 "@kano/x-carousel@^3.0.0-beta.2":
   version "3.0.0-beta.2"
@@ -2095,7 +2098,7 @@ chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.1.0, chalk@^2.3.1, chalk@^2.4.1:
+chalk@^2.0.0, chalk@^2.1.0, chalk@^2.3.1, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -3390,6 +3393,11 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     rimraf "~2.6.2"
     write "^0.2.1"
+
+flatted@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.0.tgz#55122b6536ea496b4b44893ee2608141d10d9916"
+  integrity sha512-R+H8IZclI8AAkSBRQJLVOsxwAoHd6WC40b4QTNWIjzAa6BXOBfQcM587MXDTVPeYaopFNWHUFLx7eNmHDSxMWg==
 
 flow-down@1.0.3:
   version "1.0.3"
@@ -6592,6 +6600,11 @@ svgo@^1.1.1:
     stable "~0.1.6"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sywac@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/sywac/-/sywac-1.2.1.tgz#528e482b2f2a18e764ffccc59eb40eea16a7f97d"
+  integrity sha512-bf8agjBAV9mm90k2nWoobe48bO/XugTS86W4dGYTpzVlfFv1cmWsRrQ9hUKIfoDaIRaXIta/BLFINmmxfV+otg==
 
 table@4.0.2:
   version "4.0.2"
