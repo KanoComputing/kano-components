@@ -39,3 +39,5 @@ Thumbs.db
 node_modules
 test-results.xml
 eslint.xml
+
+packages/icons/*.js
