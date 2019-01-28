@@ -27,5 +27,6 @@
     "@kano/icons-tool": "^3.0.5",
     "@kano/web-tester": "^1.0.0-alpha.8",
     "@webcomponents/webcomponentsjs": "^2.0.0"
-  }
+  },
+  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
 }

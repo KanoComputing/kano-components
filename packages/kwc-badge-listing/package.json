@@ -24,5 +24,6 @@
     "@kano/styles": "^3.0.5",
     "@polymer/paper-spinner": "^3.0.1",
     "@polymer/polymer": "^3.1.0"
-  }
+  },
+  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
 }

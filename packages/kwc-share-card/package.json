@@ -7,8 +7,7 @@
     "serve": "es6-server",
     "serve-test": "web-tester serve ./**/*.test.js",
     "test": "web-tester run ./**/*.test.js",
-    "test-ci": "yarn run --silent test > test-results.xml",
-    "prepublishOnly": "yarn test"
+    "test-ci": "yarn run --silent test > test-results.xml"
   },
   "dependencies": {
     "@kano/kwc-lightboard-preview": "^3.0.5",
@@ -29,5 +28,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
 }

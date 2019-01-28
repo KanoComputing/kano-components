@@ -23,5 +23,6 @@
   },
   "devDependencies": {
     "@kano/demo-helpers": "^3.0.5"
-  }
+  },
+  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
 }

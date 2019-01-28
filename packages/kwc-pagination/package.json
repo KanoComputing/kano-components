@@ -9,8 +9,7 @@
     "test": "web-tester run **/*.test.js",
     "test-ci": "yarn run --silent test > test-results.xml",
     "lint": "eslint *.js",
-    "lint-ci": "yarn lint -f checkstyle -o eslint.xml",
-    "prepublishOnly": "yarn run test"
+    "lint-ci": "yarn lint -f checkstyle -o eslint.xml"
   },
   "dependencies": {
     "@kano/styles": "^3.0.5",
@@ -28,5 +27,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
 }
