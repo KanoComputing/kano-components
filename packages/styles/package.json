@@ -1,6 +1,6 @@
 {
   "name": "@kano/styles",
-  "version": "1.0.0",
+  "version": "3.0.5",
   "main": "styles.js",
   "repository": "git@github.com:KanoComponents/kwc-style.git",
   "author": "Paul Varache <paul@kano.me>",
@@ -12,12 +12,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^1.0.0",
+    "@kano/demo-helpers": "^3.0.5",
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/web-tester": "^1.0.0-alpha.8",
     "babel-eslint": "^10.0.1",
-    "eslint-plugin-import": "^2.15.0",
-    "eslint": "^5.12.1"
+    "eslint": "^5.12.1",
+    "eslint-plugin-import": "^2.15.0"
   }
 }

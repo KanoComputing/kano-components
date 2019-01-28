@@ -1,7 +1,7 @@
 {
   "description": "UI for pagination",
   "name": "@kano/kwc-pagination",
-  "version": "3.0.0",
+  "version": "3.0.5",
   "main": "kwc-pagination.js",
   "scripts": {
     "serve": "es6-server",
@@ -13,11 +13,11 @@
     "prepublishOnly": "yarn run test"
   },
   "dependencies": {
-    "@kano/styles": "^1.0.0-alpha.0",
+    "@kano/styles": "^3.0.5",
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^1.0.0",
+    "@kano/demo-helpers": "^3.0.5",
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/web-tester": "^1.0.0-alpha.8",

@@ -1,13 +1,13 @@
 {
   "name": "@kano/demo-helpers",
-  "version": "1.0.0",
+  "version": "3.0.5",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@kano/styles": "^1.0.0",
+    "@kano/styles": "^3.0.5",
     "prismjs": "^1.15.0"
   },
   "devDependencies": {
