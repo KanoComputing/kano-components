@@ -10,11 +10,10 @@ KanoComputing/kwc
  - [x] kwc-share-detail
  - [x] kwc-share-card
  - [x] kwc-user-about
- - kwc-avatar-creator
  - kwc-auth
  - [x] kwc-badge-listing
  - [x] kwc-badge
- - kwc-follow-item
+ - [x] kwc-follow-item
  - [x] kwc-pagination
  - kwc-password-settings 
  - [x] styles

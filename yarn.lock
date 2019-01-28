@@ -164,10 +164,10 @@
   resolved "https://registry.yarnpkg.com/@kano/common/-/common-1.0.2.tgz#84f12d7e924a0b20434bc2d27ee8690b208777a3"
   integrity sha512-D0k6UzNWkHQel5MpBbOXpJcAHKPHDumwaELlaJUm8VBqgURP6iYPPO7SX6E6Q0vGqKnkZX0xvFvazrf6oulG9w==
 
-"@kano/es6-resolution@^1.0.12", "@kano/es6-resolution@^1.0.8":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@kano/es6-resolution/-/es6-resolution-1.0.14.tgz#6afbba8e1f9647f311fb580789c7b7efd6d495a7"
-  integrity sha512-jqJzM2Qlti3snpYb71a7VEN7Idpl9hFLUGHYzZoj5L7heHSigVzv1KKb1G1AwkFldjusreFcKHk63bCF+cf6MQ==
+"@kano/es6-resolution@1.0.16", "@kano/es6-resolution@^1.0.12", "@kano/es6-resolution@^1.0.8":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@kano/es6-resolution/-/es6-resolution-1.0.16.tgz#c405e6105ff2bdc3c7e24ec5e5f1bb21b798ebc0"
+  integrity sha512-b87Aa7Y9/Su61n8BhgX8KCAO0RtAKGPt6W63nux60QsK3tiggR5FxzDeyZ2V0r44dq2ZQhe9znuXJF7lutAN2Q==
   dependencies:
     resolve "^1.7.1"
 
@@ -193,6 +193,18 @@
     eslint-config-airbnb-base "^12.1.0"
     eslint-plugin-html "^4.0.2"
     eslint-plugin-import "^2.8.0"
+
+"@kano/icons-rendering@^0.0.1-alpha.1":
+  version "0.0.1-alpha.1"
+  resolved "https://registry.yarnpkg.com/@kano/icons-rendering/-/icons-rendering-0.0.1-alpha.1.tgz#791ca960d242f41908c271c2ce12316bb4b945c5"
+  integrity sha512-9kb6eLe/5Nive+q0w5RPdZKuvI+JxzFT9pHgGY0RJKOxOVC/ni+7HEz48G9PCZIrNgYAt5O25sI4Gr604hF4Dg==
+
+"@kano/icons@^0.0.1-alpha.3":
+  version "0.0.1-alpha.3"
+  resolved "https://registry.yarnpkg.com/@kano/icons/-/icons-0.0.1-alpha.3.tgz#10dd70121b4c7ffbddcea99f28c40c41377062d9"
+  integrity sha512-BiowDIxy0Ecp7gtrVzBVaU1jF+Mf4+xzOmLbx5xnx+FMSSQhN+6IhacYhoTlGpGUm0SJ1lfse0QP+eCLPMDX9w==
+  dependencies:
+    "@kano/icons-rendering" "^0.0.1-alpha.1"
 
 "@kano/kwc-behaviors@^3.0.0-beta.4":
   version "3.0.0-beta.5"
@@ -314,12 +326,37 @@
     "@polymer/polymer" "^3.0.0"
     sortablejs "^1.7.0"
 
+"@kano/styles@^1.0.0-alpha.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@kano/styles/-/styles-1.0.0.tgz#f7d0ef9338dcc73c72851dc931c79eefd3db9bbf"
+  integrity sha512-Iu9vr3mY3SEZYUjvDNSpPiuvEfF4TbGJAEPkmGTYJ9xATlDDTvZCsogCBkr19LLbzvTGzREXKQgNpFySX4kf9g==
+
 "@kano/telemetry@^1.0.0":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@kano/telemetry/-/telemetry-1.0.2.tgz#2f207e4ed54bf5dfa87e57d50c3be1d1c4a50dab"
   integrity sha512-cHZxNHyD1I2pSpvlr+nPTEbauEUvDgotMDW+NKWwpklco3Q62ulHQ+ZTeeFYAXy95VS3pafEsQAMWvtrg7bdsg==
   dependencies:
     "@kano/common" "^1.0.1"
+
+"@kano/web-tester@^1.0.0-alpha-9":
+  version "1.0.0-alpha-9"
+  resolved "https://registry.yarnpkg.com/@kano/web-tester/-/web-tester-1.0.0-alpha-9.tgz#204bbd49e80a37512c48cf03e25abb74e8acf337"
+  integrity sha512-Q+wgZui/rjwiB1BWGjnaN3eRe8SUTqRsbetxZCRn816nahZr2jQLMNuPisZjPe7HUcFCikeIWZpVdU2YeEML+Q==
+  dependencies:
+    "@kano/es6-resolution" "^1.0.8"
+    chai "^4.2.0"
+    chalk "^2.4.2"
+    connect "^3.6.6"
+    flatted "^2.0.0"
+    glob "^7.1.3"
+    mime "^2.3.1"
+    mocha "^5.2.0"
+    node-text-chunk "^0.1.1"
+    puppeteer "^1.7.0"
+    resolve "^1.8.1"
+    serve-static "^1.13.2"
+    sywac "^1.2.1"
+    xml "^1.0.1"
 
 "@kano/web-tester@^1.0.0-alpha.8":
   version "1.0.0-alpha.8"
