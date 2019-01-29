@@ -15,7 +15,7 @@
     "serve": "es6-server",
     "serve-test": "web-tester serve ./packages/**/*.test.js",
     "test": "web-tester run ./packages/**/*.test.js -r spec",
-    "test-ci": "yarn run --silent test > test-results.xml",
+    "test-ci": "web-tester run ./packages/**/*.test.js > test-results.xml",
     "lint": "eslint ./packages/**/*.js",
     "lint-ci": "yarn lint -f checkstyle -o eslint.xml",
     "prepublishOnly": "yarn run test"
