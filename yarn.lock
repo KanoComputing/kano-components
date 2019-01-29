@@ -338,10 +338,10 @@
   dependencies:
     "@kano/common" "^1.0.1"
 
-"@kano/web-tester@^1.0.0-alpha-9":
-  version "1.0.0-alpha-9"
-  resolved "https://registry.yarnpkg.com/@kano/web-tester/-/web-tester-1.0.0-alpha-9.tgz#204bbd49e80a37512c48cf03e25abb74e8acf337"
-  integrity sha512-Q+wgZui/rjwiB1BWGjnaN3eRe8SUTqRsbetxZCRn816nahZr2jQLMNuPisZjPe7HUcFCikeIWZpVdU2YeEML+Q==
+"@kano/web-tester@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@kano/web-tester/-/web-tester-1.0.0-alpha.10.tgz#310b8d431901242eb986b898cb2714cb42b4c58b"
+  integrity sha512-m3yGMW3sm/24i/Dy9tPMnhFi6vBPZy4alz2UTNXjHnEG2jKwS4yBf4IgzWHYuMPy9mPKHZTbBxKHRQwZqpT0eA==
   dependencies:
     "@kano/es6-resolution" "^1.0.8"
     chai "^4.2.0"
