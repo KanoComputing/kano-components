@@ -1,18 +1,4 @@
-import { button } from './button.js';
-import * as color from './color.js';
-import * as input from './input.js';
-import * as typography from './typography.js';
-
-export {
-    button,
-    color,
-    input,
-    typography,
-};
-
-export default {
-    button,
-    color,
-    input,
-    typography,
-};
+export * from './button.js';
+export * from './color.js';
+export * from './input.js';
+export * from './typography.js';
