@@ -1,4 +1,4 @@
-import { button } from './button.js';
+import * as button from './button.js';
 import * as color from './color.js';
 import * as input from './input.js';
 import * as typography from './typography.js';
