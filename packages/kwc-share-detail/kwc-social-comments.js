@@ -552,6 +552,7 @@ class KwcSocialComments extends PolymerElement {
             detail: {
                 index: e.model.index,
                 id: commentId,
+                user: e.model.comment.author.id || 0,
             },
         }));
     }
