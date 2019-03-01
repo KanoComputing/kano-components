@@ -8,14 +8,16 @@
     "@kano/es6-resolution": "1.0.16"
   },
   "devDependencies": {
-    "@kano/web-tester": "^1.0.0-alpha.10",
+    "@kano/web-tester": "^1.0.0-alpha.11",
     "lerna": "^3.5.1"
   },
   "scripts": {
     "serve": "es6-server",
     "serve-test": "web-tester serve ./packages/**/*.test.js",
-    "test": "web-tester run ./packages/**/*.test.js -r spec",
-    "test-ci": "web-tester run ./packages/**/*.test.js > test-results.xml",
+    "test": "web-tester run ./packages/**/*.test.js",
+    "test-ci": "web-tester run ./packages/**/*.test.js -r xunit > test-results.xml",
+    "coverage": "web-tester cover ./packages/**/*.test.js",
+    "coverage-ci": "yarn run --silent coverage -r cobertura",
     "lint": "eslint ./packages/**/*.js",
     "lint-ci": "yarn lint -f checkstyle -o eslint.xml",
     "prepublishOnly": "yarn run test"
