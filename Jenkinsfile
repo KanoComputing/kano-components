@@ -9,9 +9,13 @@ pipeline {
     post {
         always {
             junit allowEmptyResults: true, testResults: 'test-results.xml'
+            cobertura coberturaReportFile: 'coverage/cobertura-coverage.xml'
             step([$class: 'CheckStylePublisher', pattern: 'eslint.xml'])
         }
         regression {
+            notify_culprits currentBuild.result
+        }
+        fixed {
             notify_culprits currentBuild.result
         }
     }
@@ -53,6 +57,7 @@ pipeline {
                     docker.image('kanocomputing/puppeteer').inside('--cap-add=SYS_ADMIN') {
                         // Run the Unit test
                         sh "yarn test-ci"
+                        sh "yarn coverage-ci"
                     }
                 }
             }

@@ -1,40 +1,34 @@
-# \<kwc-pagination\>
+# <kwc-pagination>
 
-UI for pagination
-
- - What is it called?
-     - kwc-pagination
- - What is it made out of?
-     - Describe here the contents of this component
- - What variants are needed?
-     - Variant 1:
-     - Variant 2:
-     - Variant 3:
- - How does it scale?
-     - Desktop: ...
-     - Mobile: ...
- - What style variables are in use?
-     - Style 1: ...
-     - Style 2: ...
+A configurable page navigation bar.
 
 ## Installation
-Clone this repository.
-Run `bower i`
 
-## Install the Polymer-CLI
-
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
-
-## Viewing Your Element
+Grab it from the NPM repository and add it as a dependency of your project with
 
 ```
-$ polymer serve
+yarn add @kano/kwc-pagination
 ```
 
-## Running Tests
+## Usage
 
-```
-$ polymer test --skip-plugin junit-reporter
+```js
+import '@kano/kwc-pagination/kwc-pagination.js';
+
+html`
+    <kwc-pagination jump-controls pagination-controls total-pages="360" current-page="7"></kwc-pagination>
+`;
 ```
 
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+## API
+
+The following properties are available:
+
+ - `startsOn`: A number defining the start page for the navigation bar
+ - `totalPages`: A number defining the total number of pages available
+ - `currentPage`: A number defining the selected page
+ - `range`: A number defining the number of pages to display between the bar controls
+ - `paginationControls`: Turn on or off the next and previous buttons
+ - `jumpControls`: Turn on or off the got to last and got to first buttons
+
+This element dispatches one event: `go-to-page`. This event signals that the user chose a page to go to. Use this data to update the selected page
