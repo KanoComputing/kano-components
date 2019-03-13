@@ -938,7 +938,6 @@ class KwcShareDetail extends PolymerElement {
         return shareData.userId === currentUser.id;
     }
     _computeFeatured(featured) {
-        console.log(arguments);
         return featured;
     }
     _computeLiked(likeChangeObj, currentUser) {
