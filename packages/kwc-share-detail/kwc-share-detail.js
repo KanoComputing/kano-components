@@ -257,6 +257,7 @@ class KwcShareDetail extends PolymerElement {
             #more-actions-menu {
                 right: 0;
                 transform: translate(-109px, 34px);
+                margin-top:5px;
             }
             #more-actions-menu kwc-drop-down-item {
                 min-width: 150px;
@@ -733,7 +734,6 @@ class KwcShareDetail extends PolymerElement {
             featured: {
                 type: Boolean,
                 value: false,
-                reflectToAtrribute: true,
             },
             /**
                * Allow the icon to display for a featured share to be set from
@@ -937,6 +937,10 @@ class KwcShareDetail extends PolymerElement {
         }
         return shareData.userId === currentUser.id;
     }
+    _computeFeatured(featured) {
+        console.log(arguments);
+        return featured;
+    }
     _computeLiked(likeChangeObj, currentUser) {
         if (!likeChangeObj || !currentUser) {
             return false;
@@ -1053,8 +1057,8 @@ class KwcShareDetail extends PolymerElement {
     _onFeatureTapped() {
         this.dispatchEvent(new CustomEvent('action-click', {
             detail: {
-                action: 'feature',
-                feature: !this.shareData.featured,
+                action: 'featured',
+                featured: !this.featured,
                 id: this.shareData.id,
             },
         }));
