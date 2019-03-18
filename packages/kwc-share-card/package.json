@@ -22,6 +22,7 @@
     "@kano/eslint-config": "^1.0.0",
     "@kano/icons": "^3.0.7",
     "@kano/web-tester": "^1.0.0-alpha.8",
+    "@polymer/iron-test-helpers": "^3.0.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",
     "eslint-plugin-import": "^2.15.0"
