@@ -123,12 +123,10 @@ class KwcFollowItem extends PolymerElement {
         this.dispatchEvent(new CustomEvent(eventName, eventData));
     }
     _onTapUser() {
-        this.dispatchEvent(
-            new CustomEvent('tap-user', {
-                bubbles: false,
-                detail: this.username,
-            }),
-        );
+        this.dispatchEvent(new CustomEvent('tap-user', {
+            bubbles: false,
+            detail: this.username,
+        }));
     }
 }
 

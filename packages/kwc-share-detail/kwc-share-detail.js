@@ -19,7 +19,10 @@ import '@kano/styles/color.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ellipsis, like, remix } from '@kano/icons/ui.js';
 import {
-    facebook, twitter, share, code,
+    facebook,
+    twitter,
+    share,
+    code,
 } from '@kano/icons/social.js';
 import * as partIcons from '@kano/icons/parts.js';
 import button from '@kano/styles/button.js';
