@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     docker.image('node:8-alpine').inside {
-                        sh "yarn lint-ci"
+                        sh "yarn ci:lint"
                     }
                 }
             }
@@ -56,8 +56,8 @@ pipeline {
                     // Use puppeteer enabled docker image
                     docker.image('kanocomputing/puppeteer').inside('--cap-add=SYS_ADMIN') {
                         // Run the Unit test
-                        sh "yarn test-ci"
-                        sh "yarn coverage-ci"
+                        sh "yarn ci:test"
+                        sh "yarn ci:coverage"
                     }
                 }
             }
