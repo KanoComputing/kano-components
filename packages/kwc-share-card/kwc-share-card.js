@@ -113,15 +113,15 @@ class KwcShareCard extends PolymerElement {
             <div class="cover">
                 <slot name="cover"></slot>
                 <paper-spinner class="spinner" active hidden$="[[!uploadingAvatar]]"></paper-spinner>
-                <iron-image class="avatar" on-tap="_onTapAvatar" src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]"></iron-image>
+                <iron-image class="avatar" on-click="_onTapAvatar" src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]"></iron-image>
             </div>
-            <div class="title" on-tap="_onTapTitle">
+            <div class="title" on-click="_onTapTitle">
                 <div class="title-text">[[title]]</div>
                 <!-- If you want to mark this post with an icon (for example animation)
                 you can slot it into this \`title-icon\` slot -->
                 <div class="title-icon"><slot name="title-icon"></slot></div>
             </div>
-            <div class="username" on-tap="_onTapUsername">
+            <div class="username" on-click="_onTapUsername">
                 by <span class="username-text"> [[username]]</span> [[_timeSince(date)]] ago
             </div>
             <div id="actions">
@@ -196,13 +196,13 @@ class KwcShareCard extends PolymerElement {
      * Handles tap event on the avatar and fires `avatar-tapped`
      */
     _onTapAvatar() {
-        this.fire('avatar-tapped');
+        this.dispatchEvent(new CustomEvent('avatar-tapped', { bubbles: true, composed: true }));
     }
     /**
      * Handles tap event on the avatar and fires `avatar-tapped`
      */
     _onTapUsername() {
-        this.fire('username-tapped');
+        this.dispatchEvent(new CustomEvent('username-tapped', { bubbles: true, composed: true }));
     }
     /**
      * Fired when share title is tapped
@@ -213,7 +213,7 @@ class KwcShareCard extends PolymerElement {
      * Handles tap event on the title and fires `title-tapped`
      */
     _onTapTitle() {
-        this.fire('title-tapped');
+        this.dispatchEvent(new CustomEvent('title-tapped', { bubbles: true, composed: true }));
     }
     /**
     * Computes the day/time a share was created
