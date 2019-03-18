@@ -1,6 +1,6 @@
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
-import '@kano/code/app/elements/kc-player/kc-player.js';
+import '@kano/code/dist/app/elements/kc-player/kc-player.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import './elements/kwc-code-display.js';
 import './highlight-theme/app.js';
