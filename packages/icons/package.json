@@ -1,6 +1,6 @@
 {
   "name": "@kano/icons",
-  "version": "3.0.7",
+  "version": "3.0.15",
   "main": "icons.js",
   "license": "MIT",
   "scripts": {
@@ -11,11 +11,11 @@
     "generate:parts": "icons-tool generate ./src/parts -o parts.js"
   },
   "dependencies": {
-    "@kano/icons-rendering": "^3.0.6"
+    "@kano/icons-rendering": "^3.0.15"
   },
   "devDependencies": {
     "@kano/eslint-config": "^1.0.0",
-    "@kano/icons-tool": "^3.0.6",
+    "@kano/icons-tool": "^3.0.15",
     "@kano/web-tester": "^1.0.0-alpha.8",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",
