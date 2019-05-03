@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 
+.vscode
 node_modules
 test-results.xml
 eslint.xml
