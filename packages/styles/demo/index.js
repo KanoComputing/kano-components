@@ -1,5 +1,6 @@
 import { html, demo } from '@kano/demo-helpers/index.js';
 import { button } from '../button.js';
+import { closure } from '../closure.js';
 
 document.head.appendChild(button.content.cloneNode(true));
 
@@ -45,3 +46,12 @@ const action = html`
 `;
 
 demo('Action', action);
+
+document.head.appendChild(closure.content.cloneNode(true));
+
+const closures = html`
+<button class="closure"></button>
+<button class="closure secondary"></button>
+`;
+
+demo('Closure', closures);
