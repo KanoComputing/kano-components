@@ -1,7 +1,7 @@
 {
   "description": "To display details specific to a kano code share.",
   "name": "@kano/kwc-share-detail",
-  "version": "3.0.15",
+  "version": "3.0.16",
   "scripts": {
     "serve": "es6-server",
     "serve-test": "web-tester serve ./*.test.js",
@@ -12,12 +12,12 @@
   },
   "main": "kwc-share-detail.js",
   "dependencies": {
-    "@kano/icons": "^3.0.15",
+    "@kano/icons": "^3.0.16",
     "@kano/kwc-drop-down": "^3.0.0-beta.2",
     "@kano/kwc-icons": "^3.0.0-beta.2",
-    "@kano/kwc-share-card": "^3.0.15",
-    "@kano/kwc-share-player": "^3.0.15",
-    "@kano/styles": "^3.0.15",
+    "@kano/kwc-share-card": "^3.0.16",
+    "@kano/kwc-share-player": "^3.0.16",
+    "@kano/styles": "^3.0.16",
     "@polymer/iron-autogrow-textarea": "^3.0.1",
     "@polymer/iron-flex-layout": "^3.0.1",
     "@polymer/iron-icon": "^3.0.1",
@@ -28,7 +28,7 @@
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^3.0.15",
+    "@kano/demo-helpers": "^3.0.16",
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/web-tester": "^1.0.0-alpha.8",
