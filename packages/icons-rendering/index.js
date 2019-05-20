@@ -1,7 +1,3 @@
-function toSrc(data) {
-    return `data:image/svg+xml;utf8,${encodeURIComponent(data)}`;
-}
-
 function toTemplate(string) {
     const template = document.createElement('template');
     template.innerHTML = string;
@@ -11,6 +7,8 @@ function toTemplate(string) {
 function litteral(strings, ...values) {
     return values.reduce((acc, v, idx) => `${acc}${v}${strings[idx + 1]}`, strings[0]).trim();
 }
+
+export const toSrc = data => `data:image/svg+xml;utf8,${encodeURIComponent(data)}`;
 
 export const svg = (strings, ...values) => toTemplate(litteral(strings, ...values));
 

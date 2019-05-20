@@ -20,5 +20,8 @@
     "eslint": "^5.12.1",
     "eslint-plugin-import": "^2.15.0"
   },
-  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
+  "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380",
+  "dependencies": {
+    "@kano/icons-rendering": "^3.0.15"
+  }
 }
