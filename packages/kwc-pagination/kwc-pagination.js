@@ -1,68 +1,234 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@polymer/polymer/lib/elements/dom-if.js';
-import button from '@kano/styles/button.js';
+import '@polymer/iron-icon/iron-icon.js';
+import '@kano/kwc-icons/kwc-ui-icons.js';
+import '@kano/styles/typography.js';
+import '@kano/styles/color.js';
+
 
 class KWCPagination extends PolymerElement {
     static get template() {
         return html`
-        ${button}
         <style>
             :host {
-                display: block;
-            }
-            .btn.item {
-                width: 32px;
-                max-width: 100px;
-                padding: 0;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                align-items: center;
             }
             *[hidden] {
                 display: none;
             }
+            .item,
+            .item[disabled]:hover {
+                margin: 0px 5px;
+                width: 32px;
+                line-height: 32px;
+                border-radius: 32px;
+                max-width: 100px;
+                padding: 0;
+                display: block;
+
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--button-secondary-color);
+
+                font-size: 16px;
+                font-family: var(--font-body);
+                font-weight: bold;
+                cursor: default;
+            }
+            .item.active {
+                background: var(--button-secondary-color);
+                color: white;
+            }
+            .item:hover {
+                color: var(--button-secondary-hover-color);
+                cursor: pointer;
+            }
+            .item.active:hover {
+                color: white;
+                background: var(--button-secondary-hover-color);
+            }
+            .item.hidden {
+                visibility: hidden;
+            }
+            .rewind.first, .step.previous {
+                justify-self: flex-start;
+            }
+            .rewind.first {
+                margin-left: 20px;
+            }
+            .step.previous {
+                margin-right: auto;
+            }
+            .step.next {
+                margin-left: auto;
+            }
+            .rewind.last {
+                margin-right: 20px;
+            }
+            .rewind.last, .step.next {
+                justify-self: flex-end;
+            }
+            .pagination-icon {
+                width: 10px;
+                height: 10px;
+                display: block;
+            }
+            .pagination-icon.first {
+                transform: rotate(90deg);
+            }
+            .pagination-icon.last {
+                transform: rotate(-90deg);
+            }
+            .rewind {
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--button-secondary-color);
+                display: flex;
+                flex-direction: row;
+            }
+            .rewind[disabled],
+            .rewind[disabled]:hover {
+                color: var(--color-grey) !important;
+                opacity: 0.5;
+                cursor: default;
+            }
+            .rewind:hover,
+            .rewind:focus {
+                color: var(--button-secondary-hover-color);
+                cursor: pointer;
+            }
+            .step,
+            .step:focus {
+                background: transparent;
+                outline: none;
+                border: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+            .step .arrow,
+            .step:focus .arrow {
+                width: 24px;
+                height: 24px;
+                border-radius: 24px;
+                background: var(--button-secondary-color);
+                color: white;
+                display: flex;
+            }
+            .step .arrow .pagination-icon {
+                margin: auto;
+            }
+            .step .label,
+            .step:focus .label {
+                font-size: 16px;
+                font-family: var(--font-body);
+                font-weight: bold;
+                color: var(--button-secondary-color);
+            }
+            .step.previous .label {
+                margin-left: 10px;
+            }
+            .step.next .label {
+                margin-right: 10px;
+            }
+            .step[disabled],
+            .step[disabled]:hover {
+                cursor: default;
+            }
+            .step[disabled] .arrow,
+            .step[disabled]:hover .arrow {
+                background: var(--color-grey) !important;
+                opacity: 0.5;
+            }
+            .step[disabled] .label,
+            .step[disabled]:hover .label {
+                color: var(--color-grey) !important;
+                opacity: 0.5;
+            }
+            .step:hover {
+                cursor: pointer;
+            }
+            .step:hover .arrow {
+                background: var(--button-primary-color);
+            }
+            .step:hover .label {
+                color: var(--button-secondary-hover-color);
+            }
+            .item,
+            .rewind,
+            .step .label,
+            .step .arrow {
+                transition-property: background, border-color, color;
+                transition-duration: 0.2s;
+                transition-timing-function: ease;
+            }
             @media all and (max-width: 680px) {
-                :host {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    justify-content: center;
-                }
                 .item {
                     display: none;
-                }
-                .btn.secondary ~ .btn.secondary {
-                    margin-left: 8px;
                 }
             }
         </style>
 
         <template is="dom-if" if="[[jumpControls]]">
-            <button class="btn secondary first" on-click="_goToFirstPage" disabled$="[[_isFirstPage(currentPage, totalPages)]]">
-                <slot name="firstPage">&lt;&lt;</slot>
+            <button class="rewind first" on-click="_goToFirstPage" disabled$="[[_isFirstPage(currentPage, totalPages)]]">
+                <slot name="firstPage">
+                    <iron-icon class="pagination-icon first" icon="kwc-ui-icons:arrow" slot="firstPage"></iron-icon>
+                    <iron-icon class="pagination-icon first" icon="kwc-ui-icons:arrow" slot="firstPage"></iron-icon>
+                </slot>
             </button>
         </template>
 
         <template is="dom-if" if="[[paginationControls]]">
-            <button class="btn secondary previous" on-click="_previousPage" disabled$="[[_isFirstPage(currentPage, totalPages)]]">
-                <slot name="previousPage">PREV</slot>
+            <button class="step previous" on-click="_previousPage" disabled$="[[_isFirstPage(currentPage, totalPages)]]">
+                <slot name="previousPage">
+                    <div class="arrow">
+                        <iron-icon class="pagination-icon first" icon="kwc-ui-icons:arrow"></iron-icon>
+                    </div>
+                    <div class="label">Prev</div>
+                </slot>
             </button>
         </template>
 
         <template is="dom-repeat" items="[[_pages]]">
-            <button class$="btn [[_computeActiveClass(item, currentPage)]] item" on-click="_goToPage">
+            <button class$="[[_computeActiveClass(item, currentPage)]] item" on-click="_goToPage">
                 [[item]]
             </button>
         </template>
 
+        <template is="dom-if" if="[[lastPage]]">
+            <button class$="[[_computeHiddenClass(_pages, totalPages)]] item" disabled>
+                ...
+            </button>
+            <button class$="[[_computeHiddenClass(_pages, totalPages)]] item" on-click="_goToLastPage">
+                [[totalPages]]
+            </button>
+        </template>
+
         <template is="dom-if" if="[[paginationControls]]">
-            <button class="btn secondary next" on-click="_nextPage" disabled$="[[_isLastPage(currentPage, totalPages)]]">
-                <slot name="nextPage">NEXT</slot>
+            <button class="step next" on-click="_nextPage" disabled$="[[_isLastPage(currentPage, totalPages)]]">
+                <slot name="nextPage">
+                    <div class="label">Next</div>
+                    <div class="arrow">
+                        <iron-icon class="pagination-icon last" icon="kwc-ui-icons:arrow"></iron-icon>
+                    </div>
+                </slot>
             </button>
         </template>
 
         <template is="dom-if" if="[[jumpControls]]">
-            <button class="btn secondary last" on-click="_goToLastPage" disabled$="[[_isLastPage(currentPage, totalPages)]]">
-                <slot name="lastPage">&gt;&gt;</slot>
+            <button class="rewind last" on-click="_goToLastPage" disabled$="[[_isLastPage(currentPage, totalPages)]]">
+                <slot name="lastPage">
+                    <iron-icon class="pagination-icon last" icon="kwc-ui-icons:arrow" slot="lastPage"></iron-icon>
+                    <iron-icon class="pagination-icon last" icon="kwc-ui-icons:arrow" slot="lastPage"></iron-icon>
+                </slot>
             </button>
         </template>
 `;
@@ -121,6 +287,14 @@ class KWCPagination extends PolymerElement {
                 default: false,
             },
             /**
+             * Flags if pagination should display the last page number.
+             * @type {Boolean}
+             */
+            lastPage: {
+                type: Boolean,
+                default: false,
+            },
+            /**
              * Array of page indexes to be displayed, calculated based
              * on the `totalPages`, `range` and the `currentPage`.
              * @type {Array}
@@ -140,14 +314,14 @@ class KWCPagination extends PolymerElement {
 
         if (totalPages <= range) {
             /**
-             * The amount of pages is smaller than the range:
+             * The number of pages is smaller than the range:
              * add as many pages as there are
              */
             for (let i = startsOn; i < totalPages + startsOn; i += 1) {
                 pages.push(i);
             }
         /**
-         * The amount of pages is bigger than the range:
+         * The number of pages is bigger than the range:
          * only show a number of pages equal to the range
          *
          * If current page is not on the last pages
@@ -174,6 +348,10 @@ class KWCPagination extends PolymerElement {
         }
         return pages;
     }
+    _computeHiddenClass(pages, totalPages) {
+        const lastPageInRange = pages[pages.length - 1];
+        return totalPages <= lastPageInRange ? 'hidden' : '';
+    }
     _goToPage(e) {
         const page = parseInt(e.model.item, 10);
         this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: page }));
@@ -193,7 +371,7 @@ class KWCPagination extends PolymerElement {
         this.dispatchEvent(new CustomEvent('go-to-page', { bubbles: false, detail: this.startsOn }));
     }
     _computeActiveClass(item, selected) {
-        return this._isActive(item, selected) ? '' : 'secondary';
+        return this._isActive(item, selected) ? 'active' : '';
     }
     _isActive(page, current) {
         return page === current;
