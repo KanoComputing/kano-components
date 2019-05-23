@@ -1,6 +1,9 @@
-# <kwc-pagination>
+# \<kwc-pagination\>
 
 A configurable page navigation bar.
+
+<img width="673" src="https://user-images.githubusercontent.com/169328/58256498-04f85d80-7d67-11e9-84ee-b81c29fcece3.png">
+
 
 ## Installation
 
@@ -30,5 +33,6 @@ The following properties are available:
  - `range`: A number defining the number of pages to display between the bar controls
  - `paginationControls`: Turn on or off the next and previous buttons
  - `jumpControls`: Turn on or off the got to last and got to first buttons
+ - `lastPage`: Turn on or off showing the last page at the end
 
 This element dispatches one event: `go-to-page`. This event signals that the user chose a page to go to. Use this data to update the selected page
