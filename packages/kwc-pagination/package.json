@@ -1,7 +1,7 @@
 {
   "description": "UI for pagination",
   "name": "@kano/kwc-pagination",
-  "version": "3.0.16",
+  "version": "3.0.17",
   "main": "kwc-pagination.js",
   "scripts": {
     "serve": "es6-server",
