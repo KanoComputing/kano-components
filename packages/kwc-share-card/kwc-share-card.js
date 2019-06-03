@@ -1,15 +1,16 @@
+import '@polymer/paper-spinner/paper-spinner.js';
+import '@polymer/iron-image/iron-image.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@kano/styles/typography.js';
+import '@kano/styles/color.js';
+import { timeAgo, timeSince } from './timeago.js';
+
 /**
 `kwc-share-card`
 Display a creation made with Kano Code.
 
 @demo demo/index-card.html
 */
-import '@polymer/paper-spinner/paper-spinner.js';
-import '@polymer/iron-image/iron-image.js';
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '@kano/styles/typography.js';
-import '@kano/styles/color.js';
-
 class KwcShareCard extends PolymerElement {
     static get template() {
         return html`
@@ -122,7 +123,7 @@ class KwcShareCard extends PolymerElement {
                 <div class="title-icon"><slot name="title-icon"></slot></div>
             </div>
             <div class="username" on-click="_onTapUsername">
-                by <span class="username-text"> [[username]]</span> [[_timeSince(date)]] ago
+                [[_(byLabel, 'by')]] <span class="username-text"> [[username]]</span>[[_(prefixAgo, '')]] [[_timeSince(date, timeAgoLocales)]] [[_(suffixAgo, 'ago')]]
             </div>
             <div id="actions">
                 <slot name="actions"></slot>
@@ -168,7 +169,14 @@ class KwcShareCard extends PolymerElement {
                 type: String,
                 computed: '_computeAvatar(avatar.urls.world, avatar.urls.circle, user.*)',
             },
+            byLabel: String,
+            prefixAgo: String,
+            suffixAgo: String,
+            timeAgoLocales: Object,
         };
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' ? fallback : v;
     }
     /**
      * Computes which avatar source (`src`) to be used. If user has
@@ -218,35 +226,8 @@ class KwcShareCard extends PolymerElement {
     /**
     * Computes the day/time a share was created
     */
-    _timeSince(date) {
-        const UTCDate = /Z$/.test(date) ? date : `${date}Z`;
-        const parsedDate = new Date(Date.parse(UTCDate));
-        const seconds = Math.floor((new Date() - parsedDate) / 1000);
-        let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'year');
-        }
-        interval = Math.floor(seconds / 2592000);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'month');
-        }
-        interval = Math.floor(seconds / 86400);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'day');
-        }
-        interval = Math.floor(seconds / 3600);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'hour');
-        }
-        interval = Math.floor(seconds / 60);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'minute');
-        }
-        return `${Math.floor(seconds)} seconds`;
-    }
-    multipleCheck(interval, unit) {
-        const baseDate = `${interval} ${unit}`;
-        return interval === 1 ? baseDate : `${baseDate}s`;
+    _timeSince(date, locales) {
+        return timeSince(date, locales);
     }
 }
 

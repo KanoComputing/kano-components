@@ -133,7 +133,7 @@ const card = html`
     }
 </style>
 
-<kwc-share-card id="share-card" title="Kevin86's Goes to the MOON" username="Kevin86" date="2017-05-23T10:48:21.053Z">
+<kwc-share-card id="share-card" title="Kevin86's Goes to the MOON" username="Kevin86" date="2019-05-23T10:48:21.053Z">
     <iron-image slot="cover" style="width: 100%; height: 192px;" src="https://hoc-staging.kano.me/assets/images/build_challenges/orbit_moon.svg"
         sizing="cover" preload fade>
     </iron-image>
@@ -176,4 +176,34 @@ demo('kwc-share-card', card, (element) => {
     shareCard.addEventListener('username-tapped', () => {
         console.log('demo', 'username tapped');
     });
+});
+
+demo('kwc-share-card i18n', card, (element) => {
+    const shareCard = element.parentNode.querySelector('kwc-share-card');
+    const avatar = {
+        urls: {
+            circle: 'https://s3-eu-west-1.amazonaws.com/world.kano.me/users/avatars/568ba6fb26c95db40e5af0e6/avatar-circle.png',
+            landscape: 'https://s3-eu-west-1.amazonaws.com/world.kano.me/users/avatars/568ba6fb26c95db40e5af0e6/avatar-landscape.png',
+            character: 'https://s3-eu-west-1.amazonaws.com/world.kano.me/users/avatars/568ba6fb26c95db40e5af0e6/avatar-character.png',
+        },
+    };
+
+    shareCard.byLabel = 'par';
+    shareCard.prefixAgo = 'il y a';
+    shareCard.suffixAgo = '';
+    shareCard.timeAgoLocales = {
+        seconds: "moins d'une minute",
+        minute: 'environ une minute',
+        minutes: 'environ %d minutes',
+        hour: 'environ une heure',
+        hours: 'environ %d heures',
+        day: 'environ un jour',
+        days: 'environ %d jours',
+        month: 'environ un mois',
+        months: 'environ %d mois',
+        year: 'un an',
+        years: '%d ans',
+    };
+
+    shareCard.set('avatar', avatar);
 });

@@ -499,7 +499,7 @@ class KwcShareDetail extends PolymerElement {
                                 <iron-image class="featured-icon" src="[[_featuredIconUrl]]" sizing="contain" hidden$="[[!featured]]" alt="Staff pick" title="Staff pick" preload fade>
                                 </iron-image>
                             </h3>
-                            <h4 class="attribution">by
+                            <h4 class="attribution">[[_(byLabel, 'by')]]
                                 <a class="author" on-click="_onUserTapped">[[shareData.username]]</a>
                             </h4>
                             <p class="description">[[shareData.description]]</p>
@@ -512,10 +512,10 @@ class KwcShareDetail extends PolymerElement {
                                 </button>
                             </template>
                             <template is="dom-if" if="[[_showRemixButton(shareData, canRemix)]]">
-                                <button class="btn action remix" on-click="_onRemixTapped">${remix}<div>Remix</div></button>
+                                <button class="btn action remix" on-click="_onRemixTapped">${remix}<div>[[_(remixLabel, 'Remix')]]</div></button>
                             </template>
                             <template is="dom-if" if="[[_showCodeButton(shareData)]]">
-                                <button class="btn action view-code" on-click="_toggleCodeView">${code}<div>View&nbsp;code</div></button>
+                                <button class="btn action view-code" on-click="_toggleCodeView">${code}<div>[[_(viewCodeLabel, 'View&nbsp;code')]]</div></button>
                             </template>
                             <button class$="btn action [[_computeClass(dropDownOpened, 'active')]]" id="more-actions-button" on-click="_onMoreActionsTapped">
                                 <div class="ellipsis">
@@ -527,15 +527,15 @@ class KwcShareDetail extends PolymerElement {
                                     <kwc-drop-down-item class="feature" icon="kwc-ui-icons:rosette" on-click="_onFeatureTapped">[[_computeFeatureButtonText(featured)]]</kwc-drop-down-item>
                                 </template>
                                 <template is="dom-if" if="[[_displayMetaActions]]">
-                                    <kwc-drop-down-item class="delete" icon="kwc-ui-icons:rubbish-bin" on-click="_onDeleteTapped">Delete</kwc-drop-down-item>
+                                    <kwc-drop-down-item class="delete" icon="kwc-ui-icons:rubbish-bin" on-click="_onDeleteTapped">[[_(deleteLabel, 'Delete')]]</kwc-drop-down-item>
                                 </template>
                                 <kwc-drop-down-item id="drop-down-flag" class$="flag no-margin [[_computeFlagStatus(flags.*)]]" icon="kwc-social-icons:flag" on-click="_onFlagTapped"></kwc-drop-down-item>
                             </kwc-drop-down>
                         </div>
                         <div class="stats">
-                            <span hidden$="[[!likes.length]]">[[likes.length]] Likes</span>
-                            <span hidden$="[[!comments.count]]">[[comments.count]] Comments</span>
-                            <span hidden$="[[!shareData.views_count]]">[[shareData.views_count]] Views</span>
+                            <span hidden$="[[!likes.length]]">[[likes.length]] [[_(likeCountLabel, 'Likes')]]</span>
+                            <span hidden$="[[!comments.count]]">[[comments.count]] [[_(commentCountLabel, 'Comments')]]</span>
+                            <span hidden$="[[!shareData.views_count]]">[[shareData.views_count]] [[_(viewsCountLabel, 'Views')]]</span>
                         </div>
                     </div>
                 </div>
@@ -554,7 +554,7 @@ class KwcShareDetail extends PolymerElement {
             <div class="supplementary-details">
                 <template is="dom-if" if="[[_showRelatedShares(related)]]">
                     <div class="related-shares">
-                        <div class="sidebar-section-header">More from [[shareData.username]]</div>
+                        <div class="sidebar-section-header">[[_(moreFromLabel, 'More from')]] [[shareData.username]]</div>
                         <div class="related-shares-list">
                             <template is="dom-repeat" items="[[related]]">
                                 <a href="[[item.targetUrl]]">
@@ -567,12 +567,12 @@ class KwcShareDetail extends PolymerElement {
                 </template>
                 <template is="dom-if" if="[[_wandHardwareUsed(shareData.hardware)]]">
                     <div class="parts-used">
-                        <div class="sidebar-section-header">Hold down the button on your wand to see the spell motions in this creation</div>
+                        <div class="sidebar-section-header">[[_(wandSpellLabel, 'Hold down the button on your wand to see the spell motions in this creation')]]</div>
                     </div>
                 </template>
                 <template is="dom-if" if="[[_anyHardwareUsed(shareData.hardware)]]">
                     <div class="parts-used">
-                        <div class="sidebar-section-header">Parts Used</div>
+                        <div class="sidebar-section-header">[[_(partsUsedLabel, 'Parts Used')]]</div>
                         <ul class="parts-used-list">
                             <template is="dom-repeat" items="[[shareData.hardware]]">
                                 <li>
@@ -586,7 +586,7 @@ class KwcShareDetail extends PolymerElement {
                     </div>
                 </template>
                 <div class="social" hidden$="[[hideSocial]]">
-                    <div class="sidebar-section-header">Share</div>
+                    <div class="sidebar-section-header">[[_(shareLabel, 'Share')]]</div>
                     <ul class="social-actions">
                         <li class="social-action">
                             <button class="social-button facebook" on-click="_onFacebookTapped">
@@ -702,7 +702,6 @@ class KwcShareDetail extends PolymerElement {
             flags: {
                 type: Object,
                 value: () => ({}),
-                observer: 'updateFlagButton',
             },
             /**
                * From flags, but checks if flags exist
@@ -866,12 +865,48 @@ class KwcShareDetail extends PolymerElement {
                 type: Boolean,
                 value: false,
             },
+            byLabel: String,
+            remixLabel: String,
+            viewCodeLabel: String,
+            deleteLabel: String,
+            likeCountLabel: String,
+            commentCountLabel: String,
+            viewsCountLabel: String,
+            moreFromLabel: String,
+            wandSpellLabel: String,
+            partsUsedLabel: String,
+            shareLabel: String,
+            unflagLabel: String,
+            flagLabel: String,
         };
     }
     static get observers() {
         return [
             '_shareDataChanged(shareData.*)',
+            'updateFlagButton(flags, unflagLabel, flagLabel)',
         ];
+    }
+    constructor() {
+        super();
+        this.byLabel = null;
+        this.remixLabel = null;
+        this.viewCodeLabel = null;
+        this.deleteLabel = null;
+        this.likeCountLabel = null;
+        this.commentCountLabel = null;
+        this.viewsCountLabel = null;
+        this.moreFromLabel = null;
+        this.wandSpellLabel = null;
+        this.partsUsedLabel = null;
+        this.shareLabel = null;
+        this.unflagLabel = null;
+        this.flagLabel = null;
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' || v === null ? fallback : v;
+    }
+    get commentsElement() {
+        return this.shadowRoot.querySelector('#comments');
     }
     _computeClass(value, className) {
         return value ? className : '';
@@ -908,7 +943,7 @@ class KwcShareDetail extends PolymerElement {
         return flags.shares.some(flag => flag === this.shareData.id);
     }
     updateFlagButton() {
-        const text = this._computeFlagged(this.flags) ? 'Unflag' : 'Flag';
+        const text = this._computeFlagged(this.flags) ? this._(this.unflagLabel, 'Unflag') : this._(this.flagLabel, 'Flag');
         this.$['drop-down-flag'].innerText = text;
     }
     _computeFlagStatus() {
@@ -1099,7 +1134,7 @@ class KwcShareDetail extends PolymerElement {
         const activeClass = flagged ? 'unflagged' : 'flagged';
         const flagButton = this.$['drop-down-flag'];
         flagButton.setAttribute('class', `flag ${activeClass}`);
-        flagButton.innerText = flagged ? 'Flag' : 'Unflag';
+        flagButton.innerText = flagged ? this._(this.flagLabel, 'Flag') : this._(this.unflagLabel, 'Unflag');
         this.dispatchEvent(new CustomEvent('action-click', {
             detail: {
                 action: 'flag',

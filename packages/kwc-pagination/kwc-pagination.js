@@ -192,7 +192,7 @@ class KWCPagination extends PolymerElement {
                     <div class="arrow">
                         <iron-icon class="pagination-icon first" icon="kwc-ui-icons:arrow"></iron-icon>
                     </div>
-                    <div class="label">Prev</div>
+                    <div class="label">[[_(prevLabel, 'Prev')]]</div>
                 </slot>
             </button>
         </template>
@@ -215,7 +215,7 @@ class KWCPagination extends PolymerElement {
         <template is="dom-if" if="[[paginationControls]]">
             <button class="step next" on-click="_nextPage" disabled$="[[_isLastPage(currentPage, totalPages)]]">
                 <slot name="nextPage">
-                    <div class="label">Next</div>
+                    <div class="label">[[_(nextLabel, 'Next')]]</div>
                     <div class="arrow">
                         <iron-icon class="pagination-icon last" icon="kwc-ui-icons:arrow"></iron-icon>
                     </div>
@@ -303,8 +303,17 @@ class KWCPagination extends PolymerElement {
                 type: Array,
                 computed: '_computePages(currentPage, totalPages, range)',
             },
-
+            nextLabel: String,
+            prevLabel: String,
         };
+    }
+    constructor() {
+        super();
+        this.nextLabel = null;
+        this.prevLabel = null;
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' || v === null ? fallback : v;
     }
     _computePages(currentPage, totalPages = 1, range) {
         const pages = [];

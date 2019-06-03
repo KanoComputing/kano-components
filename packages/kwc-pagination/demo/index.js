@@ -31,3 +31,7 @@ demo('kwc-pagination starts on', start, (element) => {
         element.set('currentPage', e.detail);
     });
 });
+demo('kwc-pagination i18n', start, (element) => {
+    element.nextLabel = 'Suivant';
+    element.prevLabel = 'Precedent';
+});

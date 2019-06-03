@@ -84,7 +84,7 @@ class KwcFollowItem extends PolymerElement {
                     [[username]]
                 </div>
                 <div class="level">
-                    Level [[level]]
+                    [[_(levelLabel, 'Level')]] [[level]]
                 </div>
             </div>
             <div class="follow-button">
@@ -112,7 +112,12 @@ class KwcFollowItem extends PolymerElement {
                 type: Boolean,
                 value: false,
             },
+            levelLabel: String,
         };
+    }
+    constructor() {
+        super();
+        this.levelLabel = null;
     }
     _onTapFollow() {
         let eventName = 'follow';
@@ -127,6 +132,9 @@ class KwcFollowItem extends PolymerElement {
             bubbles: false,
             detail: this.username,
         }));
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' || v === null ? fallback : v;
     }
 }
 
