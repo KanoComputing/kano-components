@@ -56,7 +56,7 @@ class KwcBadgeListing extends PolymerElement {
         <template is="dom-if" if="[[!badges.length]]">
             <div class="loader">
                 <div class="loader-label">
-                    Loading...
+                    [[_(loadingLabel, 'Loading...')]]
                 </div>
                 <paper-spinner-lite active="[[!badges.length]]">
                 </paper-spinner-lite>
@@ -85,7 +85,15 @@ class KwcBadgeListing extends PolymerElement {
                 type: Boolean,
                 value: false,
             },
+            loadingLabel: String,
         };
+    }
+    constructor() {
+        super();
+        this.loadingLabel = null;
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' || v === null ? fallback : v;
     }
 }
 

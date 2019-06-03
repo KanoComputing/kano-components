@@ -75,6 +75,7 @@ import button from '@kano/styles/button.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { rubbishBin } from '@kano/icons/ui.js';
 import { flag } from '@kano/icons/social.js';
+import { timeSince } from '@kano/kwc-share-card/timeago.js';
 
 class KwcSocialComments extends PolymerElement {
     static get template() {
@@ -286,10 +287,10 @@ class KwcSocialComments extends PolymerElement {
                 <input id="comment-input" class="comment-box" type="text" placeholder$="[[_placeholderText]]" value="{{_comment::input}}" disabled$="[[posting]]" on-focus="_toggleFormControls" on-keydown="_dialogKeydown">
                 <div class="comment-form-actions">
                     <button class="btn submit" type="submit" on-tap="_submitComment" disabled="[[!_commentValid]]">
-                        Submit
+                        [[_(submitLabel, 'Submit')]]
                     </button>
                     <button class="btn secondary" on-tap="_cancelComment">
-                        Cancel
+                        [[_(cancelLabel, 'Cancel')]]
                     </button>
                 </div>
             </form>
@@ -305,7 +306,7 @@ class KwcSocialComments extends PolymerElement {
                             [[comment.author.username]]
                         </span>
                         <span class="date">
-                            [[_timeSince(comment.date_created, comments.*)]] ago
+                            [[_(agoPrefix, '')]] [[_timeSince(comment.date_created, comments.*, timeAgoLocales)]] [[_(agoSuffix, 'ago')]]
                         </span>
                     </p>
                     <p class="comment-body">
@@ -327,13 +328,13 @@ class KwcSocialComments extends PolymerElement {
                         </button>
                     </div>
                     <button id="retry" class="btn secondary s" on-tap="_retryButtonTapped" hidden$="[[!comment.error]]" type="warning">
-                        retry
+                        [[_(retryLabel, 'retry')]]
                     </button>
                 </div>
             </div>
         </template>
         <button class="btn secondary loader" id="loader" type="secondary" on-tap="_loadMoreData">
-            Load more
+            [[_loadMoreLabel, 'Load more')]]
         </button>
     `;
     }
@@ -456,7 +457,26 @@ class KwcSocialComments extends PolymerElement {
                 type: Object,
                 value: () => ({}),
             },
+            loadMoreLabel: String,
+            retryLabel: String,
+            agoSuffix: String,
+            agoPrefix: String,
+            submitLabel: String,
+            cancelLabel: String,
+            timeAgoLocales: Object,
         };
+    }
+    constructor() {
+        super();
+        this.loadMoreLabel = null;
+        this.retryLabel = null;
+        this.agoSuffix = null;
+        this.agoPrefix = null;
+        this.submitLabel = null;
+        this.cancelLabel = null;
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' || v === null ? fallback : v;
     }
     _dialogKeydown(e) {
         if (e.keyCode === 8) {
@@ -625,34 +645,8 @@ class KwcSocialComments extends PolymerElement {
             this._comment = '';
         }
     }
-    _timeSince(date) {
-        const parsedDate = new Date(Date.parse(date));
-        const seconds = Math.floor((new Date() - parsedDate) / 1000);
-        let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'year');
-        }
-        interval = Math.floor(seconds / 2592000);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'month');
-        }
-        interval = Math.floor(seconds / 86400);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'day');
-        }
-        interval = Math.floor(seconds / 3600);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'hour');
-        }
-        interval = Math.floor(seconds / 60);
-        if (interval >= 1) {
-            return this.multipleCheck(interval, 'minute');
-        }
-        return `${Math.floor(seconds)} seconds`;
-    }
-    multipleCheck(interval, unit) {
-        const baseDate = `${interval} ${unit}`;
-        return interval === 1 ? baseDate : `${baseDate}s`;
+    _timeSince(date, _, locales) {
+        return timeSince(date, locales);
     }
     _userTapped(e) {
         const { index } = e.model;

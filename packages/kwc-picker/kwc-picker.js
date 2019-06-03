@@ -185,7 +185,7 @@ class KwcPicker extends PolymerElement {
                 <div class="search" hidden$="[[!filter]]">
                     <input
                         type="search"
-                        placeholder="Search"
+                        placeholder$="[[_(searchLabel, 'Search')]]"
                         value="{{_search::input}}">
                 </div>
             </div>
@@ -247,7 +247,15 @@ class KwcPicker extends PolymerElement {
                 type: String,
                 value: null,
             },
+            searchLabel: String,
         };
+    }
+    constructor() {
+        super();
+        this.searchLabel = null;
+    }
+    _(v, fallback) {
+        return typeof v === 'undefined' || v === null ? fallback : v;
     }
     scrollToSelected() {
         if (this.selectedIndex !== undefined) {
