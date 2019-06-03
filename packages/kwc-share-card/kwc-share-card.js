@@ -3,7 +3,7 @@ import '@polymer/iron-image/iron-image.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
-import { timeAgo, timeSince } from './timeago.js';
+import { timeSince } from './timeago.js';
 
 /**
 `kwc-share-card`
