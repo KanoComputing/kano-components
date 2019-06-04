@@ -463,6 +463,8 @@ class KwcSocialComments extends PolymerElement {
             agoPrefix: String,
             submitLabel: String,
             cancelLabel: String,
+            leaveCommentLabel: String,
+            beTheFirstLabel: String,
             timeAgoLocales: Object,
         };
     }
@@ -474,6 +476,8 @@ class KwcSocialComments extends PolymerElement {
         this.agoPrefix = null;
         this.submitLabel = null;
         this.cancelLabel = null;
+        this.leaveCommentLabel = null;
+        this.beTheFirstLabel = null;
     }
     _(v, fallback) {
         return typeof v === 'undefined' || v === null ? fallback : v;
@@ -550,9 +554,9 @@ class KwcSocialComments extends PolymerElement {
     }
     _computePlaceholderText(comments) {
         if (!comments || !comments.length) {
-            return 'Be the first to comment';
+            return this._(this.beTheFirstLabel, 'Be the first to comment');
         }
-        return 'Leave a comment';
+        return this._(this.leaveCommentLabel, 'Leave a comment');
     }
     _computePostingClass(comment) {
         return `${comment.posting ? 'posting' : ''}${comment.error ? 'error' : ''}`;

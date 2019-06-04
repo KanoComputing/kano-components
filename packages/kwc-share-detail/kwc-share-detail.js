@@ -878,6 +878,8 @@ class KwcShareDetail extends PolymerElement {
             shareLabel: String,
             unflagLabel: String,
             flagLabel: String,
+            likedLabel: String,
+            likeLabel: String,
         };
     }
     static get observers() {
@@ -901,6 +903,8 @@ class KwcShareDetail extends PolymerElement {
         this.shareLabel = null;
         this.unflagLabel = null;
         this.flagLabel = null;
+        this.likedLabel = null;
+        this.likeLabel = null;
     }
     _(v, fallback) {
         return typeof v === 'undefined' || v === null ? fallback : v;
@@ -1000,7 +1004,7 @@ class KwcShareDetail extends PolymerElement {
         return `${baseClass} ${activeClass}`;
     }
     _computedLikeButtonText(liked) {
-        return liked ? 'Liked' : 'Like';
+        return liked ? this._(this.likedLabel, 'Liked') : this._(this.likeLabel, 'Like');
     }
     _computeFeatureButtonText(featured) {
         return featured ? 'Un-staff pick' : 'Staff pick';
