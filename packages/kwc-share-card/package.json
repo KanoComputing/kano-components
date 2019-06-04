@@ -1,7 +1,7 @@
 {
   "description": "Displays a creation made with Kano Code.",
   "name": "@kano/kwc-share-card",
-  "version": "3.0.17",
+  "version": "3.0.18",
   "main": "kwc-share-card.js",
   "scripts": {
     "serve": "es6-server",
