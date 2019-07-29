@@ -2,7 +2,6 @@ import { html, PolymerElement } from '@polymer/polymer/polymer-element.js';
 import '@polymer/iron-image/iron-image.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@kano/kwc-style/typography.js';
-import '@kano/kwc-style/color.js';
 
 import { assetsIcon, checkIcon } from './assets.js';
 
@@ -19,10 +18,10 @@ class KwcPicker extends PolymerElement {
         return html`
             <style>
                 :host {
-                    width: 170px;
+                    width: 169.22px;
                     padding: 8px 8px 0;
                     border-radius: 5px;
-                    background: var(--color-black);
+                    background: #292F35;
                     display: inline-flex;
                     flex-direction: column;
                     
@@ -37,27 +36,24 @@ class KwcPicker extends PolymerElement {
                     user-select: none;
                 }
                 .header {
-                    padding-top: 6px;
+                    padding-top: 5.5px;
                 }
                 .top {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                 }
-                .top__icon {
-                    display: var(--top-icon-display, inline-block);
-                }
                 .top svg {
-                    width: 10px;
+                    width: 10.2px;
                     position: relative;
-                    top: -1px;
+                    top: -0.7px;
                 }
                 .top .icon {
                     width: 16px;
                     height: 16px;
                 }
                 .top p {
-                    color: var(--color-grey);
+                    color: #9FA4A8;
                     margin: 0;
                     margin-left: 4px;
                 }
@@ -66,7 +62,7 @@ class KwcPicker extends PolymerElement {
                     color: #FFF;
                 }
                 .search {
-                    padding-top: 10px;
+                    padding-top: 9.5px;
                 }
                 .search input,
                 .search input::placeholder {
@@ -75,19 +71,19 @@ class KwcPicker extends PolymerElement {
                 }
                 .search input {
                     width: 100%;
-                    height: 30px;
+                    height: 30.25px;
                     border: none;
                     border-radius: 4px;
                     padding: 0 4px 0 12px;
-                    background: var(--color-chateau);
+                    background: #414A51;
                 }
                 .search input:focus {
                     outline: none;
                 }
                 .search input::-webkit-search-cancel-button {
                     -webkit-appearance: none;
-                    height: 14px;
-                    width: 14px;
+                    height: 13.41px;
+                    width: 13.41px;
                     border-radius: 10px;
                     /* background: url(/assets/search.svg); */
                     background-repeat: no-repeat;
@@ -98,7 +94,7 @@ class KwcPicker extends PolymerElement {
                 .content {
                     height: 220px;
                     overflow: auto;
-                    margin-top: 10px;
+                    margin-top: 9.5px;
                     -webkit-overflow-scrolling: touch;
                 }
                 .item {
@@ -106,7 +102,7 @@ class KwcPicker extends PolymerElement {
                     align-items: center;
                     justify-content: space-between;
                     margin: 8px 0;
-                    height: var(--kwc-box-height, 32px);
+                    height: 32px;
                 }
                 .item:first-child:not([hidden]){
                     margin-top: 0;
@@ -118,9 +114,9 @@ class KwcPicker extends PolymerElement {
                     cursor: pointer;
                 }
                 .item .image {
-                    width: var(--kwc-box-width, 32px);
-                    height: var(--kwc-box-height, 32px);
-                    background: var(--color-chateau);
+                    width: 32px;
+                    height: 32px;
+                    background: #414A51;
                     border-radius: 4px;
                     display: inline-flex;
                     align-items: center;
@@ -140,11 +136,11 @@ class KwcPicker extends PolymerElement {
                     fill: #FFF;
                 }
                 .item iron-image {
-                    width: var(--kwc-image-width, 24px);
-                    height: var(--kwc-image-height, 24px);
+                    width: 24px;
+                    height: 24px;
                 }
                 .item span {
-                    color: var(--color-grey);
+                    color: #9FA4A8;
                     margin-left: 10px;
                     transition: all 0.2s ease;
                     flex: 1;
@@ -159,15 +155,15 @@ class KwcPicker extends PolymerElement {
                     color: #FFF;
                 }
                 .content::-webkit-scrollbar {
-                    width: 5px;
+                    width: 5.25px;
                 }
                 .content::-webkit-scrollbar-track,
                 .content::-webkit-scrollbar-thumb {
                     border-radius: 8px;
                 }
                 .content::-webkit-scrollbar-track {
-                    background: var(--color-chateau);
-                    margin: 10px 0 8px;
+                    background: #414A51;
+                    margin: 9.5px 0 8px;
                 }
                 .content::-webkit-scrollbar-thumb {
                     background: #22272D;
@@ -178,14 +174,12 @@ class KwcPicker extends PolymerElement {
             </style>
             <div class="header">
                 <div class="top">
-                    <span class="top__icon">
-                        <template is="dom-if" if="[[!icon]]">
-                            ${assetsIcon}
-                        </template>
-                        <template is="dom-if" if="[[icon]]">
-                            <iron-image class="icon" src="[[icon]]" sizing="contain"></iron-image>
-                        </template>
-                    </span>
+                    <template is="dom-if" if="[[!icon]]">
+                        ${assetsIcon}
+                    </template>
+                    <template is="dom-if" if="[[icon]]">
+                        <iron-image class="icon" src="[[icon]]" sizing="contain"></iron-image>
+                    </template>
                     <p>[[name]]</p>
                 </div>
                 <div class="search" hidden$="[[!filter]]">
