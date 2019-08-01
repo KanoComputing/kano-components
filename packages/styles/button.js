@@ -125,7 +125,7 @@ export const button = html`
             padding: 0;
             width: 12px;
             height: 12px;
-            margin-right: 4px;
+            margin-right: 6px;
         }
         .btn.inverted:hover svg,
         .btn.inverted:focus svg {
