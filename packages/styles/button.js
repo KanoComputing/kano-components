@@ -106,7 +106,7 @@ export const button = html`
             margin-right: 9px;
         }
         /* INVERTED */
-        .btn.inverted {
+        .btn.inverted.secondary {
             background: none;
             padding: 0;
             margin: 0;
