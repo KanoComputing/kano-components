@@ -106,22 +106,30 @@ export const button = html`
             margin-right: 9px;
         }
         /* INVERTED */
-        .btn.inverted.secondary {
+        .btn.inverted {
             background: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
             color: var(--button-secondary-color);
-            fill: var(--button-secondary-color);
-            font-size: small;
         }
-        .btn.inverted.secondary:hover,
-        .btn.inverted.secondary:focus {
+        .btn.inverted:hover,
+        .btn.inverted:focus {
             background: none;
             color: var(--button-secondary-hover-color);
-            fill: var(--button-secondary-hover-color);
         }
         .btn.inverted svg {
+            background: none;
+            fill: var(--button-secondary-color);
+            border-radius: 0;
+            padding: 0;
             width: 12px;
             height: 12px;
             margin-right: 4px;
+        }
+        .btn.inverted:hover svg,
+        .btn.inverted:focus svg {
+            fill: var(--button-secondary-hover-color);
         }
     </style>
 `;
