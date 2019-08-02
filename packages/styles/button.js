@@ -105,6 +105,34 @@ export const button = html`
             height: 16px;
             margin-right: 9px;
         }
+
+        /* INVERTED */
+        .btn.inverted.secondary {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: var(--button-secondary-color);
+        }
+        .btn.inverted:hover,
+        .btn.inverted:focus {
+            background: none;
+            color: var(--button-secondary-hover-color);
+        }
+        .btn.inverted svg {
+            background: none;
+            border-radius: 0;
+            padding: 0;
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+        }
+        .btn.inverted svg * {
+            fill: var(--button-secondary-color);
+        }
+        .btn.inverted:hover svg *,
+        .btn.inverted:focus svg * {
+            fill: var(--button-secondary-hover-color);
+        }
     </style>
 `;
 
