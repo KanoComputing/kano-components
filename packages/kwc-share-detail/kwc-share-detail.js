@@ -83,13 +83,11 @@ class KwcShareDetail extends PolymerElement {
             #share-container {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 animation: fade-in 200ms linear;
                 z-index: 10;
             }
             .share-content .content {
                 min-height: var(--kw-share-detail-player-height, 480px);
-                height: var(--kw-share-detail-player-height, 480px);
                 position: relative;
             }
             #share-container,
@@ -108,7 +106,7 @@ class KwcShareDetail extends PolymerElement {
                 background-color: transparent;
                 height: 100%;
                 margin: 0 auto;
-                max-width: 800px;
+                max-width: 750px;
                 width: 100%;
             }
             .share-content .content .featured {
@@ -120,22 +118,9 @@ class KwcShareDetail extends PolymerElement {
                 margin: 0;
             }
             kwc-share-player {
-                --kwc-share-player-height: 480px;
                 position: relative;
             }
-            @media all and (max-width: 680px) {
-                .share-content .content .featured,
-                #share-container>* {
-                    max-height: calc(100% - 60px);
-                    padding: 0 20px;
-                }
-            }
-            @media all and (min-width: 681px) {
-                .share-content .content .featured,
-                #share-container>* {
-                    max-height: calc(100% - 50px);
-                }
-            }
+           
             .share-detail {
                 max-width: var(--content-width);
                 position: relative;
@@ -431,7 +416,12 @@ class KwcShareDetail extends PolymerElement {
                 .supplementary-details .actions {
                     margin: 0 0 36px 0;
                 }
+                kwc-share-player {
+                     max-width: 630px;
+                }
             }
+            
+
             @media all and (min-width: 581px) and (max-width: 780px) {
                 .supplementary-details {
                     padding: 0 0 0 36px;
@@ -462,6 +452,30 @@ class KwcShareDetail extends PolymerElement {
                     padding: 32px 40px 32px 44px;
                 }
             }
+
+            @media all and (max-width: 680px) {
+                .share-content .content {
+                    min-height: var(--kw-share-detail-player-height, 480px);
+                }
+            }
+            @media all and (max-width: 600px) {
+                .share-content .content .featured,
+                #share-container>* {
+                    max-height: calc(100% - 60px);
+                }
+                .share-content .content {
+                    min-height: var(--kw-share-detail-player-height, 440px);
+                }
+                kwc-share-player {
+                     max-width: 100%;
+                }
+            }
+            @media all and (max-width: 450px) {
+                .share-content .content {
+                    min-height: var(--kw-share-detail-player-height, 300px);
+                }
+            }
+
         </style>
         <div id="share" class="share">
             <div class="content-prefix">
