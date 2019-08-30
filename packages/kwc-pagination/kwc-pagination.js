@@ -16,6 +16,7 @@ class KWCPagination extends PolymerElement {
                 justify-content: center;
                 flex-direction: row;
                 align-items: center;
+                margin-bottom: 40px;
             }
             *[hidden] {
                 display: none;
