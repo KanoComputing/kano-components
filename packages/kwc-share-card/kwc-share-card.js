@@ -21,6 +21,10 @@ class KwcShareCard extends PolymerElement {
             :host *[hidden] {
                 display: none !important;
             }
+            :host *[disabled] {
+                cursor: auto;
+                pointer-events: none;
+            }
             .wrapper {
                 display: block;
                 width: 100%;
@@ -108,29 +112,42 @@ class KwcShareCard extends PolymerElement {
             #actions ::slotted(kwc-share-action) {
                 margin-right: 8px;
             }
+            #moderation {
+                height: 100px;
+            }
         </style>
 
         <div class="wrapper">
             <div class="cover">
                 <slot name="cover"></slot>
                 <paper-spinner class="spinner" active hidden$="[[!uploadingAvatar]]"></paper-spinner>
-                <iron-image class="avatar" on-click="_onTapAvatar" src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]"></iron-image>
+                <iron-image class="avatar" on-click="_onTapAvatar" src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]" disabled$="[[avatarDisabled]]"></iron-image>
             </div>
-            <div class="title" on-click="_onTapTitle">
-                <div class="title-text">[[title]]</div>
-                <!-- If you want to mark this post with an icon (for example animation)
-                you can slot it into this \`title-icon\` slot -->
-                <div class="title-icon"><slot name="title-icon"></slot></div>
-            </div>
-            <div class="username" on-click="_onTapUsername">
-                [[_(byLabel, 'by')]] <span class="username-text"> [[username]]</span>[[_(prefixAgo, '')]] [[_timeSince(date, timeAgoLocales)]] [[_(suffixAgo, 'ago')]]
-            </div>
-            <div id="actions">
-                <slot name="actions"></slot>
-            </div>
-            <div id="details">
-                <slot name="details"></slot>
-            </div>
+            <template is="dom-if" if="[[!moderationPending]]">
+                <div class="title" on-click="_onTapTitle">
+                    <div class="title-text">[[title]]</div>
+                    <!-- If you want to mark this post with an icon (for example animation)
+                    you can slot it into this \`title-icon\` slot -->
+                    <div class="title-icon"><slot name="title-icon"></slot></div>
+                </div>
+                <div class="username" on-click="_onTapUsername">
+                    [[_(byLabel, 'by')]] <span class="username-text"> [[username]]</span>[[_(prefixAgo, '')]] [[_timeSince(date, timeAgoLocales)]] [[_(suffixAgo, 'ago')]]
+                </div>
+                <div id="actions">
+                    <slot name="actions"></slot>
+                </div>
+                <template is="dom-if" if="[[!moderationFailed]]">
+                    <div id="details">
+                        <slot name="details"></slot>
+                    </div>
+                </template>
+                
+            </template>
+            <template is="dom-if" if="[[moderationPending]]">
+                <div id="moderation">
+                    <slot name="moderation"></slot>
+                </div>
+            </template>
         </div>
 `;
     }
@@ -168,6 +185,11 @@ class KwcShareCard extends PolymerElement {
             _avatar: {
                 type: String,
                 computed: '_computeAvatar(avatar.urls.world, avatar.urls.circle, user.*)',
+            },
+            avatarDisabled: {
+                type: Boolean,
+                notify: true,
+                reflectToAttribute: true,
             },
             byLabel: String,
             prefixAgo: String,

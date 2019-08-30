@@ -18,9 +18,22 @@ class KwcShareCover extends PolymerElement {
                 display: block;
                 overflow: hidden;
             }
+            :host([disabled]) {
+                cursor: auto;
+                pointer-events: none;
+            }
             .share-card-cover {
                 width: 100%;
                 height: 100%;
+                position: relative;
+            }
+            .share-card-cover__overlay {
+                height: inherit;
+                width: 100%;
+                position: absolute;
+                background-color: rgba(255,255,255,0.4);
+                z-index: 1;
+                top: 0;
             }
             .share-cover-spritesheet,
             .share-cover-image {
@@ -41,6 +54,9 @@ class KwcShareCover extends PolymerElement {
             }
         </style>
         <div class="share-card-cover" slot="cover">
+            <template is="dom-if" if="[[moderationPending]]">
+                <div class="share-card-cover__overlay"></div>
+            </template>
             <template is="dom-if" if="[[spritesheetUrl]]">
                 <kwc-lightboard-preview class="share-cover-spritesheet" src="[[spritesheetUrl]]">
                 </kwc-lightboard-preview>
@@ -81,6 +97,9 @@ class KwcShareCover extends PolymerElement {
             fallbackUrl: {
                 type: String,
                 value: null,
+            },
+            moderationPending: {
+                type: Boolean,
             },
         };
     }
