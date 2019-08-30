@@ -1106,6 +1106,8 @@ class KwcShareDetail extends PolymerElement {
                 action: 'delete',
                 id: this.shareData ? this.shareData.id : null,
                 slug: this.shareData ? this.shareData.slug : null,
+                user: this.shareData ? this.shareData.userId : null,
+                title: this.shareData ? this.shareData.title : null,
             },
         }));
     }
