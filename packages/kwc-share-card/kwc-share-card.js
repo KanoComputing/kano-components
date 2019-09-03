@@ -119,9 +119,6 @@ class KwcShareCard extends PolymerElement {
                 text-decoration: none;
                 color: black;
             }
-            .avatar-anchor {
-                position: relative;
-            }
         </style>
 
         <div class="wrapper">
