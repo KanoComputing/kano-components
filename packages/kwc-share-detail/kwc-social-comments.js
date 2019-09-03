@@ -277,6 +277,9 @@ class KwcSocialComments extends PolymerElement {
             .submit {
                 margin-right: 8px;
             }
+            a.author {
+                text-decoration: none;
+            }
         </style>
 
         <div class="input-comment">
@@ -297,14 +300,14 @@ class KwcSocialComments extends PolymerElement {
         </div>
         <template is="dom-repeat" items="[[comments]]" as="comment">
             <div id$="[[comment.id]]" class$="comment [[_computePostingClass(comment)]]">
-                <div class="comment-avatar">
+                <a href$="[[_getUserHref(resolveUsernameHref, comment.author)]]" class="comment-avatar">
                     <iron-image class="avatar" src$="[[_computeAvatar(comment.author)]]" sizing="cover" preload fade on-tap="_userTapped"></iron-image>
-                </div>
+                </a>
                 <div class="content">
                     <p class="comment-header">
-                        <span class="author" on-tap="_userTapped">
+                        <a href$="[[_getUserHref(resolveUsernameHref, comment.author)]]" class="author" on-tap="_userTapped">
                             [[comment.author.username]]
-                        </span>
+                        </a>
                         <span class="date">
                             [[_(agoPrefix, '')]] [[_timeSince(comment.date_created, comments.*, timeAgoLocales)]] [[_(agoSuffix, 'ago')]]
                         </span>
@@ -457,6 +460,7 @@ class KwcSocialComments extends PolymerElement {
                 type: Object,
                 value: () => ({}),
             },
+            resolveUsernameHref: Function,
             loadMoreLabel: String,
             retryLabel: String,
             agoSuffix: String,
@@ -663,6 +667,9 @@ class KwcSocialComments extends PolymerElement {
                 },
             }));
         }
+    }
+    _getUserHref(resolver, user) {
+        return resolver ? resolver(user) : '';
     }
 }
 
