@@ -1,3 +1,4 @@
+import { flush } from '@polymer/polymer/lib/utils/flush.js';
 import { assert, fixture } from '@kano/web-tester/helpers.js';
 import { click } from '@polymer/iron-test-helpers/mock-interactions.js';
 import './kwc-share-card.js';
@@ -13,6 +14,7 @@ suite('kwc-share-card', () => {
     });
     test('avatar-tapped', (done) => {
         const el = basic();
+        flush();
         el.addEventListener('avatar-tapped', () => {
             done();
         });
@@ -21,6 +23,7 @@ suite('kwc-share-card', () => {
     });
     test('username-tapped', (done) => {
         const el = basic();
+        flush();
         el.addEventListener('username-tapped', () => {
             done();
         });
@@ -29,6 +32,7 @@ suite('kwc-share-card', () => {
     });
     test('title-tapped', (done) => {
         const el = basic();
+        flush();
         el.addEventListener('title-tapped', () => {
             done();
         });
