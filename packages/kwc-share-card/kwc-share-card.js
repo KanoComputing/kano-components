@@ -115,24 +115,33 @@ class KwcShareCard extends PolymerElement {
             #moderation {
                 height: 100px;
             }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            .avatar-anchor {
+                position: relative;
+            }
         </style>
 
         <div class="wrapper">
             <div class="cover">
                 <slot name="cover"></slot>
                 <paper-spinner class="spinner" active hidden$="[[!uploadingAvatar]]"></paper-spinner>
-                <iron-image class="avatar" on-click="_onTapAvatar" src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]" disabled$="[[avatarDisabled]]"></iron-image>
+                <a class="avatar" on-click="_onTapAvatar" href$="[[avatarHref]]">
+                    <iron-image src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]" disabled$="[[avatarDisabled]]"></iron-image>
+                </a>
             </div>
             <template is="dom-if" if="[[!moderationPending]]">
-                <div class="title" on-click="_onTapTitle">
+                <a class="title" on-click="_onTapTitle" href$="[[titleHref]]">
                     <div class="title-text">[[title]]</div>
                     <!-- If you want to mark this post with an icon (for example animation)
                     you can slot it into this \`title-icon\` slot -->
                     <div class="title-icon"><slot name="title-icon"></slot></div>
-                </div>
-                <div class="username" on-click="_onTapUsername">
+                </a>
+                <a class="username" on-click="_onTapUsername" href$="[[usernameHref]]">
                     [[_(byLabel, 'by')]] <span class="username-text"> [[username]]</span>[[_(prefixAgo, '')]] [[_timeSince(date, timeAgoLocales)]] [[_(suffixAgo, 'ago')]]
-                </div>
+                </a>
                 <div id="actions">
                     <slot name="actions"></slot>
                 </div>
@@ -141,7 +150,6 @@ class KwcShareCard extends PolymerElement {
                         <slot name="details"></slot>
                     </div>
                 </template>
-                
             </template>
             <template is="dom-if" if="[[moderationPending]]">
                 <div id="moderation">
@@ -191,6 +199,13 @@ class KwcShareCard extends PolymerElement {
                 notify: true,
                 reflectToAttribute: true,
             },
+            moderationPending: {
+                type: Boolean,
+                value: false,
+            },
+            titleHref: String,
+            usernameHref: String,
+            avatarHref: String,
             byLabel: String,
             prefixAgo: String,
             suffixAgo: String,

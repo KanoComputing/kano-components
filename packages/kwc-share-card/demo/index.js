@@ -133,7 +133,7 @@ const card = html`
     }
 </style>
 
-<kwc-share-card id="share-card" title="Kevin86's Goes to the MOON" username="Kevin86" date="2019-05-23T10:48:21.053Z">
+<kwc-share-card id="share-card" title="Kevin86's Goes to the MOON" username="Kevin86" date="2019-05-23T10:48:21.053Z" title-href="https://world.kano.me" username-href="https://world.kano.me">
     <iron-image slot="cover" style="width: 100%; height: 192px;" src="https://hoc-staging.kano.me/assets/images/build_challenges/orbit_moon.svg"
         sizing="cover" preload fade>
     </iron-image>
