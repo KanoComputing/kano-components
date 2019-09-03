@@ -404,6 +404,13 @@ class KwcShareDetail extends PolymerElement {
             .no-margin {
                 margin: 0;
             }
+
+            a.author,
+            a.btn {
+                text-decoration: none;
+                color: inherit;
+            }
+
             @media all and (max-width: 780px) {
                 .share-detail {
                     @apply --layout-vertical;
@@ -570,6 +577,7 @@ class KwcShareDetail extends PolymerElement {
                                                 comment-flags="[[commentFlags]]"
                                                 username-href="[[usernameHref]]"
                                                 avatar-href="[[avatarHref]]"
+                                                resolve-username-href="[[resolveUsernameHref]]"
                                                 on-delete-comment="_handleDeleteComment"
                                                 on-load-comment="_handleLoadComment"
                                                 on-post-comment="_handlePostComment"
@@ -895,6 +903,7 @@ class KwcShareDetail extends PolymerElement {
                 type: Boolean,
                 value: false,
             },
+            resolveUsernameHref: Function,
             usernameHref: String,
             avatarHref: String,
             remixHref: String,
