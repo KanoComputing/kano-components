@@ -503,9 +503,9 @@ class KwcShareDetail extends PolymerElement {
             <div class="share-detail">
                 <div class="main-details">
                     <div class="header">
-                        <div class="avatar-wrapper">
-                            <iron-image class="avatar" src="[[_avatarUrl]]" sizing="cover" on-click="_onUserTapped" preload fade></iron-image>
-                        </div>
+                        <a class="avatar-wrapper" on-click="_onUserTapped" href$="[[avatarHref]]">
+                            <iron-image class="avatar" src="[[_avatarUrl]]" sizing="cover" preload fade></iron-image>
+                        </a>
                         <div class="detail">
                             <h3 class="title">
                                 <slot name="title-icon"></slot>
@@ -514,7 +514,7 @@ class KwcShareDetail extends PolymerElement {
                                 </iron-image>
                             </h3>
                             <h4 class="attribution">[[_(byLabel, 'by')]]
-                                <a class="author" on-click="_onUserTapped">[[shareData.username]]</a>
+                                <a class="author" on-click="_onUserTapped" href$="[[usernameHref]]">[[shareData.username]]</a>
                             </h4>
                             <p class="description">[[shareData.description]]</p>
                             <div class="actions">
@@ -526,7 +526,7 @@ class KwcShareDetail extends PolymerElement {
                                 </button>
                             </template>
                             <template is="dom-if" if="[[_showRemixButton(shareData, canRemix)]]">
-                                <button class="btn action remix" on-click="_onRemixTapped">${remix}<div>[[_(remixLabel, 'Remix')]]</div></button>
+                                <a class="btn action remix" on-click="_onRemixTapped" href$="[[remixHref]]">${remix}<div>[[_(remixLabel, 'Remix')]]</div></a>
                             </template>
                             <template is="dom-if" if="[[_showCodeButton(shareData)]]">
                                 <button class="btn action view-code" on-click="_toggleCodeView">${code}<div>[[_(viewCodeLabel, 'View&nbsp;code')]]</div></button>
@@ -559,8 +559,24 @@ class KwcShareDetail extends PolymerElement {
                                 is available -->
                     <iron-pages id="social-sections" selected="[[_section]]" attr-for-selected="section-name" fallback-selection="comments">
                         <div section-name="comments" class="social-section">
-                            <kwc-social-comments id="comments" comments="[[comments.entries]]" default-avatar="[[_defaultCommentAvatarUrl]]" next-page="[[comments.page]]" item-id="[[shareData.id]]" tombstone$="[[!shareData]]" user="[[currentUser]]" loader-status="[[commentLoaderStatus]]" comment-flags="[[commentFlags]]" on-delete-comment="_handleDeleteComment" on-load-comment="_handleLoadComment" on-post-comment="_handlePostComment" on-flag-comment="_handleFlagComment" on-unflag-comment="_handleUnflagComment" on-view-user="_handleViewUser">
-                                                    </kwc-social-comments>
+                            <kwc-social-comments id="comments"
+                                                comments="[[comments.entries]]"
+                                                default-avatar="[[_defaultCommentAvatarUrl]]"
+                                                next-page="[[comments.page]]"
+                                                item-id="[[shareData.id]]"
+                                                tombstone$="[[!shareData]]"
+                                                user="[[currentUser]]"
+                                                loader-status="[[commentLoaderStatus]]"
+                                                comment-flags="[[commentFlags]]"
+                                                username-href="[[usernameHref]]"
+                                                avatar-href="[[avatarHref]]"
+                                                on-delete-comment="_handleDeleteComment"
+                                                on-load-comment="_handleLoadComment"
+                                                on-post-comment="_handlePostComment"
+                                                on-flag-comment="_handleFlagComment"
+                                                on-unflag-comment="_handleUnflagComment"
+                                                on-view-user="_handleViewUser">
+                                        </kwc-social-comments>
                         </div>
                     </iron-pages>
                 </div>
@@ -879,6 +895,9 @@ class KwcShareDetail extends PolymerElement {
                 type: Boolean,
                 value: false,
             },
+            usernameHref: String,
+            avatarHref: String,
+            remixHref: String,
             byLabel: String,
             remixLabel: String,
             viewCodeLabel: String,
