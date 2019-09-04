@@ -30,6 +30,7 @@ class KwcFollowItem extends PolymerElement {
                 width: 40px;
                 height: 40px;
                 cursor: pointer;
+                display: var(--avatar-image-display, block);
             }
             .avatar {
                 width: 100%;
