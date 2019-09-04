@@ -138,6 +138,8 @@ class KwcShareDetail extends PolymerElement {
                 border-radius: 50%;
                 position: relative;
                 margin: 0 20px;
+                display: var(--avatar-image-display, block);
+                padding-left: var(--avatar-image-custom-left-padding, 0);
             }
             .avatar {
                 border-radius: 50%;
@@ -194,6 +196,10 @@ class KwcShareDetail extends PolymerElement {
             }
             kw-social-comment {
                 width: 100%;
+            }
+            kwc-social-comments {
+                --comments-avatar-image-display: var(--avatar-image-display, block);
+                --comments-avatar-image-custom-left-padding: var(--avatar-image-custom-left-padding, 0);
             }
             .actions {
                 position: relative;

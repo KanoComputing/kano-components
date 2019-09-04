@@ -111,6 +111,8 @@ class KwcSocialComments extends PolymerElement {
                 overflow: hidden;
                 position: relative;
                 width: 40px;
+                display: var(--comments-avatar-image-display, block);
+                padding-left: var(--comments-avatar-image-custom-left-padding, 0);
             }
             .avatar {
                 height: 40px;
