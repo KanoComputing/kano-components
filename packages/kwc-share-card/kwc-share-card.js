@@ -47,6 +47,7 @@ class KwcShareCard extends PolymerElement {
                 border-radius: 50%;
                 transition: transform 350ms ease-in-out;
                 will-change: transform;
+                display: var(--avatar-image-display, block);
             }
             .spinner {
                 position: absolute;
@@ -58,6 +59,7 @@ class KwcShareCard extends PolymerElement {
                 border: 4px solid white;
                 cursor: pointer;
                 background: white;
+                display: var(--avatar-image-display, block);
             }
             .title,
             .username {
