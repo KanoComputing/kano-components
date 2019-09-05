@@ -14,7 +14,7 @@ class KwcAppPlayer extends PolymerElement {
     static get template() {
         return html`
         <style>
-            :host {
+            /* :host {
                 display: block;
                 height: 100%;
                 font-family: var(--font-body);
@@ -22,9 +22,9 @@ class KwcAppPlayer extends PolymerElement {
 
             :host * {
                 box-sizing: border-box;
-            }
+            } */
 
-            .app {
+            /* .app {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -32,16 +32,15 @@ class KwcAppPlayer extends PolymerElement {
                 height: 100%;
                 position: relative;
             }
-
             kc-player:not([fullscreen]) {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
+                position: relative;
+
                 transition: opacity 200ms linear;
                 width: 100%;
-            }
+            } */
 
         </style>
         <div class="app">

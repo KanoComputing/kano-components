@@ -103,6 +103,9 @@ class KwcSocialComments extends PolymerElement {
                 margin: 0;
                 width: 100%;
             }
+            .input-comment .btn {
+                margin-bottom: 10px;
+            }
             .comment-avatar {
                 border-radius: 50%;
                 flex: none;
