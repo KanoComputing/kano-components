@@ -605,8 +605,7 @@ class KwcSocialComments extends PolymerElement {
             }
         } else {
             flagged = this._computeCommentFlag(this.comments[index]);
-        }
-        if (flagged) {
+        } if (flagged) {
             e.currentTarget.setAttribute('class', 'action flag unflagged');
             this.dispatchEvent(new CustomEvent('unflag-comment', {
                 detail: {
