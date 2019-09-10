@@ -560,7 +560,7 @@ class KwcShareDetail extends PolymerElement {
                             </kwc-drop-down>
                         </div>
                         <div class="stats">
-                            <span hidden$="[[!likes.length]]">[[likes.length]] [[_(likeCountLabel, 'Likes')]]</span>
+                            <span hidden$="[[!likes]]">[[likes]] [[_(likeCountLabel, 'Likes')]]</span>
                             <span hidden$="[[!comments.count]]">[[comments.count]] [[_(commentCountLabel, 'Comments')]]</span>
                             <span hidden$="[[!shareData.views_count]]">[[shareData.views_count]] [[_(viewsCountLabel, 'Views')]]</span>
                         </div>
@@ -816,22 +816,30 @@ class KwcShareDetail extends PolymerElement {
                 value: 'comments',
             },
             /**
-               * A list of like objects used to calculate the number of likes for the share
-               * and whether the current user has liked this particular share.
-               * @type {Array}
+               * The number of likes for the current share.
+               * @type {Number}
                */
             likes: {
+                type: Number,
+                value: 0,
+            },
+            /**
+               * A list of like ids belonging to the current user, used to calculate
+               * whether the current user has liked this particular share.
+               * @type {Array}
+               */
+            userLikes: {
                 type: Array,
                 value: () => [],
             },
             /**
-               * Computed property that watches the liked list and returns true is
-               * it contains a like with the current user id.
+               * Computed property that watches the user's liked list and returns true if
+               * it contains a like with the current share id.
                * @type {Boolean}
                */
             liked: {
                 type: Boolean,
-                computed: '_computeLiked(likes.*, currentUser)',
+                computed: '_computeLiked(userLikes, shareData)',
             },
             /**
                * Property to indicate whether we are currently submiting a like request.
@@ -1030,21 +1038,11 @@ class KwcShareDetail extends PolymerElement {
     _computeFeatured(featured) {
         return featured;
     }
-    _computeLiked(likeChangeObj, currentUser) {
-        if (!likeChangeObj || !currentUser) {
+    _computeLiked(userLikes, shareData) {
+        if (!userLikes || !shareData) {
             return false;
         }
-        if (Array.isArray(likeChangeObj.base)) {
-            const likes = likeChangeObj.base;
-            if (likes && likes.length && currentUser) {
-                const liked = likes.some(l => l.user === currentUser.id);
-                return liked;
-            }
-        } else if (likeChangeObj.base.userLikes.length > 0 && this.shareData && this.shareData.id) {
-            const likes = likeChangeObj.base.userLikes;
-            return likes.indexOf(this.shareData.id) >= 0;
-        }
-        return false;
+        return userLikes.some(l => l === shareData.id);
     }
     _computeLikeClass(liked) {
         const baseClass = 'action-button like';
