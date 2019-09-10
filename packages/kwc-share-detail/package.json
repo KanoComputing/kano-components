@@ -1,7 +1,7 @@
 {
   "description": "To display details specific to a kano code share.",
   "name": "@kano/kwc-share-detail",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "scripts": {
     "serve": "es6-server",
     "serve-test": "web-tester serve ./*.test.js",
