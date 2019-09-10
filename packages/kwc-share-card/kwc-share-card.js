@@ -34,6 +34,7 @@ class KwcShareCard extends PolymerElement {
                 position: relative;
                 margin-bottom: 14px;
                 width: 100%;
+                min-height: 293px;
             }
             .cover .avatar {
                 position: absolute;
