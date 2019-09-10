@@ -607,7 +607,7 @@ class KwcSocialComments extends PolymerElement {
             flagged = this._computeCommentFlag(this.comments[index]);
         }
         if (flagged) {
-            e.path[1].setAttribute('class', 'action flag unflagged');
+            e.currentTarget.setAttribute('class', 'action flag unflagged');
             this.dispatchEvent(new CustomEvent('unflag-comment', {
                 detail: {
                     index,
@@ -616,7 +616,7 @@ class KwcSocialComments extends PolymerElement {
             }));
             return;
         }
-        e.path[1].setAttribute('class', 'action flag flagged');
+        e.currentTarget.setAttribute('class', 'action flag flagged');
         this.dispatchEvent(new CustomEvent('flag-comment', {
             detail: {
                 index,
