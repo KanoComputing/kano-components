@@ -129,7 +129,7 @@ const card = html`
         margin-left: 0px;
     }
     .btn.action {
-        margin-left: 10px;
+        margin-left: 14px;
     }
 </style>
 

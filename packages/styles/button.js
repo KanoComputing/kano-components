@@ -87,7 +87,7 @@ export const button = html`
             flex-direction: row;
             align-items: center;
             color: var(--color-chateau);
-            fill: var(--color-chateau);
+            fill: var(--color-grey);
         }
         .btn.action:hover,
         .btn.action:focus {
