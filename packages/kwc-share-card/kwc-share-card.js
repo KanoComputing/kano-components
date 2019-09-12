@@ -34,7 +34,6 @@ class KwcShareCard extends PolymerElement {
                 position: relative;
                 margin-bottom: 14px;
                 width: 100%;
-                min-height: 293px;
             }
             .cover .avatar {
                 position: absolute;
@@ -49,6 +48,9 @@ class KwcShareCard extends PolymerElement {
                 transition: transform 350ms ease-in-out;
                 will-change: transform;
                 display: var(--avatar-image-display, block);
+            }
+            .info {
+                padding: 0 16px;
             }
             .spinner {
                 position: absolute;
@@ -77,8 +79,8 @@ class KwcShareCard extends PolymerElement {
             }
             .title {
                 font-size: 24px;
-                line-height: 26px;
-                margin-bottom: 8px;
+                line-height: 24px;
+                margin-bottom: 4px;
                 font-weight: bold;
                 display: flex;
                 flex-direction: row;
@@ -91,7 +93,8 @@ class KwcShareCard extends PolymerElement {
                 align-items: flex-end;
             }
             .username {
-                font-size: 16px;
+                display: block;
+                font-size: 18px;
                 line-height: 18px;
                 margin-bottom: 14px;
                 color: var(--color-grey);
@@ -120,7 +123,7 @@ class KwcShareCard extends PolymerElement {
             }
             a {
                 text-decoration: none;
-                color: black;
+                color: var(--color-black);
             }
         </style>
 
@@ -132,30 +135,27 @@ class KwcShareCard extends PolymerElement {
                     <iron-image src$="[[_avatar]]" sizing="contain" hidden$="[[uploadingAvatar]]" disabled$="[[avatarDisabled]]"></iron-image>
                 </a>
             </div>
-            <template is="dom-if" if="[[!moderationPending]]">
-                <a class="title" on-click="_onTapTitle" href$="[[titleHref]]">
-                    <div class="title-text">[[title]]</div>
-                    <!-- If you want to mark this post with an icon (for example animation)
-                    you can slot it into this \`title-icon\` slot -->
-                    <div class="title-icon"><slot name="title-icon"></slot></div>
-                </a>
-                <a class="username" on-click="_onTapUsername" href$="[[usernameHref]]">
-                    [[_(byLabel, 'by')]] <span class="username-text"> [[username]]</span>[[_(prefixAgo, '')]] [[_timeSince(date, timeAgoLocales)]] [[_(suffixAgo, 'ago')]]
-                </a>
-                <div id="actions">
-                    <slot name="actions"></slot>
-                </div>
-                <template is="dom-if" if="[[!moderationFailed]]">
-                    <div id="details">
-                        <slot name="details"></slot>
+            <div class="info">
+                <template is="dom-if" if="[[!moderationPending]]">
+                    <a class="title" on-click="_onTapTitle" href$="[[titleHref]]">
+                        <div class="title-text">[[title]]</div>
+                        <!-- If you want to mark this post with an icon (for example animation)
+                        you can slot it into this \`title-icon\` slot -->
+                        <div class="title-icon"><slot name="title-icon"></slot></div>
+                    </a>
+                    <a class="username" on-click="_onTapUsername" href$="[[usernameHref]]">
+                        [[_(byLabel, 'by')]] <span class="username-text"> [[username]]</span>[[_(prefixAgo, '')]] [[_timeSince(date, timeAgoLocales)]] [[_(suffixAgo, 'ago')]]
+                    </a>
+                    <div id="actions">
+                        <slot name="actions"></slot>
                     </div>
                 </template>
-            </template>
-            <template is="dom-if" if="[[moderationPending]]">
-                <div id="moderation">
-                    <slot name="moderation"></slot>
-                </div>
-            </template>
+                <template is="dom-if" if="[[moderationPending]]">
+                    <div id="moderation">
+                        <slot name="moderation"></slot>
+                    </div>
+                </template>
+            </div>
         </div>
 `;
     }
