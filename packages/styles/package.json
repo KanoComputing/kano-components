@@ -1,6 +1,6 @@
 {
   "name": "@kano/styles",
-  "version": "3.1.3",
+  "version": "3.2.13",
   "main": "styles.js",
   "repository": "git@github.com:KanoComponents/kwc-style.git",
   "author": "Paul Varache <paul@kano.me>",
@@ -12,7 +12,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^3.1.3",
+    "@kano/demo-helpers": "^3.2.13",
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/web-tester": "^1.0.0-alpha.8",
