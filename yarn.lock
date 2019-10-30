@@ -110,10 +110,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@kano/code@^3.0.0-rc.48":
-  version "3.0.0-rc.48"
-  resolved "https://registry.yarnpkg.com/@kano/code/-/code-3.0.0-rc.48.tgz#cc0296b59c5205624c538603a07505e6018349b2"
-  integrity sha512-DjF3sshnTqrpnMNvq0bjcSS6ewAbn6GckxRSUhyM9nLzddejOyx2unRVLMi+d0wLSmegfz2FsjyKkqgl9+kFmA==
+"@kano/code@^3.0.1-alpha.5":
+  version "3.0.1-alpha.5"
+  resolved "https://registry.yarnpkg.com/@kano/code/-/code-3.0.1-alpha.5.tgz#98d75259ba2e699a7aa6503748267e37d979fcc8"
+  integrity sha512-iqPX3K+W58ZM/j5FQlKN9JR24dUHm7Y9MmaqRIv+JjojafnXs0by049YLCjdLyFc7m0br4bNBav7j8n7/uJwLA==
   dependencies:
     "@kano/common" "^1.0.3"
     "@kano/i18n" "^1.0.4"
@@ -126,28 +126,25 @@
     "@kano/kwc-style" "^3.0.0-beta.2"
     "@kano/styles" "^3.1.3"
     "@kano/telemetry" "^1.0.0"
+    "@kano/twemoji" "^1.0.0"
     "@polymer/decorators" "^3.0.0"
     "@polymer/iron-a11y-keys" "^3.0.0-pre.18"
     "@polymer/iron-icon" "^3.0.0-pre.18"
     "@polymer/iron-icons" "^3.0.0-pre.19"
     "@polymer/iron-iconset-svg" "^3.0.0-pre.18"
-    "@polymer/iron-image" "^3.0.0-pre.18"
-    "@polymer/iron-pages" "^3.0.0-pre.18"
-    "@polymer/marked-element" "^3.0.0-pre.18"
     "@polymer/paper-dialog" "^3.0.0-pre.18"
     "@polymer/paper-dialog-behavior" "^3.0.1"
-    "@polymer/polymer" "^3.0.0"
+    "@polymer/polymer" "^3.3.0"
     challenge-engine "^1.0.1"
     gif.js "git+ssh://git@github.com:jnordberg/gif.js.git"
     js-beautify "^1.7.5"
     lit-element "^2.0.1"
     lit-html "^1.0.0"
-    marked "^0.6.1"
+    marked "^0.7.0"
     monaco-editor "^0.16.2"
     omggif "^1.0.9"
     prismjs "^1.15.0"
-    tone "^0.12.80"
-    twemoji-min "git+ssh://git@github.com:KanoComputing/twemoji-min.git"
+    tone "^13.8.25"
 
 "@kano/common@^1.0.1":
   version "1.0.2"
@@ -296,6 +293,11 @@
   integrity sha512-cHZxNHyD1I2pSpvlr+nPTEbauEUvDgotMDW+NKWwpklco3Q62ulHQ+ZTeeFYAXy95VS3pafEsQAMWvtrg7bdsg==
   dependencies:
     "@kano/common" "^1.0.1"
+
+"@kano/twemoji@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@kano/twemoji/-/twemoji-1.0.0.tgz#a0b6b4c3180d58b95feb754de9296a5476293eab"
+  integrity sha512-IZ8/pZoqE90IW5KfmLlfVWM9EAq4uanF1TakgEf3Y66fAsMOIqSCC27pRab5isn8MWNW6c8ZbA9OP3z6KpOrog==
 
 "@kano/web-tester@^1.0.0-alpha.11":
   version "1.0.0-alpha.14"
@@ -1098,7 +1100,7 @@
     "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-pages@^3.0.0-pre.18", "@polymer/iron-pages@^3.0.1":
+"@polymer/iron-pages@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-pages/-/iron-pages-3.0.1.tgz#b0c3639a4d51e405464c8b8bcccbe055fab401c0"
   integrity sha512-PQe8S1JKHPcsIvFOaQP+9+AXmqUIL9fPqC6xT63OAZQxYCeZJDKgT9GKBx+VRryYBUlj2FLEXkUVpG+PTotdjg==
@@ -1216,6 +1218,13 @@
   dependencies:
     "@webcomponents/shadycss" "^1.5.2"
 
+"@polymer/polymer@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.3.0.tgz#52a0665ac29654728e8f46e8ee178c02c49efdd0"
+  integrity sha512-rij7suomS7DxdBamnwr/Xa0V5hpypf7I9oYKseF2FWz5Xh2a3wJNpVjgJy1adXVCxqIyPhghsrthnfCt7EblsQ==
+  dependencies:
+    "@webcomponents/shadycss" "^1.9.1"
+
 "@polymer/prism-element@^3.0.0-pre.18", "@polymer/prism-element@^3.0.0-pre.25":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/prism-element/-/prism-element-3.0.1.tgz#b35d53eec9ecea5e5fec7c82c7e978e760e53501"
@@ -1253,6 +1262,11 @@
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.8.0.tgz#10340b87626f876841033b21b5221c3701252e10"
   integrity sha512-bx0TzeZ11VqYDGLuXfznen8+4u0hADk2dD5RNMFxWL9MM4c5NXCDCgNXgssb4i2zQOos/GGe4tl5AuE0LzJkLA==
+
+"@webcomponents/shadycss@^1.9.1":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.9.2.tgz#6a3a65951b5a97279dd9b92cc277dd815d0e1fad"
+  integrity sha512-GsD7RpDVrVdgC6e+D8zQia8RGNmEGQ9/qotnVPQYPrIXhGS5xSt6ZED9YmuHz3HbLqY+E54tE1EK3tjLzSCGrw==
 
 "@webcomponents/webcomponentsjs@^2.0.0":
   version "2.2.4"
@@ -4779,10 +4793,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-marked@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.1.tgz#a63addde477bca9613028de4b2bc3629e53a0562"
-  integrity sha512-+H0L3ibcWhAZE02SKMqmvYsErLo4EAVJxu5h3bHBBDvvjeWXtl92rGUSBYHL2++5Y+RSNgl8dYOAXcYe7lp1fA==
+marked@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
+  integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
 marked@~0.3.9:
   version "0.3.19"
@@ -6831,10 +6845,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-tone@^0.12.80:
-  version "0.12.80"
-  resolved "https://registry.yarnpkg.com/tone/-/tone-0.12.80.tgz#9a40fca603d02e189251db772ef6c7bf082e6c28"
-  integrity sha512-xCriTn1may1ZzfYYwxXW8pNj0W1XScc21ZLSd/itoTa3s0vMO1LlN23UYvHwUduL45xuY+Rw/e87LmqP3mW43Q==
+tone@^13.8.25:
+  version "13.8.25"
+  resolved "https://registry.yarnpkg.com/tone/-/tone-13.8.25.tgz#057eefb39d4c749524db0ca210e34303cdc3c025"
+  integrity sha512-8QqmLn+/R+Urib/78zf93+NqFLddXS777kQO7+EbJHwqy+nmug+SJFRp2KIytT0LQY2sJBiopNb2ceHA8uQQJg==
 
 tough-cookie@~2.4.3:
   version "2.4.3"
@@ -6887,10 +6901,6 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
-
-"twemoji-min@git+ssh://git@github.com:KanoComputing/twemoji-min.git":
-  version "0.0.0"
-  resolved "git+ssh://git@github.com:KanoComputing/twemoji-min.git#a495b5593962909005aa3bb256c2e578070f89b3"
 
 type-check@~0.3.2:
   version "0.3.2"
