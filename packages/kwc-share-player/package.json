@@ -7,7 +7,7 @@
   },
   "main": "kwc-share-player.js",
   "dependencies": {
-    "@kano/code": "^3.0.1-alpha.5",
+    "@kano/code": "^3.0.1-alpha.7",
     "@kano/icons": "^3.2.15",
     "@kano/styles": "^3.2.13",
     "@polymer/iron-image": "^3.0.0-pre.18",
