@@ -13,36 +13,6 @@ Player UI component for kano code shares.
 class KwcAppPlayer extends PolymerElement {
     static get template() {
         return html`
-        <style>
-            /* :host {
-                display: block;
-                height: 100%;
-                font-family: var(--font-body);
-            }
-
-            :host * {
-                box-sizing: border-box;
-            } */
-
-            /* .app {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                position: relative;
-            }
-            kc-player:not([fullscreen]) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                position: relative;
-
-                transition: opacity 200ms linear;
-                width: 100%;
-            } */
-
-        </style>
         <div class="app">
             <kc-player id="player" src="[[_appUrl]]" show-toolbar></kc-player>
         </div>

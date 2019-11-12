@@ -338,7 +338,6 @@ class KwcShareDetail extends PolymerElement {
                 max-width: 600px;
                 margin: 20px auto 0;
             }
-            /* <!-- TODO: be added in with next iteration --> */
             .supplimentary-info {
                 position: relative;
                 margin: 0 auto -20px;
@@ -466,36 +465,6 @@ class KwcShareDetail extends PolymerElement {
                     </iron-pages>
                 </div>
             </div>
-            <!-- <div class="supplementary-details">
-                <template is="dom-if" if="[[_showRelatedShares(related)]]">
-                    <div class="related-shares">
-                        <div class="sidebar-section-header">[[_(moreFromLabel, 'More from')]] [[shareData.username]]</div>
-                        <div class="related-shares-list">
-                            <template is="dom-repeat" items="[[related]]">
-                                <a href="[[item.targetUrl]]">
-                                    <kwc-share-cover class="related-shares-cover" image-url="[[item.imageUrl]]" spritesheet-url="[[item.spritesheetUrl]]">
-                                    </kwc-share-cover>
-                                </a>
-                            </template>
-                        </div>
-                    </div>
-                </template>
-                <template is="dom-if" if="[[_anyHardwareUsed(shareData.hardware)]]">
-                    <div class="parts-used">
-                        <div class="sidebar-section-header">[[_(partsUsedLabel, 'Parts Used')]]</div>
-                        <ul class="parts-used-list">
-                            <template is="dom-repeat" items="[[shareData.hardware]]">
-                                <li>
-                                    <a href$="[[_getLinkForPartId(item.product)]]" class$="[[_computePartsLinkClass(item.product)]]">
-                                        <div class="icon" id="part" inner-h-t-m-l="[[_getPartIcon(item.product)]]"></div>
-                                        <div class="label">[[_getLabelForPartId(item.product)]]</div>
-                                    </a>
-                                </li>
-                            </template>
-                        </ul>
-                    </div>
-                </template>
-            </div> -->
         </div>
     </div>
 `;
