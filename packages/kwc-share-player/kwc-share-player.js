@@ -13,19 +13,10 @@ class KwcSharePlayer extends PolymerElement {
     static get template() {
         return html`
         <style>
-            /* :host {
-                display: block;
-                width: 100%;
-                background: var(--kwc-share-player-background, --color-chateau);
-                max-height: var(--kwc-share-player-height, 480px);
-                height: var(--kwc-share-player-height, 480px);
-                box-sizing: border-box;
-                position: relative;
-            }
             kwc-app-player,
             kwc-art-player {
                 animation: fade-in 200ms linear;
-            } */
+            }
         </style>
         <template is="dom-if" if="[[_usePlayer('app', _player)]]" restamp>
             <kwc-app-player share="[[share]]" display-code="[[displayCode]]" on-hide-code="_hideCode">
