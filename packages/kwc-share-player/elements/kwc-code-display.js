@@ -46,6 +46,7 @@ class KwcCodeDisplay extends PolymerElement {
                 color: white;
                 padding-bottom: 16px;
                 width: 100%;
+                box-sizing: border-box;
             }
 
             .code-icon {

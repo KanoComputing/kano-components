@@ -19,9 +19,6 @@ import '@kano/styles/color.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { ellipsis, like, remix } from '@kano/icons/ui.js';
 import {
-    facebook,
-    twitter,
-    share,
     code,
 } from '@kano/icons/social.js';
 import * as partIcons from '@kano/icons/parts.js';
@@ -49,132 +46,7 @@ class KwcShareDetail extends PolymerElement {
                 display: block;
                 overflow: auto;
                 font-family: var(--font-body);
-                /* @apply --kw-share-detail; */
             }
-            /* :host * {
-                box-sizing: border-box;
-            }
-            :host *[hidden] {
-                display: none !important;
-            }
-            .share {
-                @apply --layout-vertical;
-                @apply --layout-center;
-                display: flex;
-                width: 100%;
-            }
-            .content-prefix {
-                background: var(--kw-share-detail-share-background, var(--color-chateau));
-                width: 100%;
-            }
-            .share-content {
-                background: var(--kw-share-detail-share-background, var(--color-chateau));
-                width: 100%;
-                box-sizing: border-box;
-                position: relative;
-            }
-            .share-content .loading {
-                color: white;
-                transition: opacity 200ms linear;
-            }
-            :host(.loaded) .share-content .loading {
-                opacity: 0;
-            }
-            #share-container {
-                display: flex;
-                flex-direction: column;
-                animation: fade-in 200ms linear;
-                z-index: 10;
-            }
-            .share-content .content {
-                min-height: var(--kw-share-detail-player-height, 570px);
-                display: block;
-                position: relative;
-            }
-            #share-container,
-            .share-content .loading,
-            .share-content .content .featured,
-            .share-content .loading .overlay {
-                @apply --layout-fit;
-            }
-            .share-content .loading .overlay {
-                @apply --layout-vertical;
-                @apply --layout-center;
-                @apply --layout-center-justified;
-            }
-            .share-content .content,
-            kwc-share-player {
-                background-color: transparent;
-                height: 100%;
-                margin: 0 auto;
-                max-width: 750px;
-                width: 100%;
-            }
-
-            kwc-share-player {
-                position: relative;
-            }
-           
-            .share-detail {
-                max-width: var(--content-width);
-                position: relative;
-                width: 100%;
-                z-index: 0;
-            }
-            .header {
-                @apply --layout-horizontal;
-            }
-
-            kwc-drop-down-item.feature {
-                --kwc-drop-down-item-icon-hover-color: var(--color-kano-orange);
-            }
-            kwc-drop-down-item.delete {
-                --kwc-drop-down-item-icon-hover-color: var(--color-dodger-blue);
-            }
-            kwc-drop-down-item.flag {
-                --kwc-drop-down-item-icon-hover-color: var(--color-carnation);
-            }
-            kwc-drop-down-item.flagged {
-                --kwc-drop-down-item-icon-color: var(--color-carnation);
-            }
-            .social-actions {
-                @apply --layout-horizontal;
-                @apply --layout-start-justified;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-            .social-action {
-                box-sizing: border-box;
-                margin-right: 16px;
-            }
-            .social-button {
-                border: 0;
-                border-radius: 3px;
-                fill: white;
-                cursor: pointer;
-                padding: 8px;
-                text-transform: uppercase;
-                transition: 0.3s ease;
-            }
-            .social-button:focus {
-                outline: 0;
-            }
-            .social-button.facebook {
-                background-color: var(--color-facebook);
-            }
-            .social-button.twitter {
-                background-color: var(--color-twitter);
-            }
-            .social-button.email {
-                background-color: var(--color-kano-orange);
-            }
-            .social-button .action-icon {
-                height: 16px;
-                width: 16px;
-            }
-            
-            */
             .no-margin {
                 margin: 0;
             }
@@ -184,86 +56,14 @@ class KwcShareDetail extends PolymerElement {
                 text-decoration: none;
                 color: inherit;
             }
-/* 
-            @media all and (max-width: 780px) {
-                .share-content,
-                .share-detail {
-                    @apply --layout-vertical;
-                    padding: 16px 16px;
-                }
-                .supplementary-details {
-                    @apply --layout-vertical;
-                    padding: 36px 0 0 0;
-                }
-                .supplementary-details .actions {
-                    margin: 0 0 36px 0;
-                }
-                kwc-share-player {
-                     max-width: 630px;
-                }
-            }
-            
-
-            @media all and (min-width: 581px) and (max-width: 780px) {
-                .supplementary-details {
-                    padding: 0 0 0 36px;
-                }
-                .actions,
-                .social {
-                    @apply --layout-flex-auto;
-                }
-                .supplementary-details > * {
-                    margin-right: 18px;
-                }
-            }
-            @media all and (min-width: 781px) {
-                #share-container {
-                    padding: 0 60px;
-                }
-                .share-content,
-                .share-detail {
-                    @apply --layout-horizontal;
-                    max-width: 888px;
-                }
-                .main-details {
-                    @apply --layout-flex-8;
-                    padding: 32px 44px 32px 8px;
-                }
-                .supplementary-details {
-                    @apply --layout-flex-4;
-                    color: var(--color-grey);
-                    padding: 32px 40px 32px 44px;
-                }
-            }
-
-            @media all and (max-width: 680px) {
-                .share-content .content {
-                    min-height: var(--kw-share-detail-player-height, 480px);
-                }
-            }
-            @media all and (max-width: 600px) {
-                .share-content .content .featured,
-                #share-container>* {
-                    max-height: calc(100% - 60px);
-                }
-                .share-content .content {
-                    min-height: var(--kw-share-detail-player-height, 440px);
-                }
-                kwc-share-player {
-                     max-width: 100%;
-                }
-            }
-            @media all and (max-width: 450px) {
-                .share-content .content {
-                    min-height: var(--kw-share-detail-player-height, 300px);
-                }
-            } */
             .share-content .loading {
                 color: white;
                 transition: opacity 200ms linear;
+                pointer-events: none;
             }
             :host(.loaded) .share-content .loading {
                 opacity: 0;
+                display: none;
             }
             .share-content .loading,
             .share-content .content .featured,
@@ -278,7 +78,7 @@ class KwcShareDetail extends PolymerElement {
             .share-detail {
                 width: calc(100% - 40px);
                 max-width: 888px;
-                margin: 20px auto;
+                margin: 0 auto 20px;
             }
             .share-content {
                 background: var(--kw-share-detail-share-background, var(--color-chateau));
@@ -530,6 +330,31 @@ class KwcShareDetail extends PolymerElement {
                 background-color: transparent;
                 margin: 0;
             }
+            .share-detail {
+                position: relative;
+            }
+
+            .main-details {
+                max-width: 600px;
+                margin: 20px auto 0;
+            }
+            /* <!-- TODO: be added in with next iteration --> */
+            .supplimentary-info {
+                position: relative;
+                margin: 0 auto -20px;
+                transform: translateY(-20px);
+                color: white;
+                min-height: 20px;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .supplimentary-info > div {
+                display: inline-block;
+                border-radius: 6px;
+                padding: 10px;
+                background-color: #414A51;
+            }
         </style>
         <div id="share" class="share">
             <div class="content-prefix">
@@ -555,6 +380,11 @@ class KwcShareDetail extends PolymerElement {
                 <slot name="content::after"></slot>
             </div>
             <div class="share-detail">
+                <template is="dom-if" if="[[_wandHardwareUsed(shareData.hardware)]]">
+                    <div class="supplimentary-info">
+                        <div>[[_(wandSpellLabel, 'Hold down the button on your wand to see the spell motions in this creation')]]</div>
+                    </div>
+                </template>
                 <div class="main-details">
                     <div class="header">
                         <a class="avatar-wrapper" on-click="_onUserTapped" href$="[[avatarHref]]">
@@ -636,7 +466,7 @@ class KwcShareDetail extends PolymerElement {
                     </iron-pages>
                 </div>
             </div>
-            <div class="supplementary-details">
+            <!-- <div class="supplementary-details">
                 <template is="dom-if" if="[[_showRelatedShares(related)]]">
                     <div class="related-shares">
                         <div class="sidebar-section-header">[[_(moreFromLabel, 'More from')]] [[shareData.username]]</div>
@@ -648,11 +478,6 @@ class KwcShareDetail extends PolymerElement {
                                 </a>
                             </template>
                         </div>
-                    </div>
-                </template>
-                <template is="dom-if" if="[[_wandHardwareUsed(shareData.hardware)]]">
-                    <div class="parts-used">
-                        <div class="sidebar-section-header">[[_(wandSpellLabel, 'Hold down the button on your wand to see the spell motions in this creation')]]</div>
                     </div>
                 </template>
                 <template is="dom-if" if="[[_anyHardwareUsed(shareData.hardware)]]">
@@ -670,27 +495,7 @@ class KwcShareDetail extends PolymerElement {
                         </ul>
                     </div>
                 </template>
-                <div class="social" hidden$="[[hideSocial]]">
-                    <div class="sidebar-section-header">[[_(shareLabel, 'Share')]]</div>
-                    <ul class="social-actions">
-                        <li class="social-action">
-                            <button class="social-button facebook" on-click="_onFacebookTapped">
-                                <div class="icon action-icon">${facebook}</div>
-                            </button>
-                        </li>
-                        <li class="social-action">
-                            <button class="social-button twitter" on-click="_onTwitterTapped">
-                                <div class="icon action-icon">${twitter}</div>
-                            </button>
-                        </li>
-                        <li class="social-action">
-                            <button class="social-button email" on-click="_onEmailTapped">
-                                <div class="icon action-icon">${share}</div>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
 `;

@@ -10,7 +10,6 @@ from HTML and may be out of place here. Review them and
 then delete this comment!
 */
 
-import '@polymer/iron-image/iron-image.js';
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
@@ -25,23 +24,19 @@ class KwcArtPlayer extends PolymerElement {
                 box-sizing: border-box;
             }
             .player {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                position: relative;
+                text-align: center;
             }
-            iron-image {
-                flex-direction: column;
-                align-items: center;
-                height: 100%;
-                width: 100%;
+            img {
+                display: inline-block;
+                margin: 0 auto ;
+                background-color: white;
+                max-width: 100%;
+                margin-bottom: 48px;
+                box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.15);
             }
         </style>
         <div class="player">
-            <iron-image id="image" src="[[share.cover_url]]" sizing="contain" preload fade>
-                        </iron-image>
+            <img id="image" src="[[share.cover_url]]" sizing="contain" preload fade>
         </div>
         <template is="dom-if" if="[[displayCode]]">
                 <kwc-code-display code="[[_mdCode]]" lines="[[_lines]]" code-type="[[_computeCodeType(share.app)]]" on-hide-code="_hideCode">
