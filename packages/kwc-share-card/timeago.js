@@ -3,11 +3,11 @@ const defaultLocales = {
     minutes: '%d minutes',
     hour: 'less than an hour',
     hours: '%d hours',
-    day: 'one day',
+    day: '1 day',
     days: '%d days',
-    month: 'one month',
+    month: '1 month',
     months: '%d months',
-    year: 'one year',
+    year: '1 year',
     years: '%d years',
 };
 
@@ -19,7 +19,7 @@ export function timeAgo(interval, unit, locales = defaultLocales) {
 export function timeSince(date, locales = defaultLocales) {
     const UTCDate = /Z$/.test(date) ? date : `${date}Z`;
     const parsedDate = new Date(Date.parse(UTCDate));
-    const seconds = Math.floor((new Date() - parsedDate) / 1000);
+    const seconds = Math.abs(Math.floor((new Date() - parsedDate) / 1000));
     let interval = Math.floor(seconds / 31536000);
     if (interval >= 1) {
         return timeAgo(interval, 'year', locales);
