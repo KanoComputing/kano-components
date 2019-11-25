@@ -393,8 +393,10 @@ class KwcShareDetail extends PolymerElement {
                             <h3 class="title">
                                 <slot name="title-icon"></slot>
                                 <div class="text">[[shareData.title]]</div>
-                                <iron-image class="featured-icon" src="[[_featuredIconUrl]]" sizing="contain" hidden$="[[!featured]]" alt="Staff pick" title="Staff pick" preload fade>
-                                </iron-image>
+                                <template is="dom-if" if="[[featured]]">
+                                    <iron-image class="featured-icon" src="[[_featuredIconUrl]]" sizing="contain" alt="Staff pick" title="Staff pick" preload fade>
+                                    </iron-image>
+                                </template>
                             </h3>
                             <h4 class="attribution">[[_(byLabel, 'by')]]
                                 <a class="author" on-click="_onUserTapped" href$="[[usernameHref]]">[[shareData.username]]</a>

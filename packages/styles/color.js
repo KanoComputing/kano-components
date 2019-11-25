@@ -30,6 +30,7 @@ const colors = html`
         --color-sky: #11b0ff;
         --color-facebook: #3b549a;
         --color-twitter: #04b9e3;
+        --color-purple-drank: #866bac;
     }
 </style>
 `;
