@@ -2,7 +2,7 @@
   "description": "",
   "homepage": "https://github.com/denisdani/kwc-user-about",
   "name": "@kano/kwc-user-about",
-  "version": "3.2.16",
+  "version": "3.3.1",
   "main": "kwc-user-about.js",
   "author": "Kano Computing",
   "license": "MIT",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@kano/icons": "^3.2.15",
-    "@kano/styles": "^3.2.16",
+    "@kano/styles": "^3.3.1",
     "@polymer/iron-flex-layout": "^3.0.0-pre.18",
     "@polymer/marked-element": "^3.0.0-pre.18",
     "@polymer/paper-input": "^3.0.0-pre.18",

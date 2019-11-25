@@ -1,7 +1,7 @@
 {
   "description": "Displays a creation made with Kano Code.",
   "name": "@kano/kwc-share-card",
-  "version": "3.2.15",
+  "version": "3.3.1",
   "main": "kwc-share-card.js",
   "scripts": {
     "serve": "es6-server",
@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@kano/kwc-lightboard-preview": "^3.0.15",
-    "@kano/styles": "^3.2.13",
+    "@kano/styles": "^3.3.1",
     "@polymer/iron-image": "^3.0.1",
     "@polymer/paper-spinner": "^3.0.1",
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^3.2.13",
+    "@kano/demo-helpers": "^3.3.1",
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/icons": "^3.2.15",
