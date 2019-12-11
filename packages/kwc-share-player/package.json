@@ -1,7 +1,7 @@
 {
   "description": "To wrap the app player in a UI component specific to the type of the share, e.g. &#34;Pixel Kit&#34;.",
   "name": "@kano/kwc-share-player",
-  "version": "3.3.0",
+  "version": "3.3.2",
   "scripts": {
     "serve": "es6-server"
   },
