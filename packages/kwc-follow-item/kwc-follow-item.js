@@ -88,18 +88,22 @@ class KwcFollowItem extends PolymerElement {
                     [[_(levelLabel, 'Level')]] [[level]]
                 </div>
             </div>
-            <div class="follow-button">
-                <div class="follow-icon-wrapper">
-                    <template is="dom-if" if="[[followed]]">
-                        <div class="followed-icon" on-click="_onTapFollow">${followed}</div>
-                    </template>
-                    <template is="dom-if" if="[[!followed]]">
-                        <div class="follow-icon" on-click="_onTapFollow">
-                            ${follow}
-                        </div>
-                    </template>
+            <template is="dom-if" if="[[showIcon]]">
+                <div class="follow-button">
+                    <div class="follow-icon-wrapper">
+                        <template is="dom-if" if="[[followed]]">
+                            <div class="followed-icon" on-click="_onTapFollow">
+                                ${followed}
+                            </div>
+                        </template>
+                        <template is="dom-if" if="[[!followed]]">
+                            <div class="follow-icon" on-click="_onTapFollow">
+                                ${follow}
+                            </div>
+                        </template>
+                    </div>
                 </div>
-            </div>
+            </template>
         </div>  
 `;
     }
@@ -114,6 +118,7 @@ class KwcFollowItem extends PolymerElement {
                 value: false,
             },
             levelLabel: String,
+            showIcon: Boolean,
         };
     }
     constructor() {
