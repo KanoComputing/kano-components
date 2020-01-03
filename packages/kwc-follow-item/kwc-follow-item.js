@@ -145,3 +145,4 @@ class KwcFollowItem extends PolymerElement {
 }
 
 customElements.define(KwcFollowItem.is, KwcFollowItem);
+
