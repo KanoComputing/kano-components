@@ -296,12 +296,14 @@ class KwcShareDetail extends PolymerElement {
                 margin-bottom: 20px;
             }
             .parent-share__image {
-                width: 124px;
-                height: fit-content;
+                height: 96px;
+                width: fit-content;
                 margin-right: 22px;
+                text-decoration: none;
+                color: inherit;
             }
             .parent-share__image img {
-                width: 100%;
+                height: 100%;
                 border-radius: 12px;
                 cursor: pointer;
             }
@@ -330,6 +332,11 @@ class KwcShareDetail extends PolymerElement {
             .parent-share__title {
                 font-weight: bold;
                 cursor: pointer;
+            }
+            .parent-share__title a,
+            .parent-share__username a {
+                text-decoration: none;
+                color: inherit;
             }
             :host([tombstone]) .avatar,
             :host([tombstone]) .avatar-wrapper {
@@ -479,15 +486,15 @@ class KwcShareDetail extends PolymerElement {
                         </div>
                         <template is="dom-if" if="[[_displayParentShare]]">
                             <div class="parent-share" >
-                                <div class="parent-share__image" on-click="_onParentShareTapped">
+                                <a class="parent-share__image" on-click="_onParentShareTapped" href="[[parentShareHref]]">
                                     <img src="[[parentShare.coverUrl]]" alt="[[parentShare.title]]" />
-                                </div>
+                                </a>
                                 <div class="text">
                                     <div class="parent-share__icon">${remixNew}<span>Remix of</span></div>
                                     <div>
-                                        <span class="parent-share__username" on-click="_onParentUserTapped">[[parentShare.username]]</span>
+                                        <span class="parent-share__username" on-click="_onParentUserTapped"><a href="[[parentUserHref]]">[[parentShare.username]]</a></span>
                                         <span class="parent-share__creation">creation</span>
-                                        <span class="parent-share__title" on-click="_onParentShareTapped">[[parentShare.title]]</span>
+                                        <span class="parent-share__title" on-click="_onParentShareTapped"><a href="[[parentShareHref]]">[[parentShare.title]]</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -809,6 +816,8 @@ class KwcShareDetail extends PolymerElement {
             usernameHref: String,
             avatarHref: String,
             remixHref: String,
+            parentUserHref: String,
+            parentShareHref: String,
             byLabel: String,
             remixLabel: String,
             viewCodeLabel: String,
