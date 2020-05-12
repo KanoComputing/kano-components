@@ -17,7 +17,7 @@ import '@kano/kwc-drop-down/kwc-drop-down-item.js';
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import { ellipsis, like, remix } from '@kano/icons/ui.js';
+import { ellipsis, like, remix, remixNew } from '@kano/icons/ui.js';
 import {
     facebook,
     twitter,
@@ -375,6 +375,47 @@ class KwcShareDetail extends PolymerElement {
                     transform: translateX(-40px);
                 }
             }
+            .parent-share {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .parent-share__image {
+                width: 124px;
+                height: fit-content;
+                margin-right: 22px;
+            }
+            .parent-share__image img {
+                width: 100%;
+                border-radius: 12px;
+                cursor: pointer;
+            }
+            .parent-share__icon {
+                display: flex;
+                align-items: end;
+            }
+            .parent-share__icon svg {
+                width: 20px;
+                fill: var(--color-kano-orange);
+                margin-right: 5px;
+            }
+            .parent-share__icon span {
+                font-weight: bold;
+                color: var(--color-grey);
+            }
+            .parent-share__username {
+                font-weight: bold;
+                color: var(--color-kano-orange);
+                cursor: pointer;
+            }
+            .parent-share__creation {
+                font-weight: bold;
+                color: var(--color-grey);
+            }
+            .parent-share__title {
+                font-weight: bold;
+                cursor: pointer;
+            }
             :host([tombstone]) .avatar,
             :host([tombstone]) .avatar-wrapper {
                 background: var(--color-grey-lightest);
@@ -564,6 +605,21 @@ class KwcShareDetail extends PolymerElement {
                             <span hidden$="[[!comments.count]]">[[comments.count]] [[_(commentCountLabel, 'Comments')]]</span>
                             <span hidden$="[[!shareData.views_count]]">[[shareData.views_count]] [[_(viewsCountLabel, 'Views')]]</span>
                         </div>
+                        <template is="dom-if" if="[[_displayParentShare]]">
+                            <div class="parent-share" >
+                                <div class="parent-share__image" on-click="_onParentShareTapped">
+                                    <img src="[[parentShare.coverUrl]]" alt="[[parentShare.title]]" />
+                                </div>
+                                <div class="text">
+                                    <div class="parent-share__icon">${remixNew}<span>Remix of</span></div>
+                                    <div>
+                                        <span class="parent-share__username" on-click="_onParentUserTapped">[[parentShare.username]]</span>
+                                        <span class="parent-share__creation">creation</span>
+                                        <span class="parent-share__title" on-click="_onParentShareTapped">[[parentShare.title]]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
                     </div>
                 </div>
                 <div class="social">
@@ -662,6 +718,21 @@ class KwcShareDetail extends PolymerElement {
                */
             shareData: {
                 type: Object,
+            },
+            /**
+               * The current share's parent share
+               * @type {Object}
+               */
+            parentShare: {
+                type: Object,
+            },
+            /**
+               * The current share's parent share
+               * @type {Object}
+               */
+            _displayParentShare: {
+                type: Boolean,
+                computed: '_computeParentShareDisplay(parentShare)',
             },
             /**
                * Flag to indicate whether the code display div should be shown.
@@ -1079,6 +1150,9 @@ class KwcShareDetail extends PolymerElement {
     _computeMetaActionDisplay(sharedByUser, userIsAdmin) {
         return sharedByUser || userIsAdmin;
     }
+    _computeParentShareDisplay(parentShare) {
+        return !!parentShare;
+    }
     _computeUserIsAdmin(adminLevel) {
         return adminLevel && adminLevel > 0;
     }
@@ -1207,6 +1281,29 @@ class KwcShareDetail extends PolymerElement {
     _toggleCodeView() {
         const newValue = !this.displayCode;
         this.set('displayCode', newValue);
+    }
+    _onParentShareTapped() {
+        const sh = this.parentShare;
+        if (!sh) {
+            return;
+        }
+        this.dispatchEvent(new CustomEvent('view-share', {
+            detail: {
+                share: this.parentShare,
+            },
+        }));
+    }
+    _onParentUserTapped() {
+        const sh = this.parentShare;
+        if (!sh) {
+            return;
+        }
+        this.dispatchEvent(new CustomEvent('view-user', {
+            detail: {
+                id: this.parentShare.userId,
+                username: this.parentShare.username,
+            },
+        }));
     }
     _onUserTapped() {
         const sh = this.shareData;
