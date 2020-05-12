@@ -1,6 +1,6 @@
 {
   "name": "@kano/icons",
-  "version": "3.3.5",
+  "version": "3.3.8",
   "main": "icons.js",
   "license": "MIT",
   "scripts": {
