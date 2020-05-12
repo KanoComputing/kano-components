@@ -17,7 +17,9 @@ import '@kano/kwc-drop-down/kwc-drop-down-item.js';
 import '@kano/styles/typography.js';
 import '@kano/styles/color.js';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import { ellipsis, like, remix, remixNew } from '@kano/icons/ui.js';
+import {
+    ellipsis, like, remix, remixNew,
+} from '@kano/icons/ui.js';
 import {
     code,
 } from '@kano/icons/social.js';
