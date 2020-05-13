@@ -332,6 +332,7 @@ class KwcShareDetail extends PolymerElement {
                 color: var(--color-grey);
             }
             .parent-share__title {
+                color: var(--color-chateau);
                 font-weight: bold;
                 cursor: pointer;
             }
@@ -494,9 +495,9 @@ class KwcShareDetail extends PolymerElement {
                                 <div class="text">
                                     <div class="parent-share__icon">${remixNew}<span>Remix of</span></div>
                                     <div>
-                                        <span class="parent-share__username" on-click="_onParentUserTapped"><a href="[[parentUserHref]]">[[parentShare.username]]</a></span>
-                                        <span class="parent-share__creation">creation</span>
                                         <span class="parent-share__title" on-click="_onParentShareTapped"><a href="[[parentShareHref]]">[[parentShare.title]]</a></span>
+                                        <span class="parent-share__creation">by</span>
+                                        <span class="parent-share__username" on-click="_onParentUserTapped"><a href="[[parentUserHref]]">[[parentShare.username]]</a></span>
                                     </div>
                                 </div>
                             </div>
