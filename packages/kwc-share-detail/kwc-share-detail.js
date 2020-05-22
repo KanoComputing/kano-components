@@ -508,6 +508,9 @@ class KwcShareDetail extends PolymerElement {
                                 <a class="parent-avatar-wrapper" on-click="_onParentUserTapped" href="[[parentUserHref]]">
                                     <iron-image class="avatar" src="[[_parentShareAvatarUrl]]" sizing="cover" preload fade></iron-image>
                                 </a>
+                                <a class="parent-share__image" on-click="_onParentShareTapped" href="[[parentShareHref]]">
+                                    <img src="[[parentShare.coverUrl]]" alt="[[parentShare.title]]" />
+                                </a>
                                 <div class="text">
                                     <div class="parent-share__icon">${remixNew}<span>Remix of</span></div>
                                     <div>
