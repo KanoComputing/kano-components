@@ -293,12 +293,13 @@ class KwcShareDetail extends PolymerElement {
                 }
             }
             .parent-share {
+                position: relative;
                 display: flex;
                 align-items: center;
                 margin-bottom: 20px;
             }
             .parent-share__image {
-                height: 96px;
+                height: 64px;
                 width: fit-content;
                 margin-right: 22px;
                 text-decoration: none;
@@ -306,8 +307,9 @@ class KwcShareDetail extends PolymerElement {
             }
             .parent-share__image img {
                 height: 100%;
-                border-radius: 12px;
+                border-radius: 6px;
                 cursor: pointer;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
             }
             .parent-share__icon {
                 display: flex;
@@ -320,7 +322,7 @@ class KwcShareDetail extends PolymerElement {
             }
             .parent-share__icon span {
                 font-weight: bold;
-                color: var(--color-grey);
+                color: var(--color-kano-orange);
             }
             .parent-share__username {
                 font-weight: bold;
@@ -335,6 +337,20 @@ class KwcShareDetail extends PolymerElement {
                 color: var(--color-chateau);
                 font-weight: bold;
                 cursor: pointer;
+            }
+            .parent-share .avatar {
+                width: 24px;
+                height: 24px;
+            }
+            .parent-avatar-wrapper {
+                flex: none;
+                overflow: hidden;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                display: var(--avatar-image-display, block);
             }
             .parent-share__title a,
             .parent-share__username a {
@@ -489,8 +505,8 @@ class KwcShareDetail extends PolymerElement {
                         </div>
                         <template is="dom-if" if="[[_displayParentShare]]">
                             <div class="parent-share" >
-                                <a class="parent-share__image" on-click="_onParentShareTapped" href="[[parentShareHref]]">
-                                    <img src="[[parentShare.coverUrl]]" alt="[[parentShare.title]]" />
+                                <a class="parent-avatar-wrapper" on-click="_onParentUserTapped" href="[[parentUserHref]]">
+                                    <iron-image class="avatar" src="[[_parentShareAvatarUrl]]" sizing="cover" preload fade></iron-image>
                                 </a>
                                 <div class="text">
                                     <div class="parent-share__icon">${remixNew}<span>Remix of</span></div>
@@ -595,6 +611,15 @@ class KwcShareDetail extends PolymerElement {
             _avatarUrl: {
                 type: String,
                 computed: '_computeAvatarUrl(shareData)',
+            },
+            /**
+               * Computed property that gives a url for the parent share avatar to show for the
+               * share author.
+               * @type {String}
+               */
+            _parentShareAvatarUrl: {
+                type: String,
+                computed: '_computeAvatarUrl(parentShare)',
             },
             /**
                * A comments object. Expects a property called `entries` that is to

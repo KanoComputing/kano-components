@@ -110,10 +110,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@kano/code@^3.0.1-alpha.30":
-  version "3.0.1-alpha.30"
-  resolved "https://registry.yarnpkg.com/@kano/code/-/code-3.0.1-alpha.30.tgz#f788727cfc956db318496332d83b50a965abc673"
-  integrity sha512-k5dJRmhCZOZ9sUoRL9TLywHSEf7ti/2syx/QKXTjdHRybocYeHqTO9QsotF2IJNFS6m0gphVvNUeHroADIuZYg==
+"@kano/code@^3.0.1-alpha.33":
+  version "3.0.1-alpha.33"
+  resolved "https://registry.yarnpkg.com/@kano/code/-/code-3.0.1-alpha.33.tgz#77f2ba367a3f0e96295624ba32f57dc40dd27184"
+  integrity sha512-ackkMilAe76f9pNg7niDCBTGAHecnKYL3mc8jCdjrTGXP2VVFaGwTNUYIm64sXKMAAOJuMMliVnf6XEZOOIW8Q==
   dependencies:
     "@kano/common" "^1.0.3"
     "@kano/i18n" "^1.0.4"
