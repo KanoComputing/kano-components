@@ -110,10 +110,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@kano/code@^3.0.1-alpha.33":
-  version "3.0.1-alpha.33"
-  resolved "https://registry.yarnpkg.com/@kano/code/-/code-3.0.1-alpha.33.tgz#77f2ba367a3f0e96295624ba32f57dc40dd27184"
-  integrity sha512-ackkMilAe76f9pNg7niDCBTGAHecnKYL3mc8jCdjrTGXP2VVFaGwTNUYIm64sXKMAAOJuMMliVnf6XEZOOIW8Q==
+"@kano/code@^3.0.1-alpha.35":
+  version "3.0.1-alpha.35"
+  resolved "https://registry.yarnpkg.com/@kano/code/-/code-3.0.1-alpha.35.tgz#d882fa25c2b6fbb39bbd4961ea6f37cc66d4eb27"
+  integrity sha512-KRcmnc1jsGnqBp1GdLOcQkJx8qvr9YVcddy3wlzRQpAaSlm/DpSkkSPRWPXRhoQ88GA1N0HjEAylZFgK6fe2zA==
   dependencies:
     "@kano/common" "^1.0.3"
     "@kano/i18n" "^1.0.4"
@@ -136,7 +136,6 @@
     "@polymer/paper-dialog-behavior" "^3.0.1"
     "@polymer/polymer" "^3.3.0"
     challenge-engine "^1.0.1"
-    gif.js "git+ssh://git@github.com:jnordberg/gif.js.git"
     js-beautify "^1.7.5"
     lit-element "^2.0.1"
     lit-html "^1.0.0"
@@ -3515,10 +3514,6 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
-
-"gif.js@git+ssh://git@github.com:jnordberg/gif.js.git":
-  version "0.2.0"
-  resolved "git+ssh://git@github.com:jnordberg/gif.js.git#92d27a02841339e202c75150dcf6fe5f4fa42ec5"
 
 git-raw-commits@2.0.0:
   version "2.0.0"
