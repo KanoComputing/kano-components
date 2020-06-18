@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@kano/web-tester": "^1.0.0-alpha.11",
-    "lerna": "^3.5.1"
+    "lerna": "^3.22.1"
   },
   "scripts": {
     "serve": "es6-server",
