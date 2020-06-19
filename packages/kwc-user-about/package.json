@@ -2,7 +2,7 @@
   "description": "",
   "homepage": "https://github.com/denisdani/kwc-user-about",
   "name": "@kano/kwc-user-about",
-  "version": "3.3.11",
+  "version": "3.3.14",
   "main": "kwc-user-about.js",
   "author": "Kano Computing",
   "license": "MIT",
@@ -14,8 +14,8 @@
     "test-ci": "yarn run --silent test > test-results.xml"
   },
   "dependencies": {
-    "@kano/icons": "^3.3.11",
-    "@kano/styles": "^3.3.1",
+    "@kano/icons": "^3.3.14",
+    "@kano/styles": "^3.3.14",
     "@polymer/iron-flex-layout": "^3.0.0-pre.18",
     "@polymer/marked-element": "^3.0.0-pre.18",
     "@polymer/paper-input": "^3.0.0-pre.18",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@kano/es6-server": "^1.0.1",
-    "@kano/icons-tool": "^3.0.15",
+    "@kano/icons-tool": "^3.3.14",
     "@kano/web-tester": "^1.0.0-alpha.8",
     "@webcomponents/webcomponentsjs": "^2.0.0"
   },

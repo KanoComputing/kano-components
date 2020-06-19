@@ -1,6 +1,6 @@
 {
   "name": "@kano/kwc-badge",
-  "version": "3.0.16",
+  "version": "3.3.14",
   "description": "> TODO: description",
   "author": "Paul Varache <perso@paulvarache.ninja>",
   "homepage": "https://github.com/KanoComputing/kano-components#readme",
@@ -22,7 +22,7 @@
     "@polymer/polymer": "^3.1.0"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^3.0.16"
+    "@kano/demo-helpers": "^3.3.14"
   },
   "gitHead": "e8016bb2a8d4bb7273a50cf4e07fbd1d811ea380"
 }

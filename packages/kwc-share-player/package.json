@@ -1,15 +1,15 @@
 {
   "description": "To wrap the app player in a UI component specific to the type of the share, e.g. &#34;Pixel Kit&#34;.",
   "name": "@kano/kwc-share-player",
-  "version": "3.3.13",
+  "version": "3.3.14",
   "scripts": {
     "serve": "es6-server"
   },
   "main": "kwc-share-player.js",
   "dependencies": {
     "@kano/code": "^3.0.1-alpha.35",
-    "@kano/icons": "^3.3.11",
-    "@kano/styles": "^3.2.13",
+    "@kano/icons": "^3.3.14",
+    "@kano/styles": "^3.3.14",
     "@polymer/iron-image": "^3.0.0-pre.18",
     "@polymer/iron-signals": "^3.0.0-pre.6",
     "@polymer/marked-element": "^3.0.0-pre.18",
@@ -17,7 +17,7 @@
     "@polymer/prism-element": "^3.0.0-pre.18"
   },
   "devDependencies": {
-    "@kano/demo-helpers": "^3.2.13",
+    "@kano/demo-helpers": "^3.3.14",
     "@kano/es6-server": "^1.0.1",
     "@kano/eslint-config": "^1.0.0",
     "@kano/web-tester": "^1.0.0-alpha.8",
